@@ -1,0 +1,56 @@
+@import url(../css/reset.css);
+/* line 43, ../sass/semantic-grid.scss */
+body {
+  width: 100%;
+  *zoom: 1;
+}
+/* line 29, ../sass/semantic-grid.scss */
+body:before, body:after {
+  content: "";
+  display: table;
+}
+/* line 33, ../sass/semantic-grid.scss */
+body:after {
+  clear: both;
+}
+
+/* line 22, ../sass/style.scss */
+.main-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* line 28, ../sass/style.scss */
+header#top {
+  margin-bottom: 1em;
+}
+
+/* line 33, ../sass/style.scss */
+#maincolumn {
+  display: inline;
+  float: left;
+  width: 72.80702%;
+  margin: 0 1.09649%;
+  background: #EEE;
+}
+
+/* line 37, ../sass/style.scss */
+#sidebar {
+  display: inline;
+  float: left;
+  width: 22.80702%;
+  margin: 0 1.09649%;
+  background: #CCC;
+}
+
+@media screen and (max-width: 720px) {
+  /* line 51, ../sass/style.scss */
+  #maincolumn,
+  #sidebar {
+    display: inline;
+    float: left;
+    width: 97.80702%;
+    margin: 0 1.09649%;
+    margin-bottom: 1em;
+  }
+}

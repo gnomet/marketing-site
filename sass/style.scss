@@ -1,0 +1,55 @@
+@import '../css/reset.css';
+@import './semantic-grid.scss';
+
+
+//////////
+// GRID //
+//////////
+
+// Specify the number of columns and set column and gutter widths
+$columns: 12;
+$column-width: 70;
+$gutter-width: 25;
+
+// Remove the definition below for a pixel-based layout
+$total-width: 100%;
+
+
+////////////
+// LAYOUT //
+////////////
+
+.main-container {
+	max-width: 1140px;
+	margin: 0 auto;	
+}
+
+// header
+header#top {
+	margin-bottom: 1em;
+}
+
+// main column & sidebar
+#maincolumn {
+	@include column(9);
+	background: #EEE;
+}
+#sidebar {
+	@include column(3);
+	background: #CCC;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 720px) {
+	#maincolumn,
+	#sidebar {
+		@include column(12);
+		margin-bottom: 1em;
+	}
+}
