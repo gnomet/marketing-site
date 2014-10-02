@@ -1,31 +1,31 @@
 @import url(../css/reset.css);
-/* line 43, ../sass/semantic-grid.scss */
+/* line 43, /Users/janne/Documents/htdocs/marketing-site/sass/semantic-grid.scss */
 body {
   width: 100%;
   *zoom: 1;
 }
-/* line 29, ../sass/semantic-grid.scss */
+/* line 29, /Users/janne/Documents/htdocs/marketing-site/sass/semantic-grid.scss */
 body:before, body:after {
   content: "";
   display: table;
 }
-/* line 33, ../sass/semantic-grid.scss */
+/* line 33, /Users/janne/Documents/htdocs/marketing-site/sass/semantic-grid.scss */
 body:after {
   clear: both;
 }
 
-/* line 22, ../sass/style.scss */
+/* line 24, ../sass/style.scss */
 .main-container {
   max-width: 1140px;
   margin: 0 auto;
 }
 
-/* line 28, ../sass/style.scss */
+/* line 30, ../sass/style.scss */
 header#top {
   margin-bottom: 1em;
 }
 
-/* line 33, ../sass/style.scss */
+/* line 35, ../sass/style.scss */
 #maincolumn {
   display: inline;
   float: left;
@@ -34,7 +34,7 @@ header#top {
   background: #EEE;
 }
 
-/* line 37, ../sass/style.scss */
+/* line 39, ../sass/style.scss */
 #sidebar {
   display: inline;
   float: left;
@@ -44,7 +44,7 @@ header#top {
 }
 
 @media screen and (max-width: 720px) {
-  /* line 51, ../sass/style.scss */
+  /* line 53, ../sass/style.scss */
   #maincolumn,
   #sidebar {
     display: inline;

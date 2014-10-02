@@ -1,5 +1,7 @@
 @import '../css/reset.css';
 @import './semantic-grid.scss';
+@import './variables.scss';
+@import './mixins.scss';
 
 
 //////////
@@ -7,12 +9,12 @@
 //////////
 
 // Specify the number of columns and set column and gutter widths
-$columns: 12;
-$column-width: 70;
-$gutter-width: 25;
+// $columns: 12;
+// $column-width: 70;
+// $gutter-width: 25;
 
 // Remove the definition below for a pixel-based layout
-$total-width: 100%;
+
 
 
 ////////////
