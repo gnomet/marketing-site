@@ -14,18 +14,18 @@ body:after {
   clear: both;
 }
 
-/* line 24, ../sass/style.scss */
+/* line 25, ../sass/style.scss */
 .main-container {
   max-width: 1140px;
   margin: 0 auto;
 }
 
-/* line 30, ../sass/style.scss */
+/* line 31, ../sass/style.scss */
 header#top {
   margin-bottom: 1em;
 }
 
-/* line 35, ../sass/style.scss */
+/* line 36, ../sass/style.scss */
 #maincolumn {
   display: inline;
   float: left;
@@ -34,7 +34,7 @@ header#top {
   background: #EEE;
 }
 
-/* line 39, ../sass/style.scss */
+/* line 40, ../sass/style.scss */
 #sidebar {
   display: inline;
   float: left;
@@ -44,7 +44,7 @@ header#top {
 }
 
 @media screen and (max-width: 720px) {
-  /* line 53, ../sass/style.scss */
+  /* line 54, ../sass/style.scss */
   #maincolumn,
   #sidebar {
     display: inline;
