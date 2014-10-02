@@ -1,15 +1,15 @@
 @import url(../css/reset.css);
-/* line 43, /Users/janne/Documents/htdocs/marketing-site/sass/semantic-grid.scss */
+/* line 43, ../sass/semantic-grid.scss */
 body {
   width: 100%;
   *zoom: 1;
 }
-/* line 29, /Users/janne/Documents/htdocs/marketing-site/sass/semantic-grid.scss */
+/* line 29, ../sass/semantic-grid.scss */
 body:before, body:after {
   content: "";
   display: table;
 }
-/* line 33, /Users/janne/Documents/htdocs/marketing-site/sass/semantic-grid.scss */
+/* line 33, ../sass/semantic-grid.scss */
 body:after {
   clear: both;
 }
