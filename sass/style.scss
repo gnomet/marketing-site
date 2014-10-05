@@ -4,7 +4,6 @@
 @import './mixins.scss';
 @import '../fonts/MyFontsWebfontsKit.css';
 
-
 body, html {
     height: 100%;
 }
@@ -27,6 +26,7 @@ strong {
 .clear { 
 	clear: both;
 }
+
 a {	
 	@include transition(color, 0.1s, ease-in-out);
 	text-decoration: none; 
@@ -39,11 +39,132 @@ a {
 
 
 
-//////////
-// HERO //
-//////////
+////////////////
+// NAVIGATION //
+////////////////
+
+.main-navigation {
+	position: fixed;
+	top: 0px;
+	z-index: 99;
+	height: 100px;
+	width: 100%;
+	background: rgba(255, 255, 255, 0.98); 
+	box-shadow: 0 2px 3px rgba(0,0,0,.05);	
+
+	.logo { 
+		position: relative;
+		margin-left: 50px;
+		margin-top: 35px;
+	}
+	
+	.menu-items {
+		float: right;
+		margin-right: 50px;
+		margin-top: -20px;
+	}
+	
+	li {
+		@include Gibson-Regular;
+		list-style-type: none;
+		float: left;
+		font-size: 15px;
+		padding-right: 45px;
+	}
+	
+	a {
+		@include transition(color, 0.1s, ease-in-out);
+		color: $grey;
+		text-decoration: none;
+		
+		&:hover {
+			color: $orange;
+		}
+	}
+	
+	.login {
+		@include button($orange, $white, $orange, $white, $blue, $blue);
+		top: -1px;
+		margin-right: -5px;
+		border-radius: 5px 0px 0px 5px;
+	}
+	
+	.get-started {
+		@include button($white, $orange, $orange, $white, $blue, $blue);
+		top: -1px;
+		border-radius: 0px 5px 5px 0px;
+	}
+	
+}
 
 
+/////////////////
+// TYPOGRAPHY //
+////////////////
+
+h2 {
+	@include Gibson-Light;
+	color: $grey;
+	font-size: 46px;
+	line-height: 60px;
+	letter-spacing: 0.00em;
+	
+	&.centered {
+		padding-bottom: 50px;
+		max-width: 600px;
+		text-align: center;
+		margin: 0 auto 40px;
+	}
+	
+}
+
+h6 {
+	@include Gibson-Light;
+	color: $grey;
+	font-size: 13px;
+	letter-spacing: 8px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #CCC;
+	
+	&.reasons {
+		width: 400px;  // Onko tähän parempaa ratkaisua?
+		text-align: center; 
+		margin: 130px auto 65px;
+		padding-bottom: 30px;	
+	}
+	
+	&.stories {
+		width: 225px;  // Onko tähän parempaa ratkaisua?
+		text-align: center; 
+		margin: 130px auto 65px;
+		padding-bottom: 30px;	
+	}
+}
+
+
+////////////
+// LAYOUT //
+////////////
+
+.main-wrapper {
+	@include Gibson-Light;
+	max-width: 1140px;
+	margin: 0 auto;	
+}
+
+.logo {
+	width: 165px;
+	height: auto;
+}
+
+a.button {
+	@include button($white, $orange, $orange, $white, $blue, $blue);	
+}
+
+
+//////////////////////
+// HOMEPAGE / HERO //
+/////////////////////
 
 .hero .logo {
 	position: relative;
@@ -58,9 +179,8 @@ a {
 	height: 99%;
 	background: $orange;
 	color: $white;
-	background-image: url("../images/bg.jpg");
-	background-size: cover;
-	background-attachment: fixed;
+	background: url("../images/bg.jpg") no-repeat center center fixed;
+	background-size: cover;	
 	
 	h1 {
 		font-size: 52px;
@@ -68,7 +188,7 @@ a {
 		margin-bottom: 30px;
 		letter-spacing: 0em;
 	}
-
+	
 	a.button.ghost {
 		@include button($white,none,$white,$white,$blue,$blue);
 		font-size: 16px;
@@ -106,6 +226,7 @@ a {
 		letter-spacing: 0.02em;
 	}
 }
+
 .hero-text {
 	position:absolute;
 	top:0;
@@ -118,134 +239,14 @@ a {
 	width: 95%;
 }
 
-.hero-text-container {max-width: 560px; }
-
-////////////
-// NAVIGATION //
-////////////
-
-.main-navigation {
-	position: fixed;
-	top: 0px;
-	z-index: 99;
-	height: 100px;
-	width: 100%;
-	background: rgba(255, 255, 255, 0.98); 
-	box-shadow: 0 2px 3px rgba(0,0,0,.05);	
-	
-	.logo { 
-		position: relative;
-		margin-left: 50px;
-		margin-top: 35px;
-	}
-	
-	.menu-items {
-		float: right;
-		margin-right: 50px;
-		margin-top: -20px;
-	}
-	
-	li {
-		@include Gibson-Regular;
-		list-style-type: none;
-		float: left;
-		font-size: 15px;
-		padding-right: 45px;
-	}
-	
-	a {
-		@include transition(color, 0.1s, ease-in-out);
-		color: $grey;
-		text-decoration: none;
-		
-			&:hover {
-				color: $orange;
-			}
-	}
-	
-	.login {
-		@include button($orange, $white, $orange, $white, $blue, $blue);
-		top: -1px;
-		margin-right: -5px;
-		border-radius: 5px 0px 0px 5px;
-	}
-	
-	.get-started {
-		@include button($white, $orange, $orange, $white, $blue, $blue);
-		top: -1px;
-		border-radius: 0px 5px 5px 0px;
-	}
-	
+.hero-text-container {
+	max-width: 560px;
 }
 
 
-/////////////////
-// TYPOGRAPHY //
-////////////////
-
-
-h2 {
-	@include Gibson-Light;
-	color: $grey;
-	font-size: 46px;
-	line-height: 60px;
-	letter-spacing: 0.00em;
-	
-}
-
-h6 {
-	@include Gibson-Light;
-	color: $grey;
-	font-size: 13px;
-	letter-spacing: 8px;
-	text-transform: uppercase;
-	border-bottom: 1px solid #CCC;
-}
-
-
-
-////////////
-// LAYOUT //
-////////////
-
-
-.main-wrapper {
-	@include Gibson-Light;
-	max-width: 1140px;
-	margin: 0 auto;	
-	
-	h2 {
-		padding-bottom: 50px;
-		max-width: 600px;
-		text-align: center;
-		margin: 0 auto 40px;
-	}
-	
-	h6 { 
-		text-align: center; 
-		margin: 130px auto 65px;
-		padding-bottom: 30px;	
-		width: 410px;  // Onko tähän parempaa ratkaisua? 
-	}
-}
-
-
-
-.logo {
-	width: 165px;
-	height: auto;
-}
-
-a.button {
-	@include button($white, $orange, $orange, $white, $blue, $blue);	
-}
-
-
-
-//////////////////////////////////
-// 5 REASONS TO USE SHARETRIBE //
-/////////////////////////////////
-
+////////////////////////////////////////////
+// HOMEPAGE / 5 REASONS TO USE SHARETRIBE //
+///////////////////////////////////////////
 
 .reason {
 	@include column(2.4);
@@ -266,20 +267,17 @@ img.hexagon {
 }
 
 
-///////////
-// VIDEO //
-///////////
-
+//////////////////////
+// HOMEPAGE / VIDEO //
+/////////////////////
 
 .video {
 	margin-top: 165px;
 	margin-bottom: 100px;
 	width: 100%;
-	background-image: url('../images/blue.marketplace.jpg');
+	background: url('../images/blue.marketplace.jpg') no-repeat center top fixed;
 	background-color: $blue;
-	background-attachment: fixed;
-	background-size:  cover;
-	background-repeat: no-repeat;
+	background-size: cover;
 	text-align: center;
 	color: $white;
 	
@@ -290,33 +288,40 @@ img.hexagon {
 	}
 	
 	h3 {
-		font-size: 38px;
 		@include Gibson-Regular;
+		font-size: 38px;
 		margin-bottom: 50px;
 	}
 	
 	a.button {
 		@include button($white, $orange, $orange, $white, none, $white);	
-		}
+	}
+	
+	.center-v {
+		position: relative;
+		padding: 180px 0;
+	}
 }
 
-.center-v {
-	position: relative;
-	padding: 180px 0;
-}
 
 
-
-
-///////////////
-// FEATURES //
-//////////////
+/////////////////////////
+// HOMEPAGE / FEATURES //
+////////////////////////
 
 .feature-screenshot { 
 	float: left;
 	position: relative;	
 	width: 200px;
 	left: -380px;
+}
+
+.right-screenshot {
+	float: right;
+	position: relative;	
+	width: 200px;
+	right: 300px;
+	top: 140px;
 }
 
 .feature-info {
@@ -327,58 +332,50 @@ img.hexagon {
 	text-align: left;
 	line-height: 32px;
 	
+	&.right-info {
+		width: 460px;
+		top: 20px;
+		float: left;
+		position: relative;
+		text-align: left;
+		line-height: 32px;
+		
+		h2 {
+			padding-bottom: 35px;
+		}
+		
+		h6.payments { 
+			margin: 150px 0 40px;
+			padding-bottom: 15px;	
+			width: 124px;  // Onko tähän parempaa ratkaisua? 
+		}
+	}
+	
 	h2 {
 		padding-bottom: 25px;
 		max-width: 600px;
-		text-align: left;
 		margin: 0 auto 0px;
 	}
 	
-	h6 { 
-		text-align: left; 
+	h6.marketplace-design, h6.track-manage { 
 		margin: 100px 0 30px;
 		padding-bottom: 15px;	
+	}
+	
+	h6.marketplace-design {
 		width: 280px;  // Onko tähän parempaa ratkaisua? 
 	}
+	
+	h6.track-manage {
+		width: 220px;  // Onko tähän parempaa ratkaisua? 
+	}
+	
 	
 	a.button {
 		@include button($orange, $white, $orange, $white, $blue, $blue);
 		top: 50px;
 	}
 }
-
-
-.feature-screenshot-alt { 
-	float: right;
-	position: relative;	
-	width: 200px;
-	right: 300px;
-	top: 140px;
-}
-
-.feature-info-alt {
-	width: 488px;
-	top: 20px;
-	float: left;
-	position: relative;
-	text-align: left;
-	line-height: 32px;
-		
-	h2 {
-		padding-bottom: 35px;
-		max-width: 600px;
-		text-align: left;
-		margin: 0 auto 0px;
-	}
-	
-	h6 { 
-		text-align: left; 
-		margin: 100px 0 40px;
-		padding-bottom: 15px;	
-		width: 272px;  // Onko tähän parempaa ratkaisua? 
-	}
-}
-
 
 .bg-color {
 	width: 100%;
@@ -388,35 +385,45 @@ img.hexagon {
 }
 
 
+/////////////////////////////
+// HOMEPAGE / WHERE & WHAT //
+////////////////////////////
 
-
-//////////////////
-// WHERE & WHAT //
-/////////////////
+.where-wrapper, .what-wrapper {
+	margin-top: 150px;
+	width: 50%;
+	color: $white;
+	text-align: center;
+	
+	p {
+		padding: 160px 0;
+		max-width: 450px;
+		max-height: 430px;
+		width: 50%;
+		text-align: center;
+		margin: 0 auto;
+		font-family: Gibson-LightIt;
+		font-size: 26px; 
+		line-height: 36px;
+	}
+}
 
 .where-wrapper {
-	margin-top: 150px;
+	background: url("../images/bg.jpg") no-repeat center center fixed;
+	background-size: cover;	
 	float: left;
-	width: 50%;
-	background: $orange;
-	height: 370px;
 }
 
 .what-wrapper {
-	margin-top: 150px;
+	background: url('../images/blue.marketplace.jpg') no-repeat center top fixed;
+	background-size: cover;	
 	float: right;
-	width: 50%;
-	background: $blue;
-	height: 370px;
 }
 
 
-
-
-//////////////////////////////////
-// SUCCESS STORIES //
-/////////////////////////////////
-
+////////////////////////////////
+// HOMEPAGE / SUCCESS STORIES //
+///////////////////////////////
 
 .story {
 	@include column(4);
@@ -456,36 +463,42 @@ img.hexagon {
 	p {
 		width: 290px;
 		margin: 0 auto;
-	}
-	 
-
+	}	 
 }
-
 
 
 ////////////
 // TRIAL //
 ///////////
 
-
 .trial {
 	margin-top: 165px;
-	margin-bottom: 100px;
+	margin-bottom: 40px;
 	width: 100%;
 	background-color: $orange;
 	text-align: center;
 	color: $white;
+	background: url("../images/trial.bg.jpg") no-repeat center top fixed;
+	background-size: cover;	
+	
+	.center-v {
+		position: relative;
+		padding: 120px 0;
+	}
+
 	
 	h4 {
-		font-size: 21px;
+		font-size: 23px;
 		font-family: Gibson-LightIt;
-		margin-bottom: 10px;
+		margin-bottom: 15px;
+		
 	}
 	
 	h3 {
 		font-size: 42px;
 		@include Gibson-Light;
-		margin-bottom: 50px;
+		margin-bottom: 40px;
+		letter-spacing: 0.01em;
 	}
 		
 	p {
@@ -494,23 +507,122 @@ img.hexagon {
 		font-size: 14px;
 		display: block;
 	}	
+	
+	input {
+		@include transition(all, 0.2s, ease-in-out);
+		width: 470px;
+		height: 67px;
+		padding: 10px 10px 10px 25px;
+		color: $white;
+		
+		font-size: 18px;
+		background-color: #d44027;
+		
+		border-radius: 5px;
+		border: none;
+		border-bottom: solid 3px #fff;
+		outline: none;
+		margin-bottom: 40px;
+		
+		&:hover {
+			border-bottom: solid 3px darken(#d44027, 10%);
+		}
+		
+		&:focus {
+			background: $white;
+			border-bottom: solid 3px darken(#d44027, 10%);
+			color: $orange;
+		}
+	}
 }
 
-.center-v {
-	position: relative;
-	padding: 180px 0;
+::-webkit-input-placeholder {
+   color: $white;
+   opacity: 0.7;
+   @include Gibson-Light;
 }
 
 
+////////////
+// FOOTER //
+///////////
 
+.footer {
+	text-align: center;
+	padding-bottom: 100px;
 
+	li {
+		@include Gibson-Regular;
+		list-style-type: none;
+		display: inline;
+		font-size: 15px;
+		padding-right: 45px;
+	}
+	
+	a {
+		@include transition(color, 0.1s, ease-in-out);
+		color: $grey;
+		text-decoration: none;
+		
+		&:hover {
+			color: $orange;
+		}
+		
+		&.icon {
+			color: $orange;
+			
+			&:hover {
+				color: $blue;
+			}
+		}
+	}
+	
+	img {
+		position: relative;
+		width: 64px;
+		height: auto;
+		top: 29px;
+	}
+}
 
+.copyright {
+	padding: 45px 0;
+	width: 100%;
+	background-color: $bg-grey;
+	
+	.main-wrapper {
+		width: 896px;
+	}
+	
+	p {
+		display: inline;
+		@include Gibson-Regular;
+		font-size: 13px;
+		color: #999;
+		
+		a {
+			color: #999;
+			
+			&:hover {
+				color: $blue;
+			}
+		}
+	}
+	
+	p.left {
+		text-align: left;
+	}
+	
+	p.right {
+		margin-right: 45px;
+		float: right;
+	}
+}
 
 
 ////////////
 // 768px //
 ///////////
-
 
 @media screen and (max-width: 768px) {
 
@@ -526,10 +638,20 @@ img.hexagon {
 	.reason {
 		@include column(12);
 	}
-
-
-
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
