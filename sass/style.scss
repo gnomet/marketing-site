@@ -2,19 +2,205 @@
 @import './semantic-grid.scss';
 @import './variables.scss';
 @import './mixins.scss';
+@import '../fonts/MyFontsWebfontsKit.css';
+
+
+body, html {
+    height: 100%;
+}
+
+body {	
+	@include Gibson-Light; 
+	text-rendering: optimizeLegibility; 
+	-webkit-font-smoothing: antialiased; 
+	font-size: 18px; 
+	word-wrap: break-word; 
+	word-break: break-word; 
+	overflow-y: scroll; 
+	overflow-x: hidden;
+}
+
+strong { 
+	@include Gibson-Regular;
+}
+
+.clear { 
+	clear: both;
+}
+a {	
+	@include transition(color, 0.1s, ease-in-out);
+	text-decoration: none; 
+	color: $orange; 
+	
+	&:hover {
+		color: $blue;
+	}
+}
+
 
 
 //////////
-// GRID //
+// HERO //
 //////////
 
 
-// Specify the number of columns and set column and gutter widths
-// $columns: 12;
-// $column-width: 70;
-// $gutter-width: 25;
 
-// Remove the definition below for a pixel-based layout
+.hero .logo {
+	position: relative;
+	top: 0;
+	margin-bottom: 100px;
+}
+
+.hero {
+	z-index: 999;
+	position: relative;
+	width: 100%;
+	height: 99%;
+	background: $orange;
+	color: $white;
+	background-image: url("../images/bg.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	
+	h1 {
+		font-size: 52px;
+		line-height: 60px;
+		margin-bottom: 30px;
+		letter-spacing: 0em;
+	}
+
+	a.button.ghost {
+		@include button($white,none,$white,$white,$blue,$blue);
+		font-size: 16px;
+		-webkit-font-smoothing: antialiased;
+		letter-spacing: 0.02em;
+		padding: 16px 26px;
+	}
+	
+	a.button.white {
+		@include button($orange,$white,$white,$white,$blue,$blue);
+		font-size: 16px;
+		-webkit-font-smoothing: antialiased;
+		letter-spacing: 0.02em;
+		margin-right: 30px;
+		padding: 16px 26px;
+	}
+	
+	a.login {
+		color: $white;
+		font-size: 13px;
+		padding-bottom:10px;
+		border-bottom: 1px solid $orange;
+		
+		&:hover {
+			@include transition(all, 0.1s, ease-in-out);
+			border-bottom: 1px solid $white;
+		}
+	}
+	
+	p {
+		@include Gibson-Regular;
+		font-size: 19px;
+		line-height: 32px;
+		margin-bottom: 55px;
+		letter-spacing: 0.02em;
+	}
+}
+.hero-text {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	margin:auto;
+	height: 650px;
+	max-width:1140px;
+	width: 95%;
+}
+
+.hero-text-container {max-width: 560px; }
+
+////////////
+// NAVIGATION //
+////////////
+
+.main-navigation {
+	position: fixed;
+	top: 0px;
+	z-index: 99;
+	height: 100px;
+	width: 100%;
+	background: rgba(255, 255, 255, 0.98); 
+	box-shadow: 0 2px 3px rgba(0,0,0,.05);	
+	
+	.logo { 
+		position: relative;
+		margin-left: 50px;
+		margin-top: 35px;
+	}
+	
+	.menu-items {
+		float: right;
+		margin-right: 50px;
+		margin-top: -20px;
+	}
+	
+	li {
+		@include Gibson-Regular;
+		list-style-type: none;
+		float: left;
+		font-size: 15px;
+		padding-right: 45px;
+	}
+	
+	a {
+		@include transition(color, 0.1s, ease-in-out);
+		color: $grey;
+		text-decoration: none;
+		
+			&:hover {
+				color: $orange;
+			}
+	}
+	
+	.login {
+		@include button($orange, $white, $orange, $white, $blue, $blue);
+		top: -1px;
+		margin-right: -5px;
+		border-radius: 5px 0px 0px 5px;
+	}
+	
+	.get-started {
+		@include button($white, $orange, $orange, $white, $blue, $blue);
+		top: -1px;
+		border-radius: 0px 5px 5px 0px;
+	}
+	
+}
+
+
+/////////////////
+// TYPOGRAPHY //
+////////////////
+
+
+h2 {
+	@include Gibson-Light;
+	color: $grey;
+	font-size: 46px;
+	line-height: 60px;
+	letter-spacing: 0.00em;
+	
+}
+
+h6 {
+	@include Gibson-Light;
+	color: $grey;
+	font-size: 13px;
+	letter-spacing: 8px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #CCC;
+}
 
 
 
@@ -22,37 +208,337 @@
 // LAYOUT //
 ////////////
 
-.main-container {
+
+.main-wrapper {
+	@include Gibson-Light;
 	max-width: 1140px;
 	margin: 0 auto;	
+	
+	h2 {
+		padding-bottom: 50px;
+		max-width: 600px;
+		text-align: center;
+		margin: 0 auto 40px;
+	}
+	
+	h6 { 
+		text-align: center; 
+		margin: 130px auto 65px;
+		padding-bottom: 30px;	
+		width: 410px;  // Onko tähän parempaa ratkaisua? 
+	}
 }
 
-// header
-header#top {
-	margin-bottom: 1em;
+
+
+.logo {
+	width: 165px;
+	height: auto;
 }
 
-// main column & sidebar
-#maincolumn {
-	@include column(9);
-	background: #EEE;
-}
-#sidebar {
-	@include column(3);
-	background: #CCC;
+a.button {
+	@include button($white, $orange, $orange, $white, $blue, $blue);	
 }
 
 
 
+//////////////////////////////////
+// 5 REASONS TO USE SHARETRIBE //
+/////////////////////////////////
+
+
+.reason {
+	@include column(2.4);
+	height: auto;
+	text-align: center;
+	line-height: 26px;
+		
+	strong {
+		display: block;
+		margin-bottom: 8px;
+	}
+}
+
+img.hexagon { 
+	width: 140px;
+	height: auto;
+	margin-bottom: 30px;	
+}
+
+
+///////////
+// VIDEO //
+///////////
+
+
+.video {
+	margin-top: 165px;
+	margin-bottom: 100px;
+	width: 100%;
+	background-image: url('../images/blue.marketplace.jpg');
+	background-color: $blue;
+	background-attachment: fixed;
+	background-size:  cover;
+	background-repeat: no-repeat;
+	text-align: center;
+	color: $white;
+	
+	h4 {
+		font-size: 32px;
+		font-family: Gibson-LightIt;
+		margin-bottom: 10px;
+	}
+	
+	h3 {
+		font-size: 38px;
+		@include Gibson-Regular;
+		margin-bottom: 50px;
+	}
+	
+	a.button {
+		@include button($white, $orange, $orange, $white, none, $white);	
+		}
+}
+
+.center-v {
+	position: relative;
+	padding: 180px 0;
+}
+
+
+
+
+///////////////
+// FEATURES //
+//////////////
+
+.feature-screenshot { 
+	float: left;
+	position: relative;	
+	width: 200px;
+	left: -380px;
+}
+
+.feature-info {
+	width: 488px;
+	top: 20px;
+	float: right;
+	position: relative;
+	text-align: left;
+	line-height: 32px;
+	
+	h2 {
+		padding-bottom: 25px;
+		max-width: 600px;
+		text-align: left;
+		margin: 0 auto 0px;
+	}
+	
+	h6 { 
+		text-align: left; 
+		margin: 100px 0 30px;
+		padding-bottom: 15px;	
+		width: 280px;  // Onko tähän parempaa ratkaisua? 
+	}
+	
+	a.button {
+		@include button($orange, $white, $orange, $white, $blue, $blue);
+		top: 50px;
+	}
+}
+
+
+.feature-screenshot-alt { 
+	float: right;
+	position: relative;	
+	width: 200px;
+	right: 300px;
+	top: 140px;
+}
+
+.feature-info-alt {
+	width: 488px;
+	top: 20px;
+	float: left;
+	position: relative;
+	text-align: left;
+	line-height: 32px;
+		
+	h2 {
+		padding-bottom: 35px;
+		max-width: 600px;
+		text-align: left;
+		margin: 0 auto 0px;
+	}
+	
+	h6 { 
+		text-align: left; 
+		margin: 100px 0 40px;
+		padding-bottom: 15px;	
+		width: 272px;  // Onko tähän parempaa ratkaisua? 
+	}
+}
+
+
+.bg-color {
+	width: 100%;
+	height: 800px;
+	background: $bg-grey;
+	position: relative;
+}
+
+
+
+
+//////////////////
+// WHERE & WHAT //
+/////////////////
+
+.where-wrapper {
+	margin-top: 150px;
+	float: left;
+	width: 50%;
+	background: $orange;
+	height: 370px;
+}
+
+.what-wrapper {
+	margin-top: 150px;
+	float: right;
+	width: 50%;
+	background: $blue;
+	height: 370px;
+}
+
+
+
+
+//////////////////////////////////
+// SUCCESS STORIES //
+/////////////////////////////////
+
+
+.story {
+	@include column(4);
+	height: auto;
+	text-align: center;
+	line-height: 26px;
+		
+	strong {
+		display: block;
+		margin-bottom: 16px;
+		font-size: 18px;
+		
+		a {
+			font-size: 18px;
+		}
+	}
+	
+	img.hexagon { 
+		width: 240px;
+		height: auto;
+		margin-bottom: 30px;	
+	}
+	
+	i {
+		font-family: Gibson-LightIt;
+		font-size: 18px; 
+		line-height: 26px;
+		-webkit-font-smoothing: subpixel-antialiased;
+		display: block;
+	}
+	
+	a { 
+		@include Gibson-Regular;
+		font-size: 15px;
+	}
+	
+	p {
+		width: 290px;
+		margin: 0 auto;
+	}
+	 
+
+}
+
+
+
+////////////
+// TRIAL //
+///////////
+
+
+.trial {
+	margin-top: 165px;
+	margin-bottom: 100px;
+	width: 100%;
+	background-color: $orange;
+	text-align: center;
+	color: $white;
+	
+	h4 {
+		font-size: 21px;
+		font-family: Gibson-LightIt;
+		margin-bottom: 10px;
+	}
+	
+	h3 {
+		font-size: 42px;
+		@include Gibson-Light;
+		margin-bottom: 50px;
+	}
+		
+	p {
+		@include Gibson-Regular;
+		color: #f3ab9e;
+		font-size: 14px;
+		display: block;
+	}	
+}
+
+.center-v {
+	position: relative;
+	padding: 180px 0;
+}
 
 
 
 
 
-@media screen and (max-width: 720px) {
-	#maincolumn,
-	#sidebar {
+
+
+////////////
+// 768px //
+///////////
+
+
+@media screen and (max-width: 768px) {
+
+	.main-wrapper {
+		max-width: 90%;
+	}
+	
+	#maincolumn, #sidebar {
 		@include column(12);
 		margin-bottom: 1em;
 	}
+	
+	.reason {
+		@include column(12);
+	}
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+

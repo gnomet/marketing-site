@@ -10,9 +10,39 @@ $total-width: 100%;
 // TYPOGRAPHY //
 ////////////////
 
+.Gibson-Light { font-weight: normal; font-style: normal; font-family: Gibson-Light;}
+.Gibson-LightIt { font-weight: normal; font-style: normal; font-family: Gibson-LightIt; }
+.Gibson-Regular { font-weight: normal; font-style: normal; font-family: Gibson-Regular;}
+.Gibson-Italic { font-weight: normal; font-style: normal; font-family: Gibson-Italic; }
+.Gibson-SemiBold { font-weight: normal; font-style: normal;	font-family: Gibson-SemiBold;}
+.Gibson-SemiboldIt { font-weight: normal; font-style: normal; font-family: Gibson-SemiboldIt;}
+
+@mixin Gibson-Light{
+	font-family: Gibson-Light;
+	letter-spacing: 0.03em;
+}
+
+@mixin Gibson-Regular{
+	font-family: Gibson-Regular;
+	letter-spacing: 0.03em;
+}
+
+
+
+
+
+
 
 
 
 ///////////////////
 // COLOR PALETTE //
 //////////////////
+
+
+$orange: #F05A3F;
+$grey: #323232;
+$blue: #2a3d4b;
+$light-grey: #666;
+$white: #FFF;
+$bg-grey: #f6f7f7;

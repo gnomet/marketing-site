@@ -1,0 +1,45 @@
+@mixin transition($value, $duration, $type) {
+	-webkit-transition: $value $duration $type;
+	-moz-transition: $value $duration $type;
+	-o-transition: $value $duration $type;
+	transition: $value $duration $type;
+
+}
+
+@mixin button($color, $background, $border, $color-hover, $background-hover, $border-hover) {
+	font-family: Gibson-Regular;
+	letter-spacing: 0.05em;
+	font-size: 13px;
+	border-radius: 5px;
+	background: $background;
+	color: $color;
+	padding: 14px 22px;
+	border: 1px solid $border;
+	position: relative;
+	-webkit-font-smoothing: subpixel-antialiased;
+	
+		&:hover {
+			@include transition(all, 0.2s, ease-in-out);
+			background: $background-hover;
+			color: $color-hover;
+			border: 1px solid $border-hover;
+		}
+}
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
