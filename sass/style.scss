@@ -389,7 +389,7 @@ img.hexagon {
 // HOMEPAGE / WHERE & WHAT //
 ////////////////////////////
 
-.where-wrapper, .what-wrapper {
+.where, .what {
 	margin-top: 150px;
 	width: 50%;
 	color: $white;
@@ -408,13 +408,13 @@ img.hexagon {
 	}
 }
 
-.where-wrapper {
+.where {
 	background: url("../images/bg.jpg") no-repeat center center fixed;
 	background-size: cover;	
 	float: left;
 }
 
-.what-wrapper {
+.what {
 	background: url('../images/blue.marketplace.jpg') no-repeat center top fixed;
 	background-size: cover;	
 	float: right;
