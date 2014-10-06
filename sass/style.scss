@@ -95,6 +95,36 @@ a {
 	
 }
 
+.sidenav {
+	margin-top: 60px;
+	width: 180px;
+	float: left;
+	position: relative;
+	margin-right: 80px;
+	opacity: 0.2;
+	@include transition(all, 0.5s, ease-in-out);
+	
+	&:hover {
+		opacity: 1.0;
+	}
+		
+	li {
+		list-style-type: none;
+		@include Gibson-Regular;
+		font-size: 16px;
+		margin-bottom: 15px;
+		letter-spacing: 0.01em;
+		line-height: 26px;
+		
+		a {
+			color: $grey;
+			
+			&:hover {
+				color: $orange;
+			}
+		}
+	}
+}
 
 /////////////////
 // TYPOGRAPHY //
@@ -157,6 +187,13 @@ h6 {
 
 a.button {
 	@include button($white, $orange, $orange, $white, $blue, $blue);	
+}
+
+.subpage-content {
+	width: 865px;
+	float: left;
+	height: auto;
+	margin-top: 68px;
 }
 
 
@@ -239,6 +276,29 @@ a.button {
 
 .hero-text-container {
 	max-width: 560px;
+}
+
+
+//////////////////////
+// SUBPAGE / HEADER //
+//////////////////////
+
+.subpage-header {
+	margin-bottom: 40px;
+	width: 100%;
+	background-color: $orange;
+	text-align: center;
+	color: $white;
+	background: url("../images/trial.bg.jpg") no-repeat center top fixed;
+	background-size: cover;	
+	
+	h3 {
+		font-size: 52px;
+		@include Gibson-Light;
+		margin-bottom: 40px;
+		letter-spacing: 0.00em;
+		padding: 90px 0;
+	}
 }
 
 
@@ -621,6 +681,96 @@ a.button {
 		float: right;
 	}
 }
+
+
+
+////////////////////////
+// SUBPAGE / FEATURES //
+///////////////////////
+
+.feature {
+
+	padding-bottom: 120px;
+
+	p {
+		font-size: 16px;
+		line-height: 28px;
+		-webkit-font-smoothing: subpixel-antialiased;
+	}
+
+	h6 {
+		font-size: 11px;
+		letter-spacing: 5px!important;
+		@include Gibson-Regular;
+		margin-bottom: 25px;
+		padding-bottom: 15px;
+	}
+	
+	h5 {
+		@include Gibson-Regular;
+		display: block;
+		margin-bottom: 20px;
+		font-size: 21px;
+		line-height: 28px;
+		letter-spacing: 0.02em;
+	}
+
+	&.one-third {
+		@include column(4);
+		width: 225px;
+		margin-right: 90px;
+		margin-left: 0;
+	}
+	
+	&.one-third-last {
+		@include column(4);
+		width: 225px;
+		margin-right: 0;
+		margin-left: 0;
+	}
+	
+	&.one-half {
+		@include column(6);
+		width: 384px;
+		margin-right: 90px;
+		margin-left: 0;
+	}
+	
+	&.one-half-last {
+		@include column(6);
+		width: 383px;
+		margin-right: 0;
+		margin-left: 0;
+	}
+	
+	&.two-thirds {
+		@include column(8);
+		width: 540px;
+		margin-right: 90px;
+		margin-left: 0;
+	}
+	
+	&.two-thirds-last {
+		@include column(8);
+		width: 550px;
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ////////////
