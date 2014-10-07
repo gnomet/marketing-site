@@ -178,6 +178,11 @@ h6 {
 	@include Gibson-Light;
 	max-width: 1140px;
 	margin: 0 auto;	
+	
+	&.pricing {
+		position: relative;
+		top: -120px;
+	}
 }
 
 .logo {
@@ -194,7 +199,10 @@ a.button {
 	float: left;
 	height: auto;
 	margin-top: 68px;
+	margin-bottom: 165px;
 }
+
+
 
 
 //////////////////////
@@ -208,20 +216,19 @@ a.button {
 }
 
 .hero {
-	z-index: 999;
 	position: relative;
 	width: 100%;
 	height: 100%;
 	background: $orange;
 	color: $white;
-	background: url("../images/bg.jpg") no-repeat center center fixed;
+	background: url("../images/bg2.jpg") no-repeat center center fixed;
 	background-size: cover;	
 	
 	h1 {
-		font-size: 52px;
-		line-height: 60px;
+		font-size: 64px;
+		line-height: 74px;
 		margin-bottom: 30px;
-		letter-spacing: 0em;
+		letter-spacing: -0.01em;
 	}
 	
 	a.button.ghost {
@@ -255,8 +262,8 @@ a.button {
 	
 	p {
 		@include Gibson-Regular;
-		font-size: 19px;
-		line-height: 32px;
+		font-size: 21px;
+		line-height: 36px;
 		margin-bottom: 55px;
 		letter-spacing: 0.02em;
 	}
@@ -266,39 +273,47 @@ a.button {
 	position:absolute;
 	top:0;
 	bottom:0;
-	left:0;
+	left:10%;
 	right:0;
 	margin:auto;
-	height: 650px;
-	max-width:1140px;
+	height: 600px;
 	width: 95%;
+	
+	img {
+		float: right;
+	}
 }
 
 .hero-text-container {
-	max-width: 560px;
+	max-width: 700px;
+	float: left;
 }
 
 
-//////////////////////
-// SUBPAGE / HEADER //
-//////////////////////
+////////////////////////////////
+// SUBPAGE / HEADERS: PRICING //
+///////////////////////////////
 
-.subpage-header {
-	margin-bottom: 40px;
+
+.subpage-header, .pricing-page {
 	width: 100%;
 	background-color: $orange;
-	text-align: center;
 	color: $white;
-	background: url("../images/trial.bg.jpg") no-repeat center top fixed;
+	background: url("../images/bg.jpg") no-repeat center bottom fixed;
 	background-size: cover;	
 	
 	h3 {
 		font-size: 52px;
 		@include Gibson-Light;
-		margin-bottom: 40px;
 		letter-spacing: 0.00em;
 		padding: 90px 0;
 	}
+	
+} 
+
+.subpage-header h3 {
+	text-align: center;
+	margin-bottom: 40px;
 }
 
 
@@ -493,6 +508,7 @@ a.button {
 	height: auto;
 	text-align: center;
 	line-height: 26px;
+	margin-bottom: 165px;
 		
 	strong {
 		display: block;
@@ -535,8 +551,6 @@ a.button {
 ///////////
 
 .trial {
-	margin-top: 165px;
-	margin-bottom: 40px;
 	width: 100%;
 	background-color: $orange;
 	text-align: center;
@@ -613,6 +627,7 @@ a.button {
 .footer {
 	text-align: center;
 	padding-bottom: 100px;
+	margin-top: 40px;
 
 	li {
 		@include Gibson-Regular;
@@ -761,10 +776,226 @@ a.button {
 
 
 
+////////////////////////
+// SUBPAGES / PRICING //
+////////////////////////
 
+.grey-background {
+	width: 100%;
+	background: #F6F7F7;
+	height: 1100px;
+}
 
+.pricing-page h3 {
+	margin-top: 40px;
+	float: left;
+}
 
+.pricing-top {
+	width: 1140px;
+	margin: 0 auto;
+	height: 450px;
+}
 
+.pricing-icon {
+	@include Gibson-Regular;
+	width: 175px;
+	float: right;
+	text-align: center;
+	font-size: 16px;
+	line-height: 24px;
+	margin-right: 55px;
+	margin-top: 95px;
+	
+	img {
+		width: 50px;
+		height: auto;
+		margin-bottom: 20px;
+	}
+}
+
+.pricing-table {
+	float: left;
+	margin-right: 0;
+	width: 25%;
+	height: 595px;
+	background: $white;
+	text-align: center;
+	-webkit-font-smoothing: subpixel-antialiased;
+	
+	&.first-table {
+		border-radius: 5px 0 0 0;
+		border-bottom: 1px solid #ccc;
+	}
+	
+	&.last-table {
+		border-radius: 0 5px 0 0;
+		border-left: 1px solid #CCC;
+		border-bottom: 1px solid #ccc;
+	}
+	
+	&.table {
+		border-bottom: 1px solid #ccc;
+	}
+	
+	&.featured-table {
+		border: 1px solid $orange;
+		margin-top: -25px;
+		height: 620px;
+		
+		h4 {
+			padding-top: 70px;
+			font-size: 24px;
+			padding-bottom: 24px;
+		}	
+		
+		h4, .superscript, .price, .month {
+			color: $orange;
+		}
+		
+		img {
+			position: relative;
+			left: 90px;
+			width: 30px;
+			height: auto;
+			margin-bottom: -42px;
+		}
+	}
+	
+	h4 {
+		@include Gibson-Regular;
+		font-size: 23px;
+		padding-top: 45px;
+		padding-bottom: 25px;
+	}
+	
+	.superscript {
+		@include Gibson-Light;
+		position: relative;
+		font-size: 42px;
+		top: -23px;
+		left: 3px;
+	}
+	
+	.price {
+		@include Gibson-Light;
+		font-size: 72px;
+		letter-spacing: 0em;
+	}
+	
+	.month {
+		font-size: 16px;
+	}
+	
+	p.billing-cycle {
+		width: 185px;
+		margin: 15px auto 25px;
+		font-size: 14px;
+		color: #666666;
+		padding: 15px 0;
+		border-top: 1px solid #CCC;
+		border-bottom: 1px solid #CCC;
+	}
+	
+	li {
+		list-style-type: none;
+		font-size: 16px;
+		line-height: 30px;
+		
+		&.last-band {
+			padding-bottom: 76px;
+		}
+		
+		&.last {
+			padding-bottom: 45px;
+		}
+	}
+	
+	a.switch-monthly {
+		display: block;
+		margin-top: 40px;
+		font-size: 14px;
+		color: #b3b3b3;
+		
+		&:hover {
+			color: #666;
+		}
+	}
+	
+	a.switch-biannually {
+		margin: 0 auto;
+		width: 185px;
+		display: block;
+		margin-top: 36px;
+		font-size: 14px;
+		line-height: 21px;
+		color: $orange;
+		
+		&:hover {
+			color: $blue;
+		}
+	}
+}
+
+.enterprise-table {
+	background: $white;
+	border-radius: 0 0 5px 5px;
+	float: left;
+	width: 100%;
+	padding: 35px 0;
+	margin-bottom: 50px;
+		
+	h4 {
+		@include Gibson-Regular;
+		font-size: 21px;
+		margin-left: 40px;
+		float: left;
+	}
+	
+	p {
+		font-size: 16px;
+		-webkit-font-smoothing: subpixel-antialiased;
+		margin-top: 4px;
+		padding-left: 70px;
+		float: left;
+	}
+	
+	a {
+		padding-left: 20px;
+	}
+}
+
+p.footnotes {
+	font-size: 12px;
+	line-height: 24px;
+	margin-left: 40px;
+}
+
+hr.pricing {
+	margin: 60px 40px;
+	opacity: 0.3;
+}
+
+p.pricing-faq {
+	@include column(4);
+	width: 300px;
+	font-size: 16px;
+	line-height: 24px;
+	
+	strong {
+		display: block;
+		margin-bottom: 15px;
+	}
+	
+	&.first {
+		margin-left: 40px!important;
+	}
+	
+	&.second, &.third {
+		margin-left: 70px;
+	}
+	
+}
 
 
 
@@ -777,6 +1008,14 @@ a.button {
 // 768px //
 ///////////
 
+@media screen and (min-width: 1920px) {
+
+	.hero-text {
+		left: 15%;
+	}
+	
+}	
+	
 @media screen and (max-width: 768px) {
 
 	.main-wrapper {
