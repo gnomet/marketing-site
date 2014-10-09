@@ -246,8 +246,17 @@ a.button {
 		letter-spacing: 0.02em;
 		margin-right: 30px;
 		padding: 16px 26px;
-	}
-	
+	}	
+		
+	img.crown, img.add {
+		width: 15px;
+		margin-right: 10px;
+		margin-top: 10px;
+		float: none;
+		display: inline-block;
+		vertical-align: -1px;
+	}	
+			
 	a.login {
 		color: $white;
 		font-size: 13px;
@@ -339,7 +348,7 @@ a.button {
 	background: url("../images/svg/hexagon.svg") no-repeat center center;
 }
 .icon-hexagon {
-	width: 40px;
+	width: 55px;
 	height: 170px;
 	top: -4px;
 	position: relative;
