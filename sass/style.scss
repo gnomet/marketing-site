@@ -200,6 +200,60 @@ a.button {
 	height: auto;
 	margin-top: 68px;
 	margin-bottom: 65px;
+	
+	&.text-only {
+		margin-top: 58px;
+		width: 700px;
+		font-size: 16px;
+		line-height: 26px;
+		padding-bottom: 65px;
+		
+		p {
+			margin-bottom: 26px;
+		}
+		
+		p.updated {
+			font-size: 14px;
+			color: #999;
+			margin-bottom: 20px;
+		}
+		
+		p.important-privacy {
+			font-size: 30px;
+			line-height: 42px;
+			font-family:  Gibson-LightIt;
+		}
+		
+		ol {
+			counter-reset: item;
+		}
+		
+		ol li {
+			display: block;
+			position: relative;
+		}
+		
+		ol li:before {
+			content: counters(item, ".")".";
+			counter-increment: item;
+			position: absolute;
+			margin-right: 100%;
+			right: 10px; /* space between number and text */
+		}
+		
+		h3 {
+			font-size: 24px;
+			@include Gibson-Regular;
+			margin-top: 40px;
+			margin-bottom: 20px;
+		}
+		
+		h4 {
+			font-size: 18px;
+			@include Gibson-Regular;
+			margin-bottom: 10px;
+		}
+	}
 }
 
 
@@ -221,7 +275,7 @@ a.button {
 	height: 100%;
 	background: $orange;
 	color: $white;
-	background: url("../images/bg2.jpg") no-repeat center center fixed;
+	background: url("../images/bg.hero.jpg") no-repeat center center fixed;
 	background-size: cover;	
 	
 	h1 {
@@ -232,49 +286,62 @@ a.button {
 	}
 	
 	a.button.ghost {
+		font-family: Gibson-Light!important;
 		@include button($white,none,$white,$white,$blue,$blue);
-		font-size: 16px;
-		-webkit-font-smoothing: antialiased;
-		letter-spacing: 0.02em;
+		font-size: 15px;
+		letter-spacing: 0.07em;
 		padding: 16px 26px;
 	}
 	
 	a.button.white {
 		@include button($orange,$white,$white,$white,$blue,$blue);
-		font-size: 16px;
-		-webkit-font-smoothing: antialiased;
-		letter-spacing: 0.02em;
+		font-size: 15px;
+		letter-spacing: 0.03em;
 		margin-right: 30px;
 		padding: 16px 26px;
 	}	
 		
-	img.crown, img.add {
-		width: 15px;
-		margin-right: 10px;
-		margin-top: 10px;
+	img.crown {
+		margin-right: 7px;
 		float: none;
 		display: inline-block;
+		width: 15px;
 		vertical-align: -1px;
 	}	
-			
+				
 	a.login {
 		color: $white;
 		font-size: 13px;
-		padding-bottom:10px;
-		border-bottom: 1px solid $orange;
+		opacity: 0.7;
+		@include transition(all, 0.1s, ease-in-out);
 		
+		&:hover img.arrow {
+				margin-left: 9px;
+			}
+			
 		&:hover {
+			opacity: 1.0;
+		}	
+		
+		img.arrow {
+			margin-left: 3px;
+			float: none;
+			display: inline-block;
+			width: 15px;
+			vertical-align: -3px;
 			@include transition(all, 0.1s, ease-in-out);
-			border-bottom: 1px solid $white;
+				
 		}
+		
 	}
 	
 	p {
 		@include Gibson-Regular;
-		font-size: 21px;
+		font-size: 19px;
 		line-height: 36px;
 		margin-bottom: 55px;
 		letter-spacing: 0.02em;
+		
 	}
 }
 
@@ -308,7 +375,7 @@ a.button {
 	width: 100%;
 	background-color: $orange;
 	color: $white;
-	background: url("../images/bg.jpg") no-repeat center bottom fixed;
+	background: url("../images/bg.where.jpg") no-repeat center bottom fixed;
 	background-size: cover;	
 	
 	h3 {
@@ -363,7 +430,7 @@ a.button {
 	margin-top: 165px;
 	margin-bottom: 100px;
 	width: 100%;
-	background: url('../images/blue.marketplace.jpg') no-repeat center top fixed;
+	background: url('../images/bg.video.jpg') no-repeat center top fixed;
 	background-color: $blue;
 	background-size: cover;
 	text-align: center;
@@ -388,6 +455,14 @@ a.button {
 	.center-v {
 		position: relative;
 		padding: 180px 0;
+	}
+	
+	img.play {
+		margin-right: 7px;
+		float: none;
+		display: inline-block;
+		width: 13px;
+		vertical-align: -3px;
 	}
 }
 
@@ -457,10 +532,17 @@ a.button {
 		width: 220px;  // Onko tähän parempaa ratkaisua? 
 	}
 	
-	
 	a.button {
 		@include button($orange, $white, $orange, $white, $blue, $blue);
 		top: 50px;
+	}
+	
+	img.add {
+		margin-right: 7px;
+		float: none;
+		display: inline-block;
+		width: 13px;
+		vertical-align: -2px;
 	}
 }
 
@@ -496,13 +578,13 @@ a.button {
 }
 
 .where {
-	background: url("../images/bg.jpg") no-repeat center center fixed;
+	background: url("../images/bg.where.jpg") no-repeat center center fixed;
 	background-size: cover;	
 	float: left;
 }
 
 .what {
-	background: url('../images/blue.marketplace.jpg') no-repeat center top fixed;
+	background: url('../images/bg.video.jpg') no-repeat center top fixed;
 	background-size: cover;	
 	float: right;
 }
@@ -529,10 +611,8 @@ a.button {
 		}
 	}
 	
-	img.hexagon { 
-		width: 240px;
-		height: auto;
-		margin-bottom: 30px;	
+	img { 
+		margin-bottom: 40px;	
 	}
 	
 	i {
@@ -564,7 +644,7 @@ a.button {
 	background-color: $orange;
 	text-align: center;
 	color: $white;
-	background: url("../images/trial.bg.jpg") no-repeat center top fixed;
+	background: url("../images/bg.footer.jpg") no-repeat center top fixed;
 	background-size: cover;	
 	
 	.center-v {
@@ -817,7 +897,7 @@ a.button {
 	margin-top: 95px;
 	
 	img {
-		width: 50px;
+		width: 55px;
 		height: auto;
 		margin-bottom: 20px;
 	}
