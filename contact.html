@@ -11,7 +11,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
 	
-	<title>Sharetribe / Contact us</title>
+	<title>Create a marketplace with Sharetribe – Contact us</title>
 
     <!-- Stylesheets -->
 	<link rel="stylesheet" href="css/style.css" type="text/less" media="screen" />
@@ -19,6 +19,40 @@
 	<!-- Javascripts -->
 	<script type="text/javascript" src="js/sharetribe.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	
+	<script type="text/javascript">
+ 
+		// The latitude and longitude of your business / place
+		var position = [60.1654159, 24.9405212];
+		 
+		function showGoogleMaps() {
+		 
+		    var latLng = new google.maps.LatLng(position[0], position[1]);
+		 
+		    var mapOptions = {
+		        zoom: 5, // initialize zoom level - the max value is 21
+		        streetViewControl: false, // hide the yellow Street View pegman
+		        scaleControl: false, // allow users to zoom the Google Map
+		        mapTypeId: google.maps.MapTypeId.ROADMAP,
+		        center: latLng
+		    };
+		 
+		    map = new google.maps.Map(document.getElementById('googlemaps'),
+		        mapOptions);
+		 
+		    // Show the default red marker at the location
+		    marker = new google.maps.Marker({
+		        position: latLng,
+		        map: map,
+		        draggable: false,
+		        animation: google.maps.Animation.DROP
+		    });
+		}
+		 
+		google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+	
+	</script>
 	
 </head>
 <body>
@@ -35,7 +69,7 @@
 			<li><a href="stories.html">Success stories</a></li>
 			<li><a href="pricing.html">Pricing</a></li>
 			<li><a href="about.html">About us</a></li>
-			<li><a href="#">Blog</a></li>
+			<li><a href="http://blog.sharetribe.com" target="_blank">Blog</a></li>
 			<li><a href="contact.html">Contact us</a></li>
 			
 			<a class="button login" href="#">Login</a>
@@ -47,227 +81,25 @@
 	
 	
 <!-- Subpage Header -->
+
+	<div id="googlemaps"></div>
+
+	<header class="contact">
 	
-	<div class="subpage-header">
+		<div class="contact-text">
+		
+				<img class="svg castle" src="images/icons/castle.svg" alt="Sharetribe Castle">
+				
+				<h1>For a good time: <a href="mailto:hello@sharetribe.com">hello@sharetribe.com</a></h1>
+				<p>Do you have a marketplace concept in mind? Perhaps a potential partnership? <br>Or just want to hear more about Sharetribe? We're happy to help.</p>
+				
+				<p class="osoite">SHARETRIBE LTD | +358 12 345 6789 | BULEVARDI 12 | 00120 HELSINKI | FINLAND</p>
+				
+		</div>		
+		
+	</header>
 	
-		<h3>Contact us</h3>
-		
-	</div>
 
-	<div class="clear"></div>
-
-	<div class="main-wrapper">		
-
-
-<!-- Sidenav -->
-
-		<div class="sidenav">
-		
-			<li><a href="#">Marketplace design</a></li>
-			<li><a href="#">Payments</a></li>
-			<li><a href="#">Manage & track</a></li>
-			<li><a href="#">Listings</a></li>
-			<li><a href="#">Browsing</a></li>
-			<li><a href="#">Profiles & storefronts</a></li>
-			<li><a href="#">Communication</a></li>
-			<li><a href="#">Trust & reputation</a></li>
-			<li><a href="#">White label design</a></li>
-			<li><a href="#">Access control</a></li>
-			<li><a href="#">Marketing, Social media & SEO</a></li>
-			<li><a href="#">Responsive design</a></li>
-			<li><a href="#">Languages & currencies</a></li>
-				
-		</div>
-
-
-		<!-- Subpage content wrapper -->
-
-		<div class="subpage-content">
-		
-			<!-- Features 1st row, three columns -->
-			
-			<div class="feature one-third">
-			
-				<h6>Marketplace design</h6>
-				<h5>Product selling, rentals, services - we have it all.</h5>
-				
-				<p>Need a marketplace for selling products? Is your idea about peer-to-peer rentals? Or maybe a site for booking services? Worry not - we support all of them. Your merchants and buyers can be individual people or companies, big or small.</p>
-							
-			</div>
-			
-			<div class="feature one-third">
-			
-				<h6>Payments</h6>
-				<h5>Global payments made simple. Setup only takes a few minutes.</h5>
-				
-				<p>Sharetribe's built-in payment system allows your merchants to accept both PayPal and all the most common credit cards. It works in 200+ countries and in 25+ currencies. You can charge a commission from each transaction.</p>
-							
-			</div>
-			
-			<div class="feature one-third-last">
-			
-				<h6>Manage & Track</h6>
-				<h5>Manage your marketplace. You are always in control.</h5>
-				
-				<p>Easily manage and moderate your marketplace from our admin dasboard. Connect Google Analytics to get a detailed view of what is going on. See who your members are and what kind of transactions are taking place.</p>
-							
-			</div>
-			
-			
-			
-			<!-- Features 2nd row, two columns -->
-			
-			<div class="feature one-third">
-			
-				<h6>listings</h6>
-				<h5>Selling and renting made easy.</h5>
-				
-				<p>It couldn't be easier for people to create new listings in your marketplace and accept payments. They can easily add all the product information, including pricing, geolocation and multiple photos, and manage their listings effortlessly.</p>
-							
-			</div>
-			
-			<div class="feature two-thirds-last">
-			
-				<h6>profiles & storefronts</h6>
-				<h5>A storefront for everyone.</h5>
-				
-				<p>Every member of your marketplace will have their own profile page, which they can turn into a full-fledged storefront. Storefronts will display their bio, their listings, and the reviews from buyers. Members can follow each other to get information when new content is added. 
-				<br><br>Every member of your marketplace will have their own profile page, which they can turn into a full-fledged storefront. Storefronts will display their bio, their listings, and the reviews from buyers. Members can follow each other to get information when new content is added.</p>
-							
-			</div>
-			
-			
-			<div class="clear"></div>
-			
-			
-			<!-- Features 2nd row, two columns -->
-			
-			<div class="feature one-half">
-			
-				<h6>browsing</h6>
-				<h5>Find the information you need.</h5>
-				
-				<p>Sharetribe provides advanced tools for categorizing and filtering content. People can browse the listings as a list or on a map. The content can be searched by location or by keyword. You can define categories, subcategories, and numerous custom filters to help people find what they are looking for.</p>
-							
-			</div>
-			
-			<div class="feature one-half-last">
-			
-				<h6>profiles & storefronts</h6>
-				<h5>A storefront for everyone.</h5>
-				
-				<p>Every member of your marketplace will have their own profile page, which they can turn into a full-fledged storefront. Storefronts will display their bio, their listings, and the reviews from buyers. Members can follow each other to get information when new content is added.</p>
-							
-			</div>
-			
-			
-			
-			<!-- Features 2nd row, two columns -->
-			
-			<div class="feature two-thirds">
-			
-				<h6>listings</h6>
-				<h5>Selling and renting made easy.</h5>
-				
-				<p>It couldn't be easier for people to create new listings in your marketplace and accept payments. They can easily add all the product information, including pricing, geolocation and multiple photos, and manage their listings effortlessly.<br><br>It couldn't be easier for people to create new listings in your marketplace and accept payments. They can easily add all the product information, including pricing, geolocation and multiple photos, and manage their listings effortlessly. geolocation and multiple photos, and manage their listings effortlessly. It couldn't be easier for people to create new listings in your marketplace and accept payments. They can easily add all the product information, including pricing, geolocation and multiple photos, and manage their listings effortlessly.</p>
-							
-			</div>
-			
-			<div class="feature one-third-last">
-			
-				<h6>access control</h6>
-				<h5>Safe & secure.<br>As it should be.</h5>
-				
-				<p>You can control who has the ability to view, buy, and sell in your marketplace. Make it open for everyone, restrict it only to people with an invitation, or allow in only people with certain email addresses. Allow your team to manage the marketplace for you by making them administrators. With Sharetribe it's easy to control who has access to what.</p>
-							
-			</div>
-			
-			
-			<div class="clear"></div>
-			
-			
-			
-			<!-- Features 2nd row, two columns -->
-			
-			<div class="feature one-third">
-			
-				<h6>listings</h6>
-				<h5>Selling and renting made easy.</h5>
-				
-				<p>It couldn't be easier for people to create new listings in your marketplace and accept payments. They can easily add all the product information, including pricing, geolocation and multiple photos, and manage their listings effortlessly.</p>
-							
-			</div>
-			
-			<div class="feature two-thirds-last">
-			
-				<h6>profiles & storefronts</h6>
-				<h5>A storefront for everyone.</h5>
-				
-				<p>Every member of your marketplace will have their own profile page, which they can turn into a full-fledged storefront. Storefronts will display their bio, their listings, and the reviews from buyers. Members can follow each other to get information when new content is added. 
-				<br><br>Every member of your marketplace will have their own profile page, which they can turn into a full-fledged storefront. Storefronts will display their bio, their listings, and the reviews from buyers. Members can follow each other to get information when new content is added.</p>
-							
-			</div>
-			
-			
-			<div class="clear"></div>
-			
-			
-			
-			<!-- Features 1st row, three columns -->
-			
-			<div class="feature one-third">
-			
-				<h6>communication</h6>
-				<h5>Messaging & order management. Simple & effective.</h5>
-				
-				<p>Your members can connect with each other through messages. Every member will have their own inbox inside your marketplace. Inbox also helps them to keep track of the orders they received.</p>
-							
-			</div>
-			
-			<div class="feature one-third">
-			
-				<h6>trust & reputation</h6>
-				<h5>Build a trusted community.</h5>
-				
-				<p>You can allow people to review each other after transactions. This helps in weeding out the bad apples and building trust in your marketplace community. </p>
-							
-			</div>
-			
-			<div class="feature one-third-last">
-			
-				<h6>white label design</h6>
-				<h5>Your concept, your brand. Add your logo, custom domain & branding.</h5>
-				
-				<p>Your marketplace should look like you. Our tools make it easy to add your custom branding: logos, cover photos, color themes, and a custom domain. You can even add custom CSS to make the marketplace match the look & feel of your brand.</p>
-							
-			</div>
-		
-		</div> <!-- close subpage content wrapper -->
-
-	</div> <!-- close main wrapper -->	
-		
-	<div class="clear"> </div>	
-		
-		
-<!-- Sign up -->
-		
-	<div class="trial">
-	
-		<div class="main-wrapper center-v">
-	
-			<h4>No credit card or business loan required.</h4>		
-			<h3>Start your free 14-day trial of Sharetribe.</h3>
-			
-			<input type="text" name="email" placeholder="What's your email?">
-				
-			<p>We pinky promise that we will not sell your information.</p>		
-	
-		</div>
-	
-	</div>
-
-	<div class="clear"></div>
-	
 		
 <!-- Footer -->	
 	
@@ -279,17 +111,16 @@
 			<li><a href="stories.html">Success stories</a></li>
 			<li><a href="pricing.html">Pricing</a></li>
 			
-			<li><a class="icon" href="https://www.facebook.com/Sharetribe" target="_blank">F</a></li>
+			<li><a href="https://www.facebook.com/Sharetribe" target="_blank"><img class="svg facebook" src="images/icons/facebook.svg" alt="Sharetribe Facebook"></a></li>
 			
 			<li><a href="index.html"><img class="svg" src="images/svg/sharetribe.symbol.svg" alt="Sharetribe logo"></a></li>
 			
-			<li><a class="icon" href="https://www.twitter.com/Sharetribe" target="_blank">T</a></li>
+			<li><a href="https://www.twitter.com/Sharetribe" target="_blank"><img class="svg twitter" src="images/icons/twitter.svg" alt="Sharetribe Twitter"></a></li>
 			
 			<li><a href="about.html">About us</a></li>
-			<li><a href="#">Blog</a></li>
-			<li><a href="contact.html">Contact us</a></li>
+			<li><a href="http://blog.sharetribe.com" target="_blank">Blog</a></li>
+			<li class="footer-last"><a href="contact.html">Contact us</a></li>
 
-		
 		</div>
 		
 	</div>

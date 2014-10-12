@@ -17,8 +17,10 @@
 	<link rel="stylesheet" href="css/style.css" type="text/less" media="screen" />
 	
 	<!-- Javascripts -->
-	<script type="text/javascript" src="js/sharetribe.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="js/bind-polyfill.js"></script>
+	<script src="js/smooth-scroll.js"></script>
 	
 </head>
 <body>
@@ -29,8 +31,6 @@
 	
 		<div class="hero-text">
 		
-			<!-- <img src="images/hero.girl.png" alt="Sharetribe marketplace">-->
-		
 			<div class="hero-text-container">
 			
 				<div class="logo"><img class="svg" src="images/svg/logo.valk.svg" alt="Sharetribe logo"></div>
@@ -38,7 +38,7 @@
 				<h1>Create a marketplace <br>with Sharetribe. It only takes a minute.</h1>
 				<p>Let your users sell or rent goods, spaces or services online. <br>Set up your site in no time. You don't need a developer.</p>
 				
-				<p><a class="button white" href="#"><img class="svg crown" src="images/icons/crown.svg">Get started now</a><a class="button ghost" href="#main-navigation">Learn more</a></p>
+				<p><a class="button white" href="#"><img class="svg crown" src="images/icons/crown.svg">Get started now</a><a class="button ghost" data-scroll href="#main-navigation">Learn more</a></p>
 				
 				<p><a class="login" href="#">Already own a marketplace? Log in <img class="svg arrow" src="images/icons/arrow-right.svg"></a></p>
 				
@@ -53,7 +53,7 @@
 	
 <!-- Sticky navigation -->
 	
-<nav class="main-navigation" id="main-navigation">
+	<nav class="main-navigation" id="main-navigation">
 		
 		<div class="logo"><a href="index.html"><img class="svg" src="images/svg/logo.svg" alt="Sharetribe logo"></a></div>
 		
@@ -63,7 +63,7 @@
 			<li><a href="stories.html">Success stories</a></li>
 			<li><a href="pricing.html">Pricing</a></li>
 			<li><a href="about.html">About us</a></li>
-			<li><a href="#">Blog</a></li>
+			<li><a href="http://blog.sharetribe.com" target="_blank">Blog</a></li>
 			<li><a href="contact.html">Contact us</a></li>
 			
 			<a class="button login" href="#">Login</a>
@@ -72,8 +72,9 @@
 		</div>
 	
 	</nav>
-		
-		
+	
+	
+<!-- Subpage Header -->
 <!-- 5 reasons to use sharetribe -->
 	
 	<div class="main-wrapper">	
@@ -185,7 +186,7 @@
 			<h2>Manage your marketplace. You are always in control.</h2>
 			
 			<p>Easily manage and moderate your marketplace from our admin dasboard. Connect Google Analytics to get a detailed view of what is going on. See who your members are and what kind of transactions are taking place.</p>
-			<a href="#" class="button"><img class="svg add" src="images/icons/add.svg">See all our features</a>
+			<a href="features.html" class="button"><img class="svg add" src="images/icons/add.svg">See all our features</a>
 	
 		</div>
 
@@ -215,23 +216,23 @@
 	
 	<div class="main-wrapper">	
 		
-			<h6 class="stories">Success stories</h6>
+			<h6 class="stories-title">Success stories</h6>
 			
 			<h2 class="centered">Get inspired and become your own marketplace's boss. Say hello to Rob, Jackie and Mario.</h2>
 			
 			<div class="story">
 				<img src="images/story.jackie.jpg">
-				<p><strong>Rob from <a href="#">The Quiver</a> – <br>Peer-to-peer surfboard rentals</strong><i>“Without Sharetribe it would have been impossible for me to pursue my dream and start The Quiver.”</i><br><a href="#">› Read Rob’s story</a></p>	
+				<p><strong>Rob from <a href="thequiver.html">The Quiver</a> – <br>Peer-to-peer surfboard rentals</strong><i>“Without Sharetribe it would have been impossible for me to pursue my dream and start The Quiver.”</i><br><a href="thequiver.html">› Read Rob’s story</a></p>	
 			</div>
 			
 			<div class="story">
 				<img src="images/story.jackie.jpg">
-				<p><strong>Jackie from <a href="#">Maggie's Kids Market</a> – <br>Pre-owned kids' clothes & toys</strong><i>"Sharetribe's great support made it really easy for me to set up my marketplace site."</i><br><a href="#">› Read Jackie's story</a></p>			
+				<p><strong>Jackie from <a href="maggieskidmarket.html">Maggie's Kids Market</a> – <br>Pre-owned kids' clothes & toys</strong><i>"Sharetribe's great support made it really easy for me to set up my marketplace site."</i><br><a href="maggieskidmarket.html">› Read Jackie's story</a></p>			
 			</div>
 			
 			<div class="story">
 				<img src="images/story.mario.jpg">
-				<p><strong>Mario from <a href="#">Casa Guau</a> – <br>Find a carer for your pet</strong><i>"All the other marketplace providers <br>I checked were 4-5 times more expensive."</i><br><a href="#">› Read Mario's story</a></p>			
+				<p><strong>Mario from <a href="casaguau.html">Casa Guau</a> – <br>Find a carer for your pet</strong><i>"All the other marketplace providers <br>I checked were 4-5 times more expensive."</i><br><a href="casaguau">› Read Mario's story</a></p>			
 			</div>
 			
 	</div>
@@ -269,16 +270,16 @@
 			<li><a href="stories.html">Success stories</a></li>
 			<li><a href="pricing.html">Pricing</a></li>
 			
-			<li><a class="icon" href="https://www.facebook.com/Sharetribe" target="_blank">F</a></li>
+			<li><a href="https://www.facebook.com/Sharetribe" target="_blank"><img class="svg facebook" src="images/icons/facebook.svg" alt="Sharetribe Facebook"></a></li>
 			
 			<li><a href="index.html"><img class="svg" src="images/svg/sharetribe.symbol.svg" alt="Sharetribe logo"></a></li>
 			
-			<li><a class="icon" href="https://www.twitter.com/Sharetribe" target="_blank">T</a></li>
+			<li><a href="https://www.twitter.com/Sharetribe" target="_blank"><img class="svg twitter" src="images/icons/twitter.svg" alt="Sharetribe Twitter"></a></li>
 			
 			<li><a href="about.html">About us</a></li>
-			<li><a href="#">Blog</a></li>
-			<li><a href="contact.html">Contact us</a></li>
-		
+			<li><a href="http://blog.sharetribe.com" target="_blank">Blog</a></li>
+			<li class="footer-last"><a href="contact.html">Contact us</a></li>
+
 		</div>
 		
 	</div>
@@ -293,6 +294,9 @@
 		</div>
 		
 	</div>
+	
+	
+	<script>smoothScroll.init();</script>
 		
 </body>
 </html>

@@ -17,8 +17,10 @@
 	<link rel="stylesheet" href="css/style.css" type="text/less" media="screen" />
 	
 	<!-- Javascripts -->
-	<script type="text/javascript" src="js/sharetribe.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="js/bind-polyfill.js"></script>
+	<script src="js/smooth-scroll.js"></script>	
 	
 </head>
 <body>
@@ -35,7 +37,7 @@
 			<li><a href="stories.html">Success stories</a></li>
 			<li><a href="pricing.html">Pricing</a></li>
 			<li><a href="about.html">About us</a></li>
-			<li><a href="#">Blog</a></li>
+			<li><a href="http://blog.sharetribe.com" target="_blank">Blog</a></li>
 			<li><a href="contact.html">Contact us</a></li>
 			
 			<a class="button login" href="#">Login</a>
@@ -50,7 +52,7 @@
 	
 	<div class="subpage-header">
 	
-		<h3>Marketplace features</h3>
+		<h2>Marketplace features</h2>
 		
 	</div>
 
@@ -63,19 +65,19 @@
 
 		<div class="sidenav">
 		
-			<li><a href="#">Marketplace design</a></li>
-			<li><a href="#">Payments</a></li>
-			<li><a href="#">Manage & track</a></li>
-			<li><a href="#">Listings</a></li>
-			<li><a href="#">Browsing</a></li>
-			<li><a href="#">Profiles & storefronts</a></li>
-			<li><a href="#">White label design</a></li>
-			<li><a href="#">Responsive design</a></li>
-			<li><a href="#">Language & currency</a></li>
-			<li><a href="#">Access control</a></li>
-			<li><a href="#">Communication</a></li>
-			<li><a href="#">Trust & reputation</a></li>
-			<li><a href="#">Marketing, Social media & SEO</a></li>
+			<li class="current"><a data-scroll href="#marketplace-design">Marketplace design</a></li>
+			<li><a data-scroll href="#payments">Payments</a></li>
+			<li><a data-scroll href="#manage-track">Manage & track</a></li>
+			<li><a data-scroll href="#listings">Listings</a></li>
+			<li><a data-scroll href="#browsing">Browsing</a></li>
+			<li><a data-scroll href="#profiles-storefronts">Profiles & storefronts</a></li>
+			<li><a data-scroll href="#white-label-design">White label design</a></li>
+			<li><a data-scroll href="#mobile-friendly">Mobile friendly</a></li>
+			<li><a data-scroll href="#language-currency">Language & currency</a></li>
+			<li><a data-scroll href="#access-control">Access control</a></li>
+			<li><a data-scroll href="#communication">Communication</a></li>
+			<li><a data-scroll href="#trust-reputation">Trust & reputation</a></li>
+			<li><a data-scroll href="#marketing">Marketing, Social media & SEO</a></li>
 		
 		</div>
 
@@ -86,7 +88,7 @@
 		
 			<!-- Features 1st row, three columns -->
 			
-			<div class="feature one-third">
+			<div class="feature one-third" id="marketplace-design">
 			
 				<h6>Marketplace design</h6>
 				<h5>Product selling, rentals, services - we have it all.</h5>
@@ -95,7 +97,7 @@
 							
 			</div>
 			
-			<div class="feature one-third">
+			<div class="feature one-third" id="payments">
 			
 				<h6>Payments</h6>
 				<h5>Global payments made simple. Setup only takes a few minutes.</h5>
@@ -104,7 +106,7 @@
 							
 			</div>
 			
-			<div class="feature one-third-last">
+			<div class="feature one-third-last" id="manage-track">
 			
 				<h6>Manage & Track</h6>
 				<h5>Manage your marketplace. You are always in control.</h5>
@@ -117,7 +119,7 @@
 			
 			<!-- Features 2nd row, two columns -->
 			
-			<div class="feature one-third">
+			<div class="feature one-third" id="listings">
 			
 				<h6>listings</h6>
 				<h5>Selling and renting made easy.</h5>
@@ -126,7 +128,7 @@
 							
 			</div>
 			
-			<div class="feature two-thirds-last" style="background: #ccc; height: 350px;">
+			<div class="feature two-thirds-last">
 			
 			</div>
 			
@@ -136,7 +138,7 @@
 			
 			<!-- Features 2nd row, two columns -->
 			
-			<div class="feature one-half">
+			<div class="feature one-half" id="browsing">
 			
 				<h6>browsing</h6>
 				<h5>Find the information you need.</h5>
@@ -145,7 +147,7 @@
 							
 			</div>
 			
-			<div class="feature one-half-last">
+			<div class="feature one-half-last" id="profiles-storefronts">
 			
 				<h6>profiles & storefronts</h6>
 				<h5>A storefront for everyone.</h5>
@@ -158,11 +160,11 @@
 			
 			<!-- Features 2nd row, two columns -->
 			
-			<div class="feature two-thirds"  style="background: #ccc; height: 400px;">
+			<div class="feature two-thirds">
 			
 			</div>
 			
-			<div class="feature one-third-last">
+			<div class="feature one-third-last" id="white-label-design">
 			
 				<h6>White label design</h6>
 				<h5>Your concept, your brand. Add your logo, custom domain & branding.</h5>
@@ -178,7 +180,7 @@
 			
 			<!-- Features 2nd row, two columns -->
 			
-			<div class="feature one-third">
+			<div class="feature one-third" id="mobile-friendly">
 			
 				<h6>Mobile friendly</h6>
 				<h5>Your marketplace on the go. Optimized for every screen.</h5>
@@ -187,7 +189,7 @@
 							
 			</div>
 			
-			<div class="feature one-third">
+			<div class="feature one-third" id="language-currency">
 			
 				<h6>Language & currency</h6>
 				<h5>Feel like home, wherever you are.</h5>
@@ -196,7 +198,7 @@
 							
 			</div>
 			
-			<div class="feature one-third-last">
+			<div class="feature one-third-last" id="access-control">
 			
 				<h6>Access control</h6>
 				<h5>Safe & secure. <br/>As it should be.</h5>
@@ -212,7 +214,7 @@
 			
 			<!-- Features 1st row, three columns -->
 			
-			<div class="feature one-third">
+			<div class="feature one-third" id="communication">
 			
 				<h6>communication</h6>
 				<h5>Messaging & order management. Simple & effective. </h5>
@@ -221,7 +223,7 @@
 							
 			</div>
 			
-			<div class="feature two-thirds-last" style="background: #ccc; height: 350px;">
+			<div class="feature two-thirds-last">
 			
 			</div>
 			
@@ -231,7 +233,7 @@
 			
 			<!-- Features 2nd row, two columns -->
 			
-			<div class="feature one-half">
+			<div class="feature one-half" id="trust-reputation">
 			
 				<h6>Trust & reputation</h6>
 				<h5>Build a trusted community.</h5>
@@ -240,7 +242,7 @@
 							
 			</div>
 			
-			<div class="feature one-half-last">
+			<div class="feature one-half-last" id="marketing">
 			
 				<h6>Marketing, Social media & SEO</h6>
 				<h5>Spread the word. Be social.</h5>
@@ -286,17 +288,16 @@
 			<li><a href="stories.html">Success stories</a></li>
 			<li><a href="pricing.html">Pricing</a></li>
 			
-			<li><a class="icon" href="https://www.facebook.com/Sharetribe" target="_blank">F</a></li>
+			<li><a href="https://www.facebook.com/Sharetribe" target="_blank"><img class="svg facebook" src="images/icons/facebook.svg" alt="Sharetribe Facebook"></a></li>
 			
 			<li><a href="index.html"><img class="svg" src="images/svg/sharetribe.symbol.svg" alt="Sharetribe logo"></a></li>
 			
-			<li><a class="icon" href="https://www.twitter.com/Sharetribe" target="_blank">T</a></li>
+			<li><a href="https://www.twitter.com/Sharetribe" target="_blank"><img class="svg twitter" src="images/icons/twitter.svg" alt="Sharetribe Twitter"></a></li>
 			
 			<li><a href="about.html">About us</a></li>
-			<li><a href="#">Blog</a></li>
-			<li><a href="contact.html">Contact us</a></li>
+			<li><a href="http://blog.sharetribe.com" target="_blank">Blog</a></li>
+			<li class="footer-last"><a href="contact.html">Contact us</a></li>
 
-		
 		</div>
 		
 	</div>
@@ -311,6 +312,8 @@
 		</div>
 		
 	</div>
+	
+	<script>smoothScroll.init();</script>
 		
 </body>
 </html>
