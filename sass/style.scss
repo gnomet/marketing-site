@@ -6,14 +6,14 @@
 
 body, html { height: 100%; }
 
-body {	
-	@include Gibson-Light; 
-	text-rendering: optimizeLegibility; 
-	-webkit-font-smoothing: antialiased; 
-	font-size: 18px; 
-	word-wrap: break-word; 
-	word-break: break-word; 
-	overflow-y: scroll; 
+body {
+	@include Gibson-Light;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	font-size: 18px;
+	word-wrap: break-word;
+	word-break: break-word;
+	overflow-y: scroll;
 	overflow-x: hidden;
 }
 
@@ -21,11 +21,11 @@ strong { @include Gibson-Regular; }
 
 .clear { clear: both; }
 
-a {	
+a {
 	@include transition(color, 0.1s, ease-in-out);
-	text-decoration: none; 
-	color: $orange; 
-	
+	text-decoration: none;
+	color: $orange;
+
 	&:hover { color: $blue; }
 }
 
@@ -33,27 +33,27 @@ a {
 ////////////////
 // NAVIGATION //
 ////////////////
-
 .main-navigation {
 	top: 0px;
 	z-index: 99;
-	height: 70px;
+	height: 105px;
 	width: 100%;
-	background: rgba(255, 255, 255, 0.98); 
-	box-shadow: 0 2px 3px rgba(0,0,0,.05);	
+	background: rgba(255, 255, 255, 0.98);
+	box-shadow: 0 2px 3px rgba(0,0,0,.05);
+	padding: 35px 0;
 
-	.logo { 
+
+	.logo {
 		position: relative;
 		margin-left: 50px;
-		margin-top: 35px;
 	}
-	
+
 	.menu-items {
 		float: right;
 		margin-right: 50px;
 		margin-top: -20px;
 	}
-	
+
 	li {
 		@include Gibson-Regular;
 		list-style-type: none;
@@ -61,28 +61,28 @@ a {
 		font-size: 15px;
 		padding-right: 45px;
 	}
-	
+
 	a {
 		@include transition(color, 0.1s, ease-in-out);
 		color: $grey;
 		text-decoration: none;
-		
+
 		&:hover { color: $orange; }
 	}
-	
+
 	.login {
 		@include button($orange, $white, $orange, $white, $blue, $blue);
 		top: -1px;
 		margin-right: -5px;
 		border-radius: 5px 0px 0px 5px;
 	}
-	
+
 	.get-started {
 		@include button($white, $orange, $orange, $white, $blue, $blue);
 		top: -1px;
 		border-radius: 0px 5px 5px 0px;
 	}
-	
+
 }
 
 .sidenav {
@@ -93,9 +93,9 @@ a {
 	margin-right: 80px;
 	opacity: 0.5;
 	@include transition(all, 0.5s, ease-in-out);
-	
+
 	&:hover { opacity: 1.0; }
-		
+
 	li {
 		list-style-type: none;
 		@include Gibson-Regular;
@@ -103,11 +103,11 @@ a {
 		margin-bottom: 15px;
 		letter-spacing: 0.01em;
 		line-height: 26px;
-		
+
 		a {	color: $grey;
 			&:hover { color: $orange; }
 		}
-		
+
 		&.current a {
 			border-left: 3px solid $orange;
 			padding-left: 20px;
@@ -134,28 +134,28 @@ h2 {
 	font-size: 46px;
 	line-height: 60px;
 	letter-spacing: 0.00em;
-	
+
 	&.centered {
 		padding-bottom: 50px;
 		max-width: 600px;
 		text-align: center;
 		margin: 0 auto 40px;
-	}	
+	}
 }
-	
+
 h3 {
 	font-size: 24px;
 	@include Gibson-Regular;
 	margin-bottom: 20px;
 
 }
-	
+
 .subpage-content h4 {
 	font-size: 18px;
 	@include Gibson-Regular;
 	margin-bottom: 10px;
 }
-	
+
 
 h6 {
 	@include Gibson-Light;
@@ -164,30 +164,30 @@ h6 {
 	letter-spacing: 8px;
 	text-transform: uppercase;
 	border-bottom: 1px solid #CCC;
-	
+
 	&.reasons, &.stories-title {
-		text-align: center; 
+		text-align: center;
 		margin: 130px auto 65px;
-		padding-bottom: 30px;	
+		padding-bottom: 30px;
 	}
-	
-	&.marketplace-design, &.track-manage { 
+
+	&.marketplace-design, &.track-manage {
 		margin: 100px 0 30px;
-		padding-bottom: 15px;	
+		padding-bottom: 15px;
 	}
-	
-	&.reasons { width: 400px; } // Onko tähän parempaa ratkaisua? 
-	
-	&.stories-title, &.story-page { width: 225px; } // Onko tähän parempaa ratkaisua?
-	
-	&.marketplace-design { width: 280px; } // Onko tähän parempaa ratkaisua? 
-	
-	&.track-manage { width: 220px; } // Onko tähän parempaa ratkaisua?
-	
-	&.payments { width: 124px; margin: 150px 0 40px; padding-bottom: 15px; } // Onko tähän parempaa ratkaisua? 
-	
+
+	&.reasons { width: 400px; } // Onko tahan parempaa ratkaisua?
+
+	&.stories-title, &.story-page { width: 225px; } // Onko tahan parempaa ratkaisua?
+
+	&.marketplace-design { width: 280px; } // Onko tahan parempaa ratkaisua?
+
+	&.track-manage { width: 220px; } // Onko tahan parempaa ratkaisua?
+
+	&.payments { width: 124px; margin: 150px 0 40px; padding-bottom: 15px; } // Onko tahan parempaa ratkaisua?
+
 	&.story-page { text-align: center; margin: 100px auto 50px; padding-bottom: 30px;}
-		
+
 }
 
 .feature h6 {
@@ -208,8 +208,8 @@ h6 {
 .main-wrapper {
 	@include Gibson-Light;
 	max-width: 1140px;
-	margin: 0 auto;	
-	
+	margin: 0 auto;
+
 	&.pricing {
 		position: relative;
 		top: -120px;
@@ -229,35 +229,35 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 	height: auto;
 	margin-top: 28px;
 	margin-bottom: 65px;
-	
+
 	&.text-only {
 		margin-top: 58px;
 		width: 700px;
 		font-size: 16px;
 		line-height: 26px;
 		padding-bottom: 65px;
-		
+
 		p { margin-bottom: 26px; }
-		
+
 		p.updated {
 			font-size: 14px;
 			color: #999;
 			margin-bottom: 20px;
 		}
-		
+
 		p.important-privacy {
 			font-size: 30px;
 			line-height: 42px;
 			font-family:  Gibson-LightIt;
 		}
-		
+
 		ol { counter-reset: item; }
-		
+
 		ol li {
 			display: block;
 			position: relative;
 		}
-		
+
 		ol li:before {
 			content: counters(item, ".")".";
 			counter-increment: item;
@@ -287,8 +287,8 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 	background: $orange;
 	color: $white;
 	background: url("../images/bg.hero.jpg") no-repeat center center fixed;
-	background-size: cover;	
-	
+	background-size: cover;
+
 	a.button.ghost {
 		font-family: Gibson-Light!important;
 		@include button($white,none,$white,$white,$blue,$blue);
@@ -296,43 +296,43 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 		letter-spacing: 0.07em;
 		padding: 16px 26px;
 	}
-	
+
 	a.button.white {
 		@include button($orange,$white,$white,$white,$blue,$blue);
 		font-size: 15px;
 		letter-spacing: 0.03em;
 		margin-right: 30px;
 		padding: 16px 26px;
-	}	
-		
+	}
+
 	img.crown {
 		margin-right: 7px;
 		float: none;
 		display: inline-block;
 		width: 15px;
 		vertical-align: -1px;
-	}	
-				
+	}
+
 	a.login {
 		color: $white;
 		font-size: 13px;
 		opacity: 0.7;
 		@include transition(all, 0.1s, ease-in-out);
-		
+
 		&:hover img.arrow { margin-left: 9px; }
-		
-		&:hover { opacity: 1.0;}	
-		
+
+		&:hover { opacity: 1.0;}
+
 		img.arrow {
 			margin-left: 3px;
 			float: none;
 			display: inline-block;
 			width: 15px;
 			vertical-align: -3px;
-			@include transition(all, 0.1s, ease-in-out);	
+			@include transition(all, 0.1s, ease-in-out);
 		}
 	}
-	
+
 	p {
 		@include Gibson-Regular;
 		font-size: 19px;
@@ -370,8 +370,8 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 	background-color: $orange;
 	color: $white;
 	background: url("../images/bg.where.jpg") no-repeat center bottom fixed;
-	background-size: cover;	
-	
+	background-size: cover;
+
 	h2 {
 		font-size: 52px;
 		@include Gibson-Light;
@@ -379,13 +379,13 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 		padding: 90px 0;
 		color: $white;
 	}
-	
-} 
+
+}
 
 .subpage-header h2 {
 	text-align: center;
 	margin-bottom: 40px;
-	
+
 }
 
 .contact-header {
@@ -394,8 +394,8 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 	background-color: $orange;
 	color: $white;
 	background: url("../images/bg.where.jpg") no-repeat center bottom fixed;
-	background-size: cover;	
-	
+	background-size: cover;
+
 	h2 {
 		text-align: center;
 		font-size: 52px;
@@ -416,14 +416,14 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 	height: auto;
 	text-align: center;
 	line-height: 26px;
-		
+
 	strong {
 		display: block;
 		margin-bottom: 8px;
 	}
 }
 
-.icon-hexagon-bg { 
+.icon-hexagon-bg {
 	height: auto;
 	margin-bottom: 30px;
 	background: url("../images/svg/hexagon.svg") no-repeat center center;
@@ -450,26 +450,26 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 	background-size: cover;
 	text-align: center;
 	color: $white;
-	
+
 	h4 {
 		font-size: 32px;
 		font-family: Gibson-LightIt;
 		margin-bottom: 10px;
 	}
-	
+
 	h3 {
 		@include Gibson-Regular;
 		font-size: 38px;
 		margin-bottom: 50px;
 	}
-	
+
 	a.button { @include button($white, $orange, $orange, $white, none, $white);	}
-	
+
 	.center-v {
 		position: relative;
 		padding: 180px 0;
 	}
-	
+
 	img.play {
 		margin-right: 7px;
 		float: none;
@@ -484,16 +484,16 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 // HOMEPAGE / FEATURES //
 ////////////////////////
 
-.feature-screenshot { 
+.feature-screenshot {
 	float: left;
-	position: relative;	
+	position: relative;
 	width: 200px;
 	left: -380px;
 }
 
 .right-screenshot {
 	float: right;
-	position: relative;	
+	position: relative;
 	width: 200px;
 	right: 300px;
 	top: 140px;
@@ -506,7 +506,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 	position: relative;
 	text-align: left;
 	line-height: 32px;
-	
+
 	&.right-info {
 		width: 460px;
 		top: 20px;
@@ -514,22 +514,22 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 		position: relative;
 		text-align: left;
 		line-height: 32px;
-		
+
 		h2 { padding-bottom: 35px; }
-		
+
 	}
-	
+
 	h2 {
 		padding-bottom: 25px;
 		max-width: 600px;
 		margin: 0 auto 0px;
 	}
-	
+
 	a.button {
 		@include button($orange, $white, $orange, $white, $blue, $blue);
 		top: 50px;
 	}
-	
+
 	img.add {
 		margin-right: 7px;
 		float: none;
@@ -556,7 +556,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 	width: 50%;
 	color: $white;
 	text-align: center;
-	
+
 	p {
 		padding: 160px 0;
 		max-width: 450px;
@@ -565,20 +565,20 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 		text-align: center;
 		margin: 0 auto;
 		font-family: Gibson-LightIt;
-		font-size: 26px; 
+		font-size: 26px;
 		line-height: 36px;
 	}
 }
 
 .where {
 	background: url("../images/bg.where.jpg") no-repeat center center fixed;
-	background-size: cover;	
+	background-size: cover;
 	float: left;
 }
 
 .what {
 	background: url('../images/bg.video.jpg') no-repeat center top fixed;
-	background-size: cover;	
+	background-size: cover;
 	float: right;
 }
 
@@ -593,34 +593,34 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 	text-align: center;
 	line-height: 26px;
 	margin-bottom: 165px;
-		
+
 	strong {
 		display: block;
 		margin-bottom: 16px;
 		font-size: 18px;
-		
+
 		a { font-size: 18px; }
 	}
-	
+
 	img { margin-bottom: 40px; }
-	
+
 	i {
 		font-family: Gibson-LightIt;
-		font-size: 18px; 
+		font-size: 18px;
 		line-height: 26px;
 		-webkit-font-smoothing: subpixel-antialiased;
 		display: block;
 	}
-	
-	a { 
+
+	a {
 		@include Gibson-Regular;
 		font-size: 15px;
 	}
-	
+
 	p {
 		width: 290px;
 		margin: 0 auto;
-	}	 
+	}
 }
 
 
@@ -634,53 +634,53 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 	text-align: center;
 	color: $white;
 	background: url("../images/bg.footer.jpg") no-repeat center top fixed;
-	background-size: cover;	
-	
+	background-size: cover;
+
 	.center-v {
 		position: relative;
 		padding: 120px 0;
 	}
 
-	
+
 	h4 {
 		font-size: 23px;
 		font-family: Gibson-LightIt;
 		margin-bottom: 15px;
-		
+
 	}
-	
+
 	h3 {
 		font-size: 42px;
 		@include Gibson-Light;
 		margin-bottom: 40px;
 		letter-spacing: 0.01em;
 	}
-		
+
 	p {
 		@include Gibson-Regular;
 		color: #f3ab9e;
 		font-size: 14px;
 		display: block;
-	}	
-	
+	}
+
 	input {
 		@include transition(all, 0.2s, ease-in-out);
 		width: 470px;
 		height: 67px;
 		padding: 10px 10px 10px 25px;
 		color: $white;
-		
+
 		font-size: 18px;
 		background-color: #d44027;
-		
+
 		border-radius: 5px;
 		border: none;
 		border-bottom: solid 3px #fff;
 		outline: none;
 		margin-bottom: 40px;
-		
+
 		&:hover { border-bottom: solid 3px darken(#d44027, 10%); }
-		
+
 		&:focus {
 			background: $white;
 			border-bottom: solid 3px darken(#d44027, 10%);
@@ -712,31 +712,31 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 		display: inline;
 		font-size: 15px;
 		padding-right: 45px;
-		
+
 		&.footer-last { padding-right: 0!important; }
 	}
-	
+
 	a {
 		@include transition(color, 0.1s, ease-in-out);
 		color: $grey;
 		text-decoration: none;
-		
+
 		&:hover { color: $orange; }
-		
+
 		&.icon { color: $orange;
-		
+
 			&:hover { color: $blue; }
 		}
 	}
-	
+
 	img {
 		position: relative;
 		width: 64px;
 		height: auto;
 		top: 29px;
 	}
-	
-	img.facebook, img.twitter { 
+
+	img.facebook, img.twitter {
 		width: 22px;
 		top: 5px;
 	}
@@ -746,23 +746,23 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 	padding: 45px 43px 45px 0;
 	width: 100%;
 	background-color: $bg-grey;
-	
+
 	.main-wrapper { width: 844px; }
-	
+
 	p {
 		display: inline;
 		@include Gibson-Regular;
 		font-size: 13px;
 		color: #999;
-		
+
 		a { color: #999;
-		
+
 			&:hover { color: $blue; }
 		}
 	}
-	
+
 	p.left { text-align: left; }
-	
+
 	p.right { float: right; }
 }
 
@@ -792,15 +792,15 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 	}
 
 	&.one-third { @include column(4); width: 225px; margin-right: 90px; margin-left: 0; }
-	
+
 	&.one-third-last { @include column(4); width: 225px; margin-right: 0; margin-left: 0; }
-	
+
 	&.one-half { @include column(6); width: 384px; margin-right: 90px; margin-left: 0; }
-	
+
 	&.one-half-last { @include column(6); width: 383px; margin-right: 0; margin-left: 0; }
-	
+
 	&.two-thirds { @include column(8); width: 540px; margin-right: 90px; margin-left: 0; }
-	
+
 	&.two-thirds-last { @include column(8); width: 550px; margin-right: 0; margin-left: 0; }
 }
 
@@ -836,7 +836,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 	line-height: 24px;
 	margin-right: 55px;
 	margin-top: 95px;
-	
+
 	img {
 		width: 55px;
 		height: auto;
@@ -852,33 +852,33 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 	background: $white;
 	text-align: center;
 	-webkit-font-smoothing: subpixel-antialiased;
-	
+
 	&.first-table {
 		border-radius: 5px 0 0 0;
 		border-bottom: 1px solid #ccc;
 	}
-	
+
 	&.last-table {
 		border-radius: 0 5px 0 0;
 		border-left: 1px solid #CCC;
 		border-bottom: 1px solid #ccc;
 	}
-	
+
 	&.table { border-bottom: 1px solid #ccc; }
-	
+
 	&.featured-table {
 		border: 1px solid $orange;
 		margin-top: -25px;
 		height: 620px;
-		
+
 		h4 {
 			padding-top: 70px;
 			font-size: 24px;
 			padding-bottom: 24px;
-		}	
-		
+		}
+
 		h4, .superscript, .price, .month { color: $orange; }
-		
+
 		img {
 			position: relative;
 			left: 90px;
@@ -887,14 +887,14 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 			margin-bottom: -42px;
 		}
 	}
-	
+
 	h4 {
 		@include Gibson-Regular;
 		font-size: 23px;
 		padding-top: 45px;
 		padding-bottom: 25px;
 	}
-	
+
 	.superscript {
 		@include Gibson-Light;
 		position: relative;
@@ -902,15 +902,15 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 		top: -23px;
 		left: 3px;
 	}
-	
+
 	.price {
 		@include Gibson-Light;
 		font-size: 72px;
 		letter-spacing: 0em;
 	}
-	
+
 	.month { font-size: 16px; }
-	
+
 	p.billing-cycle {
 		width: 185px;
 		margin: 15px auto 25px;
@@ -920,26 +920,26 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 		border-top: 1px solid #CCC;
 		border-bottom: 1px solid #CCC;
 	}
-	
+
 	li {
 		list-style-type: none;
 		font-size: 16px;
 		line-height: 30px;
-		
+
 		&.last-band { padding-bottom: 76px; }
-		
+
 		&.last { padding-bottom: 45px; }
 	}
-	
+
 	a.switch-monthly {
 		display: block;
 		margin-top: 40px;
 		font-size: 14px;
 		color: #b3b3b3;
-		
+
 		&:hover { color: #666; }
 	}
-	
+
 	a.switch-biannually {
 		margin: 0 auto;
 		width: 185px;
@@ -948,7 +948,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 		font-size: 14px;
 		line-height: 21px;
 		color: $orange;
-		
+
 		&:hover { color: $blue; }
 	}
 }
@@ -960,14 +960,14 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 	width: 100%;
 	padding: 35px 0;
 	margin-bottom: 50px;
-		
+
 	h4 {
 		@include Gibson-Regular;
 		font-size: 21px;
 		margin-left: 40px;
 		float: left;
 	}
-	
+
 	p {
 		font-size: 16px;
 		-webkit-font-smoothing: subpixel-antialiased;
@@ -975,7 +975,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue);	}
 		padding-left: 70px;
 		float: left;
 	}
-	
+
 	a { padding-left: 20px; }
 }
 
@@ -995,16 +995,16 @@ p.pricing-faq {
 	width: 300px;
 	font-size: 16px;
 	line-height: 24px;
-	
+
 	strong {
 		display: block;
 		margin-bottom: 15px;
 	}
-	
+
 	&.first { margin-left: 40px!important; }
-	
+
 	&.second, &.third { margin-left: 70px; }
-	
+
 }
 
 
@@ -1018,7 +1018,7 @@ p.pricing-faq {
 	height: 400px;
 	background-color: $blue;
 	@include transition(all, 0.15s, ease-in-out);
-	
+
 	&:hover { box-shadow: 0px 400px rgba(237, 79, 46, 0.9) inset; cursor: hand; }
 }
 
@@ -1026,14 +1026,14 @@ p.pricing-faq {
 
 .maggieskidmarket { background: url("../images/bg.maggieskidmarket.jpg") no-repeat center center; }
 
-.casaguau { background: url("../images/bg.casaguau.jpg") no-repeat center center; }	
+.casaguau { background: url("../images/bg.casaguau.jpg") no-repeat center center; }
 
 .thequiver, .maggieskidmarket, .casaguau {
 	background-size: cover;
 	box-shadow: 0px 400px rgba(42, 61, 75, 0.3) inset;
 	width: 100%;
 	height: 400px;
-	
+
 	h2 {
 		padding-top: 150px;
 		padding-bottom: 25px;
@@ -1042,7 +1042,7 @@ p.pricing-faq {
 		text-align: center;
 		letter-spacing: -0.02em;
 	}
-	
+
 	h5 {
 		text-align: center;
 		color: $white;
@@ -1051,12 +1051,12 @@ p.pricing-faq {
 }
 
 .story-page {
-	
+
 	a {
 		@include Gibson-Regular;
 		font-size: 16px;
 	}
-	
+
 	p.story-ingress {
 		font-size: 32px;
 		line-height: 46px;
@@ -1064,7 +1064,7 @@ p.pricing-faq {
 		margin: 0 auto;
 		padding-bottom: 130px;
 	}
-	
+
 	p.quote {
 		@include column(1);
 		font-family: Gibson-LightIt;
@@ -1076,19 +1076,19 @@ p.pricing-faq {
 		margin-left: 30px;
 		margin-right: 120px;
 	}
-	
+
 	.story-content {
 		@include column(4);
 		padding-top: 105px;
 		max-width: 650px;
 		width: 95%;
-		
+
 		p {
 			padding-bottom: 30px;
 			font-size: 19px;
 			line-height: 30px;
 		}
-		
+
 		h4 {
 			@include Gibson-Regular;
 			padding-top: 15px;
@@ -1099,7 +1099,7 @@ p.pricing-faq {
 	}
 }
 
-img.story-left, img.story-right {	
+img.story-left, img.story-right {
 	width: 50%;
 	height: auto;
 	float: left;
@@ -1112,7 +1112,7 @@ img.story-left, img.story-right {
 	text-align: center;
 	box-shadow: 0px 400px rgba(42, 61, 75, 0.3) inset;
 	@include transition(all, 0.15s, ease-in-out);
-	
+
 	h3 {
 		font-size: 42px;
 		@include Gibson-Light;
@@ -1120,33 +1120,33 @@ img.story-left, img.story-right {
 		letter-spacing: 0em;
 		margin-bottom: 15px;
 	}
-	
+
 	p {
 		@include Gibson-Light;
 		margin: 0 auto;
-		font-size: 21px; 
+		font-size: 21px;
 		margin-bottom: 160px;
 	}
-	
+
 	&.left { float: left; }
 	&.right { float: right; }
-	
+
 	&:hover { box-shadow: 0px 400px rgba(237, 79, 46, 0.9) inset; cursor: hand; }
 }
 
 .maggieskidmarket-banner {
 	background: url("../images/bg.maggieskidmarket.jpg") no-repeat center center;
-	background-size: cover;	
+	background-size: cover;
 }
 
 .casaguau-banner {
 	background: url('../images/bg.casaguau.jpg') no-repeat center center;
-	background-size: cover;	
+	background-size: cover;
 }
 
 .thequiver-banner {
 	background: url('../images/bg.thequiver.jpg') no-repeat center center;
-	background-size: cover;	
+	background-size: cover;
 }
 
 
@@ -1165,15 +1165,15 @@ img.story-left, img.story-right {
 	color: $white;
 	background-color: rgba(237, 79, 46, 0.9);
 	background-blend-mode: multiply;
-	
+
 	img.castle {
 		margin-bottom: 40px;
 		float: none;
 		display: inline-block;
 		width: 60px;
 		vertical-align: -1px;
-	}	
-		
+	}
+
 	p {
 		@include Gibson-Regular;
 		font-size: 17px;
@@ -1181,17 +1181,17 @@ img.story-left, img.story-right {
 		margin-bottom: 28px;
 		letter-spacing: 0.04em;
 	}
-	
+
 	a {	color: $blue;
-		
+
 		&:hover { color: #000; }
 	}
-	
+
 	p.osoite {
 		font-size: 13px;
 		letter-spacing: 4px;
 	}
-	
+
 }
 
 .contact-text {
@@ -1206,11 +1206,11 @@ img.story-left, img.story-right {
 }
 
 #googlemaps {
-	height: 93%; 
-	width: 100%; 
-	position:absolute; 
-	top: 105px; 
-	left: 0; 
+	height: 93%;
+	width: 100%;
+	position:absolute;
+	top: 105px;
+	left: 0;
 	z-index: 0;
 }
 
@@ -1222,18 +1222,18 @@ img.story-left, img.story-right {
 @media screen and (min-width: 1920px) {
 
 	.hero-text { left: 15%; }
-	
-}	
-	
+
+}
+
 @media screen and (max-width: 768px) {
 
 	.main-wrapper { max-width: 90%; }
-	
+
 	#maincolumn, #sidebar {
 		@include column(12);
 		margin-bottom: 1em;
 	}
-	
+
 	.reason { @include column(12); }
-	
+
 }
