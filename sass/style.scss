@@ -80,7 +80,6 @@ a {
 	.get-started {
 		@include button($white, $orange, $orange, $white, $blue, $blue);
 		top: -1px;
-		border-radius: 0px 5px 5px 0px;
 	}
 
 }
