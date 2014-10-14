@@ -1,7 +1,9 @@
 @import '../css/reset.css';
-@import './semantic-grid.scss';
-@import './variables.scss';
-@import './mixins.scss';
+
+@import 'vendor.scss';
+@import 'semantic-grid.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
 @import '../fonts/MyFontsWebfontsKit.css';
 
 body, html { height: 100%; }
