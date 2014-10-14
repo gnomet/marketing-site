@@ -14,17 +14,17 @@ $total-width: 100%;
 .Gibson-LightIt { font-weight: normal; font-style: normal; font-family: Gibson-LightIt; }
 .Gibson-Regular { font-weight: normal; font-style: normal; font-family: Gibson-Regular;}
 .Gibson-Italic { font-weight: normal; font-style: normal; font-family: Gibson-Italic; }
-.Gibson-SemiBold { font-weight: normal; font-style: normal;	font-family: Gibson-SemiBold;}
+.Gibson-SemiBold { font-weight: normal; font-style: normal; font-family: Gibson-SemiBold;}
 .Gibson-SemiboldIt { font-weight: normal; font-style: normal; font-family: Gibson-SemiboldIt;}
 
 @mixin Gibson-Light{
-	font-family: Gibson-Light;
-	letter-spacing: 0.03em;
+  font-family: Gibson-Light;
+  letter-spacing: 0.03em;
 }
 
 @mixin Gibson-Regular{
-	font-family: Gibson-Regular;
-	letter-spacing: 0.03em;
+  font-family: Gibson-Regular;
+  letter-spacing: 0.03em;
 }
 
 
