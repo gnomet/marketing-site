@@ -1676,12 +1676,12 @@ img.story-left, img.story-right {
   }
   /* line 1274, ../sass/style.scss */
   .mobile-menu a:hover {
-    color: #000;
+    color: #323232;
   }
   /* line 1277, ../sass/style.scss */
   .mobile-menu .hamburger {
     width: 15px;
-    margin-right: 9px;
+    margin-right: 7px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1705,5 +1705,27 @@ img.story-left, img.story-right {
     float: left;
     width: 97.80702%;
     margin: 0 1.09649%;
+  }
+}
+@media screen and (max-width: 470px) {
+  /* line 1299, ../sass/style.scss */
+  .main-navigation {
+    height: 50px;
+    padding: 16px 0;
+  }
+  /* line 1303, ../sass/style.scss */
+  .main-navigation .get-started {
+    display: none;
+  }
+  /* line 1307, ../sass/style.scss */
+  .main-navigation .logo {
+    width: 109px;
+    margin-left: 15px;
+  }
+
+  /* line 1313, ../sass/style.scss */
+  .mobile-menu {
+    right: 15px;
+    top: 18px;
   }
 }

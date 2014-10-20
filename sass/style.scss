@@ -1271,12 +1271,12 @@ img.story-left, img.story-right {
 		top: 30px;
 		
 		a {	color: $orange;
-			&:hover { color: #000; }
+			&:hover { color: $grey; }
 		}
 		
 		.hamburger {
 			width: 15px;
-			margin-right: 9px;
+			margin-right: 7px;
 		}
 	}
 }
@@ -1291,6 +1291,26 @@ img.story-left, img.story-right {
 	}
 	
 	.reason { @include column(12); }
+
+}
+
+@media screen and (max-width: 470px) {
+
+	.main-navigation {
+		height: 50px;
+		padding: 16px 0;
+	
+		.get-started { 
+			display: none;
+		}
+		
+		.logo { 
+			width: 109px; 
+			margin-left: 15px; 
+		}
+	}
+	
+	.mobile-menu { right: 15px; top: 18px; }
 
 }
 
