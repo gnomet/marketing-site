@@ -1308,6 +1308,86 @@ img.story-left, img.story-right {
 }
 
 
+
+////////////////
+// MOBILE NAV //
+////////////////
+
+.menu-cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: $orange;
+  color: $orange;
+  background-size: cover;
+  text-align: center;
+  
+  li a { 
+	  color: $white;
+	  font-size: 48px;
+	  line-height: 80px;
+	  
+	  &:hover { color: $blue; }
+	  
+  }
+
+  .logo {
+    position: relative;
+    margin-left: 40px;
+    top: 40px;
+  }
+  
+  .mobile-menu-close {
+		display: inline-block;
+		font-size: 14px;
+		@include Gibson-Regular;
+		position: absolute;
+		right: 40px;
+		top: 40px;
+		
+		a {	
+			color: $white;
+			
+				&:hover { 
+					color: $grey;
+				}
+		}
+		
+		.menu-close {
+			width: 10px;
+			margin-right: 7px;
+		}
+	}
+}
+
+.button-bottom {
+	position: absolute;
+	bottom: 7%;
+	left: 50%;
+	
+	a.button.ghost {
+		position: relative;
+		left: -50%;
+	    font-family: Gibson-Regular!important;
+	    @include button($white, $orange, $white ,$white,$blue,$blue);
+	    font-size: 14px;
+	    letter-spacing: 0.07em;
+	    padding: 14px 20px;
+	}
+}
+
+.menu-cover-text {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 600px;
+	text-align: center;
+}
+
+
 //////////////////////
 // RESPONSIVE STUFF //
 /////////////////////
@@ -1397,8 +1477,40 @@ img.story-left, img.story-right {
 		}
 	}
 	
-	.mobile-menu { right: 15px; top: 18px; }
+	.menu-cover {
+		
+		li a { 
+			font-size: 24px;
+			line-height: 40px;
+		}
+		
+		.logo { 
+			width: 109px; 
+			margin-left: 15px; 
+			top: 20px;
+		} 
+		
+		.mobile-menu-close {
+			right: 15px;
+			top: 23px;
+		}
+	
+		.menu-cover-text {
+			height: 300px;
+		}
+	
+	}
+	
+	.button-bottom {
 
+		a.button.ghost {
+			font-size: 12px;
+		    padding: 10px 16px;		    
+		}
+	}
+	
+	.mobile-menu { right: 15px; top: 18px; }
+	
 }
 
 
