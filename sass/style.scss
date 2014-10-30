@@ -143,7 +143,7 @@ h2 {
 
   &.centered {
     padding-bottom: 50px;
-    max-width: 600px;
+    max-width: 700px;
     text-align: center;
     margin: 0 auto 40px;
   }
@@ -624,7 +624,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
   }
 
   p {
-    width: 290px;
+    width: 295px;
     margin: 0 auto;
   }
 }
@@ -1434,7 +1434,7 @@ img.story-left, img.story-right {
 		font-size: 14px;
 		@include Gibson-Regular;
 		position: absolute;
-		right: 195px;
+		right: 150px;
 		top: 30px;
 		
 		a {	color: $orange;

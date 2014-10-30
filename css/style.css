@@ -267,7 +267,7 @@ h2 {
 /* line 144, ../sass/style.scss */
 h2.centered {
   padding-bottom: 50px;
-  max-width: 600px;
+  max-width: 700px;
   text-align: center;
   margin: 0 auto 40px;
 }
@@ -879,7 +879,7 @@ a.button:hover {
 }
 /* line 626, ../sass/style.scss */
 .story p {
-  width: 290px;
+  width: 295px;
   margin: 0 auto;
 }
 
@@ -1867,7 +1867,7 @@ img.story-left, img.story-right {
     font-family: Gibson-Regular;
     letter-spacing: 0.03em;
     position: absolute;
-    right: 195px;
+    right: 150px;
     top: 30px;
   }
   /* line 1440, ../sass/style.scss */
