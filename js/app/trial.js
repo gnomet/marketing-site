@@ -136,6 +136,8 @@ define(
               $container.find('.marketplace-field .next-button').on('click', this.onNextClick.bind(this));
 
               this.trialSwiper.swipeNext();
+              $field.parents('.trial').find('.trial-info').removeClass('warning').text("Didn't find your language? Easily translate your marketplace yourself! Contact us to learn more.");
+
             } else {
               var newSlide = this.trialSwiper.createSlide('<p class="trial-text">It seems you already have a Sharetribe account.</p><p class="trial-text">If you want to create a new marketplace with this account, <a class="trial-link" href="contact.html" alt="contact us">contact us</a>.</p>');
               newSlide.append();
@@ -147,7 +149,10 @@ define(
           //   //TODO
           //   alert( "Request failed: " + textStatus );
           // }.bind(this));
+        } else {
+          $field.parents('.trial').find('.trial-info').addClass('warning').text( "Please enter a valid email address.")
         }
+
       }
 
       , localizationQuestions: function($field) {
@@ -159,12 +164,18 @@ define(
       , nameQuestions: function($field) {
         if(this.validateName($field)) {
           this.trialSwiper.swipeNext();
+          //TODO what requirements we have for password?
+          $field.parents('.trial').find('.trial-info').removeClass('warning').text("Password needs to be at least 8 characters long.");
         }
       }
 
       , passwordQuestions: function($field) {
         if(this.validatePassword($field)) {
           this.trialSwiper.swipeNext();
+          // TODO links to terms of service and privacy policy
+          $field.parents('.trial').find('.trial-info').removeClass('warning').html("Didn't find a suitable type for your marketplace idea? Contact us.<br />By creating your marketplace, you agree to Sharetribe's Terms of Service and Privacy policy.");
+        } else {
+          $field.parents('.trial').find('.trial-info').addClass('warning').text("Password didn't match or it was too short. Password needs to be at least 8 characters long.");
         }
       }
 
