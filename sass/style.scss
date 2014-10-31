@@ -707,6 +707,9 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
       &:hover {
         background-color: darken($orange-dark, 10%);
       }
+      &:focus {
+        outline: none;
+      }
 
       .slide-number {
         opacity: 0.5;

@@ -101,37 +101,52 @@ define(
 
       , emailQuestion: function($field) {
         if(this.validateEmail($field)) {
-          // TODO AJAX call!
-          var response = {email: 'blaa@blaa.fi', available: true}
-          var emailAvailable = response.available;
+          // // TODO AJAX call!
+          // var request = $.ajax(
+          //   {
+          //     type: "POST"
+          //   , url: 'http://sharetribe.com/checkemail'
+          //   , data: {email: $field.find('input').val()}
+          //   , dataType: 'application/json'
+          // });
 
-          if(emailAvailable) {
-            var $container = $field.parents('.swiper-container');
-            // webkit fix
-            var width = $container.find('.chosen-select').width() - 1;
+          // request.done(function( response ) {
+            var response = {email: 'blaa@blaa.fi', available: true}
+            var emailAvailable = response.available;
 
-            // country & language
-            this.trialSwiper.createSlide(localizationHtml).append();
-            this.initializeSelection($container.find('.country.chosen-select'), width, "No results match" );
-            this.initializeSelection($container.find('.language.chosen-select'), width, "Didn't find your language? Easily translate your marketplace yourself!")
-            $container.find('.localization-field .next-button').on('click', this.onNextClick.bind(this));
-            // first & last name
-            this.trialSwiper.createSlide(nameHtml).append();
-            $container.find('.name-field .next-button').on('click', this.onNextClick.bind(this));
-            // password & confirm
-            this.trialSwiper.createSlide(passwordHtml).append();
-            $container.find('.password-field .next-button').on('click', this.onNextClick.bind(this));
-            //marketplace type & name
-            this.trialSwiper.createSlide(marketplaceHtml).append();
-            this.initializeSelection($container.find('.marketplace-type.chosen-select'), width, "No results match" );
-            $container.find('.marketplace-field .next-button').on('click', this.onNextClick.bind(this));
+            if(emailAvailable) {
+              var $container = $field.parents('.swiper-container');
+              // country & language
+              this.trialSwiper.createSlide(localizationHtml).append();
+              // webkit fix / override
+              var width = 'none';
 
-            this.trialSwiper.swipeNext();
-          } else {
-            var newSlide = this.trialSwiper.createSlide('<p class="trial-text">It seems you already have a Sharetribe account.</p><p class="trial-text">If you want to create a new marketplace with this account, <a class="trial-link" href="contact.html" alt="contact us">contact us</a>.</p>');
-            newSlide.append();
-            this.trialSwiper.swipeNext();
-          }
+              this.initializeSelection($container.find('.country.chosen-select'), width, "No results match" );
+              this.initializeSelection($container.find('.language.chosen-select'), width, "Didn't find your language? Easily translate your marketplace yourself!")
+              $container.find('.localization-field .next-button').on('click', this.onNextClick.bind(this));
+              // first & last name
+              this.trialSwiper.createSlide(nameHtml).append();
+              $container.find('.name-field .next-button').on('click', this.onNextClick.bind(this));
+              // password & confirm
+              this.trialSwiper.createSlide(passwordHtml).append();
+              $container.find('.password-field .next-button').on('click', this.onNextClick.bind(this));
+              //marketplace type & name
+              this.trialSwiper.createSlide(marketplaceHtml).append();
+              this.initializeSelection($container.find('.marketplace-type.chosen-select'), width, "No results match" );
+              $container.find('.marketplace-field .next-button').on('click', this.onNextClick.bind(this));
+
+              this.trialSwiper.swipeNext();
+            } else {
+              var newSlide = this.trialSwiper.createSlide('<p class="trial-text">It seems you already have a Sharetribe account.</p><p class="trial-text">If you want to create a new marketplace with this account, <a class="trial-link" href="contact.html" alt="contact us">contact us</a>.</p>');
+              newSlide.append();
+              this.trialSwiper.swipeNext();
+            }
+          // });
+
+          // request.fail(function( jqXHR, textStatus ) {
+          //   //TODO
+          //   alert( "Request failed: " + textStatus );
+          // });
         }
       }
 
@@ -161,8 +176,24 @@ define(
             this.validateLocalization($container.find('.localization-field')) &&
             this.validateEmail($container.find('.email-field'))) {
 
-            //TODO AJAX call: send data and redirect to response url
             alert('AJAX call: send data and redirect to response url');
+            // // TODO AJAX call: send data and redirect to response url
+            // var request = $.ajax(
+            //   {
+            //     type: "POST"
+            //   , url: 'http://sharetribe.com/checkemail'
+            //   , data: {email: $field.find('input').val()}
+            //   , dataType: 'application/json'
+            // });
+
+            // request.done(function( response ) {
+              //TODO some redirects according to response
+            // });
+
+            // request.fail(function( jqXHR, textStatus ) {
+            //   //TODO error message somehow
+            //   alert( "Request failed: " + textStatus );
+            // });
           }
         }
       }
