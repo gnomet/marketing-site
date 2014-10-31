@@ -47,13 +47,15 @@ define(
           var keyCode = e.keyCode || e.which;
           // enter
           if( keyCode === 13 ) {
+
             e.preventDefault();
             var $question = ($(e.target).hasClass('question')) ? $(e.target) : $(e.target).parents('.question');
             var $field = $question.parent('.trial-field');
             var isLastQuestion = $question.get(0) == $field.find('.next-button').prev().get(0);
 
-            //slide to next question
-            if( isLastQuestion && $question.hasClass('question-checked')) {
+            // Slide to next question
+            // If enter key is pressed once on input element -> slide to next fieldset ( $question.prop("tagName") === 'INPUT') )
+            if( isLastQuestion && ($question.hasClass('question-checked') || $question.prop("tagName") === 'INPUT')) {
               var active = $element.find('.chosen-container-active');
               this.nextSlide($field);
 

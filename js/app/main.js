@@ -14,10 +14,9 @@ define(
         //Initialize smooth-scroll plugin
         SmoothScroll.init({speed: 300});
 
-        //TODO only on pricing.html
-        //this.initializeOdometers();
+        this.initializeOdometers();
 
-        // Our own js modules
+        // Initialize trial to DOM element
         Trial.initializeTrialForm($('.trial'));
 
       }
@@ -34,36 +33,39 @@ define(
       , initializeOdometer: function($priceContainer, reducedPrice, monthlyPrice) {
         var $pricingTable = $priceContainer.parents('.pricing-table');
         var $deal = $pricingTable.find('.odometer');
-        var odometer = new Odometer(
-          { el: $deal[0]
-          , value: reducedPrice
-          }
-        );
 
-        $pricingTable.find('.switch-price').on('click', function(e) {
-          var switchPrice = $(e.currentTarget);
+        if($deal.length > 0) {
 
-          var currentPrice = $deal.text().replace(/\s/g, "");
-          if(currentPrice == reducedPrice) {
-            $deal.text(monthlyPrice);
-            switchPrice
-              .removeClass('switch-monthly')
-              .addClass('switch-biannually')
-              .text('› Switch to semiannual billing and save up to 20%');
+          var odometer = new Odometer(
+            { el: $deal[0]
+            , value: reducedPrice
+            }
+          );
 
-            $pricingTable.find('.billing-cycle').text('Billed monthly');
+          $pricingTable.find('.switch-price').on('click', function(e) {
+            var switchPrice = $(e.currentTarget);
 
-          } else {
-            $deal.text(reducedPrice);
-            switchPrice
-              .removeClass('switch-biannually')
-              .addClass('switch-monthly')
-              .text('› Switch to monthly billing');
+            var currentPrice = $deal.text().replace(/\s/g, "");
+            if(currentPrice == reducedPrice) {
+              $deal.text(monthlyPrice);
+              switchPrice
+                .removeClass('switch-monthly')
+                .addClass('switch-biannually')
+                .text('› Switch to semiannual billing and save up to 20%');
 
-            $pricingTable.find('.billing-cycle').text('Billed every 6 months');
-          }
-        });
+              $pricingTable.find('.billing-cycle').text('Billed monthly');
+
+            } else {
+              $deal.text(reducedPrice);
+              switchPrice
+                .removeClass('switch-biannually')
+                .addClass('switch-monthly')
+                .text('› Switch to monthly billing');
+
+              $pricingTable.find('.billing-cycle').text('Billed every 6 months');
+            }
+          });
+        }
       }
-
     }
 });
