@@ -2,57 +2,57 @@
 @import url(../vendor/fixedsticky/fixedsticky.css);
 @import url(../vendor/chosen/chosen.css);
 @import url(../fonts/MyFontsWebfontsKit.css);
-/* line 43, /Users/gnitost/marketing-site/sass/semantic-grid.scss */
+/* line 43, ../sass/semantic-grid.scss */
 body {
   width: 100%;
   *zoom: 1;
 }
-/* line 29, /Users/gnitost/marketing-site/sass/semantic-grid.scss */
+/* line 29, ../sass/semantic-grid.scss */
 body:before, body:after {
   content: "";
   display: table;
 }
-/* line 33, /Users/gnitost/marketing-site/sass/semantic-grid.scss */
+/* line 33, ../sass/semantic-grid.scss */
 body:after {
   clear: both;
 }
 
-/* line 13, /Users/gnitost/marketing-site/sass/variables.scss */
+/* line 13, ../sass/variables.scss */
 .Gibson-Light {
   font-weight: normal;
   font-style: normal;
   font-family: Gibson-Light;
 }
 
-/* line 14, /Users/gnitost/marketing-site/sass/variables.scss */
+/* line 14, ../sass/variables.scss */
 .Gibson-LightIt {
   font-weight: normal;
   font-style: normal;
   font-family: Gibson-LightIt;
 }
 
-/* line 15, /Users/gnitost/marketing-site/sass/variables.scss */
+/* line 15, ../sass/variables.scss */
 .Gibson-Regular {
   font-weight: normal;
   font-style: normal;
   font-family: Gibson-Regular;
 }
 
-/* line 16, /Users/gnitost/marketing-site/sass/variables.scss */
+/* line 16, ../sass/variables.scss */
 .Gibson-Italic {
   font-weight: normal;
   font-style: normal;
   font-family: Gibson-Italic;
 }
 
-/* line 17, /Users/gnitost/marketing-site/sass/variables.scss */
+/* line 17, ../sass/variables.scss */
 .Gibson-SemiBold {
   font-weight: normal;
   font-style: normal;
   font-family: Gibson-SemiBold;
 }
 
-/* line 18, /Users/gnitost/marketing-site/sass/variables.scss */
+/* line 18, ../sass/variables.scss */
 .Gibson-SemiboldIt {
   font-weight: normal;
   font-style: normal;
@@ -165,7 +165,7 @@ a:hover {
   margin-right: -5px;
   border-radius: 5px 0px 0px 5px;
 }
-/* line 21, /Users/gnitost/marketing-site/sass/mixins.scss */
+/* line 21, ../sass/mixins.scss */
 .main-navigation .login:hover {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -189,7 +189,7 @@ a:hover {
   -webkit-font-smoothing: subpixel-antialiased;
   top: -1px;
 }
-/* line 21, /Users/gnitost/marketing-site/sass/mixins.scss */
+/* line 21, ../sass/mixins.scss */
 .main-navigation .get-started:hover {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -268,7 +268,7 @@ h2 {
 /* line 144, ../sass/style.scss */
 h2.centered {
   padding-bottom: 50px;
-  max-width: 600px;
+  max-width: 700px;
   text-align: center;
   margin: 0 auto 40px;
 }
@@ -381,7 +381,7 @@ a.button {
   position: relative;
   -webkit-font-smoothing: subpixel-antialiased;
 }
-/* line 21, /Users/gnitost/marketing-site/sass/mixins.scss */
+/* line 21, ../sass/mixins.scss */
 a.button:hover {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -477,7 +477,7 @@ a.button:hover {
   letter-spacing: 0.07em;
   padding: 16px 26px;
 }
-/* line 21, /Users/gnitost/marketing-site/sass/mixins.scss */
+/* line 21, ../sass/mixins.scss */
 .hero a.button.ghost:hover {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -504,7 +504,7 @@ a.button:hover {
   margin-right: 30px;
   padding: 16px 26px;
 }
-/* line 21, /Users/gnitost/marketing-site/sass/mixins.scss */
+/* line 21, ../sass/mixins.scss */
 .hero a.button.white:hover {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -695,7 +695,7 @@ a.button:hover {
   position: relative;
   -webkit-font-smoothing: subpixel-antialiased;
 }
-/* line 21, /Users/gnitost/marketing-site/sass/mixins.scss */
+/* line 21, ../sass/mixins.scss */
 .video a.button:hover {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -778,7 +778,7 @@ a.button:hover {
   -webkit-font-smoothing: subpixel-antialiased;
   top: 50px;
 }
-/* line 21, /Users/gnitost/marketing-site/sass/mixins.scss */
+/* line 21, ../sass/mixins.scss */
 .feature-info a.button:hover {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -880,7 +880,7 @@ a.button:hover {
 }
 /* line 626, ../sass/style.scss */
 .story p {
-  width: 290px;
+  width: 295px;
   margin: 0 auto;
 }
 
@@ -1547,7 +1547,7 @@ a.button:hover {
   font-size: 16px;
   -webkit-font-smoothing: subpixel-antialiased;
   margin-top: 4px;
-  padding-left: 70px;
+  padding-left: 30px;
   float: left;
 }
 /* line 1173, ../sass/style.scss */
@@ -1897,7 +1897,7 @@ img.story-left, img.story-right {
   letter-spacing: 0.07em;
   padding: 16px 26px;
 }
-/* line 21, /Users/gnitost/marketing-site/sass/mixins.scss */
+/* line 21, ../sass/mixins.scss */
 .about-cover a.button.ghost:hover {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -1935,14 +1935,112 @@ img.story-left, img.story-right {
   text-align: center;
 }
 
+/* line 1504, ../sass/style.scss */
+.menu-cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #ed4f2e;
+  color: #ed4f2e;
+  background-size: cover;
+  text-align: center;
+}
+/* line 1513, ../sass/style.scss */
+.menu-cover li a {
+  color: white;
+  font-size: 48px;
+  line-height: 80px;
+}
+/* line 1518, ../sass/style.scss */
+.menu-cover li a:hover {
+  color: #2a3d4b;
+}
+/* line 1522, ../sass/style.scss */
+.menu-cover .logo {
+  position: relative;
+  margin-left: 40px;
+  top: 40px;
+}
+/* line 1528, ../sass/style.scss */
+.menu-cover .mobile-menu-close {
+  display: inline-block;
+  font-size: 14px;
+  font-family: Gibson-Regular;
+  letter-spacing: 0.03em;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+/* line 1536, ../sass/style.scss */
+.menu-cover .mobile-menu-close a {
+  color: white;
+}
+/* line 1539, ../sass/style.scss */
+.menu-cover .mobile-menu-close a:hover {
+  color: #323232;
+}
+/* line 1544, ../sass/style.scss */
+.menu-cover .mobile-menu-close .menu-close {
+  width: 10px;
+  margin-right: 7px;
+}
+
+/* line 1551, ../sass/style.scss */
+.button-bottom {
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+}
+/* line 1556, ../sass/style.scss */
+.button-bottom a.button.ghost {
+  position: relative;
+  left: -50%;
+  font-family: Gibson-Regular!important;
+  font-family: Gibson-Regular;
+  letter-spacing: 0.05em;
+  font-size: 13px;
+  border-radius: 5px;
+  background: #ed4f2e;
+  color: white;
+  padding: 14px 26px;
+  border: 1px solid white;
+  position: relative;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-size: 14px;
+  letter-spacing: 0.07em;
+  padding: 14px 20px;
+}
+/* line 21, ../sass/mixins.scss */
+.button-bottom a.button.ghost:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background: #2a3d4b;
+  color: white;
+  border: 1px solid #2a3d4b;
+}
+
+/* line 1567, ../sass/style.scss */
+.menu-cover-text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 600px;
+  text-align: center;
+}
+
 @media screen and (min-width: 1920px) {
-  /* line 1505, ../sass/style.scss */
+  /* line 1585, ../sass/style.scss */
   .hero-text {
     left: 15%;
   }
 }
 @media screen and (max-width: 1150px) {
-  /* line 1511, ../sass/style.scss */
+  /* line 1591, ../sass/style.scss */
   .main-navigation {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -1951,7 +2049,7 @@ img.story-left, img.story-right {
     height: 75px;
     padding: 25px 0;
   }
-  /* line 1516, ../sass/style.scss */
+  /* line 1596, ../sass/style.scss */
   .main-navigation li {
     padding-right: 30px;
     font-size: 14px;
@@ -1960,7 +2058,7 @@ img.story-left, img.story-right {
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
   }
-  /* line 1522, ../sass/style.scss */
+  /* line 1602, ../sass/style.scss */
   .main-navigation .get-started {
     padding: 12px 19px;
     font-size: 12px;
@@ -1969,7 +2067,7 @@ img.story-left, img.story-right {
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
   }
-  /* line 1528, ../sass/style.scss */
+  /* line 1608, ../sass/style.scss */
   .main-navigation .logo {
     margin-left: 25px;
     -webkit-transition: all 0.2s ease-in-out;
@@ -1978,7 +2076,7 @@ img.story-left, img.story-right {
     transition: all 0.2s ease-in-out;
     width: 140px;
   }
-  /* line 1530, ../sass/style.scss */
+  /* line 1610, ../sass/style.scss */
   .main-navigation .menu-items {
     margin-right: 25px;
     margin-top: -17px;
@@ -1989,42 +2087,42 @@ img.story-left, img.story-right {
   }
 }
 @media screen and (max-width: 920px) {
-  /* line 1536, ../sass/style.scss */
+  /* line 1616, ../sass/style.scss */
   .main-navigation li {
     display: none;
   }
 
-  /* line 1540, ../sass/style.scss */
+  /* line 1620, ../sass/style.scss */
   .mobile-menu {
     display: inline-block;
     font-size: 14px;
     font-family: Gibson-Regular;
     letter-spacing: 0.03em;
     position: absolute;
-    right: 195px;
+    right: 150px;
     top: 30px;
   }
-  /* line 1548, ../sass/style.scss */
+  /* line 1628, ../sass/style.scss */
   .mobile-menu a {
     color: #ed4f2e;
   }
-  /* line 1549, ../sass/style.scss */
+  /* line 1629, ../sass/style.scss */
   .mobile-menu a:hover {
     color: #323232;
   }
-  /* line 1552, ../sass/style.scss */
+  /* line 1632, ../sass/style.scss */
   .mobile-menu .hamburger {
     width: 15px;
     margin-right: 7px;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 1561, ../sass/style.scss */
+  /* line 1641, ../sass/style.scss */
   .main-wrapper {
     max-width: 90%;
   }
 
-  /* line 1563, ../sass/style.scss */
+  /* line 1643, ../sass/style.scss */
   #maincolumn, #sidebar {
     display: inline;
     float: left;
@@ -2033,7 +2131,7 @@ img.story-left, img.story-right {
     margin-bottom: 1em;
   }
 
-  /* line 1568, ../sass/style.scss */
+  /* line 1648, ../sass/style.scss */
   .reason {
     display: inline;
     float: left;
@@ -2042,22 +2140,55 @@ img.story-left, img.story-right {
   }
 }
 @media screen and (max-width: 470px) {
-  /* line 1573, ../sass/style.scss */
+  /* line 1653, ../sass/style.scss */
   .main-navigation {
     height: 50px;
     padding: 16px 0;
   }
-  /* line 1577, ../sass/style.scss */
+  /* line 1657, ../sass/style.scss */
   .main-navigation .get-started {
     display: none;
   }
-  /* line 1581, ../sass/style.scss */
+  /* line 1661, ../sass/style.scss */
   .main-navigation .logo {
     width: 109px;
     margin-left: 15px;
   }
 
-  /* line 1587, ../sass/style.scss */
+  /* line 1666, ../sass/style.scss */
+  .mobile-menu {
+    right: 15px;
+    top: 18px;
+  }
+
+  /* line 1670, ../sass/style.scss */
+  .menu-cover li a {
+    font-size: 24px;
+    line-height: 40px;
+  }
+  /* line 1675, ../sass/style.scss */
+  .menu-cover .logo {
+    width: 109px;
+    margin-left: 15px;
+    top: 20px;
+  }
+  /* line 1681, ../sass/style.scss */
+  .menu-cover .mobile-menu-close {
+    right: 15px;
+    top: 23px;
+  }
+  /* line 1686, ../sass/style.scss */
+  .menu-cover .menu-cover-text {
+    height: 300px;
+  }
+
+  /* line 1694, ../sass/style.scss */
+  .button-bottom a.button.ghost {
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+
+  /* line 1700, ../sass/style.scss */
   .mobile-menu {
     right: 15px;
     top: 18px;
