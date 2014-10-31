@@ -1,16 +1,24 @@
 requirejs.config(
   { paths:
       { 'jquery':       '../vendor/jquery-2.1.1.min'
-      , 'sticky':       '../vendor/fixedsticky/fixedsticky'
       , 'bind':         '../vendor/smooth-scroll/bind-polyfill'
-      , 'smoothscroll': '../vendor/smooth-scroll/smooth-scroll'
+      , 'chosen':       '../vendor/chosen/chosen.jquery.min'
       , 'domReady':     '../vendor/domReady'
+      , 'smoothscroll': '../vendor/smooth-scroll/smooth-scroll'
+      , 'sticky':       '../vendor/fixedsticky/fixedsticky'
+      , 'swiper':       '../vendor/Swiper/dist/idangerous.swiper.min'
+      , 'text':         '../vendor/text'
       }
   , shim:
     { sticky:
-      { 'deps': ['jquery']
+      {
+        'deps': ['jquery']
       }
-      , smoothscroll:
+    , chosen:
+      {
+        deps: ['jquery']
+      }
+    , smoothscroll:
       {
         'deps': ['bind']
       }

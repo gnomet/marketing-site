@@ -1,10 +1,10 @@
 define(
-    [ "jquery"
-    , "smoothscroll"
-    , "app/blaa"
-    ]
-  , function ($, SmoothScroll, Blaa) {
-
+  [ "jquery"
+  , "smoothscroll"
+  , "swiper"
+  , "app/trial"
+  ]
+  , function ($, SmoothScroll, Swiper, Trial) {
     return {
       init: function() {
         //initialize sticky nav bar
@@ -14,7 +14,8 @@ define(
         SmoothScroll.init({speed: 300});
 
         // Our own js modules
-        Blaa.blaa();
+        Trial.initializeTrialForm($('.trial'));
+
       }
     }
 });
