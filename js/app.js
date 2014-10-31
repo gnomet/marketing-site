@@ -3,6 +3,7 @@ requirejs.config(
       { 'jquery':       '../vendor/jquery-2.1.1.min'
       , 'bind':         '../vendor/smooth-scroll/bind-polyfill'
       , 'chosen':       '../vendor/chosen/chosen.jquery.min'
+      , 'odometer':     '../vendor/odometer/odometer.min'
       , 'domReady':     '../vendor/domReady'
       , 'smoothscroll': '../vendor/smooth-scroll/smooth-scroll'
       , 'sticky':       '../vendor/fixedsticky/fixedsticky'
