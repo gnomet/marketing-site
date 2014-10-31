@@ -141,12 +141,12 @@ define(
               newSlide.append();
               this.trialSwiper.swipeNext();
             }
-          // });
+          // }.bind(this));
 
           // request.fail(function( jqXHR, textStatus ) {
           //   //TODO
           //   alert( "Request failed: " + textStatus );
-          // });
+          // }.bind(this));
         }
       }
 
@@ -181,19 +181,30 @@ define(
             // var request = $.ajax(
             //   {
             //     type: "POST"
-            //   , url: 'http://sharetribe.com/checkemail'
-            //   , data: {email: $field.find('input').val()}
+            //   , url: 'http://sharetribe.com/createmarketplace/'
+            //   , data:
+                    // {
+                    //     'email': $field.find('input').val()
+                    //   , 'country': $field.find('.country').val()
+                    //   , 'language': $field.find('.language').val()
+                    //   , 'firstname': $field.find('.firstname').val()
+                    //   , 'lastname': $field.find('.lastname').val()
+                    //   , 'password': $field.find('.password').val()
+                    //   , 'confirm': $field.find('.confirm').val()
+                    //   , 'marketplace-type': $field.find('.marketplace-type').val()
+                    //   , 'marketplace-name': $field.find('.marketplace-name').val()
+                    // }
             //   , dataType: 'application/json'
             // });
 
             // request.done(function( response ) {
               //TODO some redirects according to response
-            // });
+            // }.bind(this));
 
             // request.fail(function( jqXHR, textStatus ) {
             //   //TODO error message somehow
             //   alert( "Request failed: " + textStatus );
-            // });
+            // }.bind(this));
           }
         }
       }
