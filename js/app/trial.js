@@ -152,7 +152,7 @@ define(
           //   alert( "Request failed: " + textStatus );
           // }.bind(this));
         } else {
-          $field.parents('.trial').find('.trial-info').addClass('warning').text( "Please enter a valid email address.")
+          $field.parents('.trial').find('.trial-info').addClass('warning').text( "Sorry, we need a valid email address.")
         }
 
       }
@@ -167,7 +167,7 @@ define(
         if(this.validateName($field)) {
           this.trialSwiper.swipeNext();
           //TODO what requirements we have for password?
-          $field.parents('.trial').find('.trial-info').removeClass('warning').text("Password needs to be at least 8 characters long.");
+          $field.parents('.trial').find('.trial-info').removeClass('warning').text("Your password needs to be at least 8 characters long.");
         }
       }
 
@@ -177,7 +177,7 @@ define(
           // TODO links to terms of service and privacy policy
           $field.parents('.trial').find('.trial-info').removeClass('warning').html("Didn't find a suitable type for your marketplace idea? Contact us.<br />By creating your marketplace, you agree to Sharetribe's Terms of Service and Privacy policy.");
         } else {
-          $field.parents('.trial').find('.trial-info').addClass('warning').text("Password didn't match or it was too short. Password needs to be at least 8 characters long.");
+          $field.parents('.trial').find('.trial-info').addClass('warning').text("Sorry, your password didn't match or it was too short. Password needs to be at least 8 characters long.");
         }
       }
 

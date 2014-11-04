@@ -636,7 +636,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
 
 .trial {
   width: 100%;
-  height: 481px;
+  height: 500px;
   background-color: $orange;
   text-align: center;
   color: $white;
@@ -654,7 +654,6 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
     font-size: 23px;
     font-family: Gibson-LightIt;
     margin-bottom: 15px;
-
   }
 
   h3 {
@@ -665,10 +664,10 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
   }
 
   p {
-    @include Gibson-Regular;
     color: #f3ab9e;
-    font-size: 14px;
+    font-size: 16px;
     display: block;
+	@include Gibson-Regular;
   }
 
   .trial-text {
@@ -680,6 +679,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
   }
   .trial-info {
     font-size: 16px;
+    line-height: 24px;
   }
   .trial-info.warning {
     color: yellow;
@@ -687,62 +687,68 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
 
   .trial-field {
     position: relative;
-    width: 520px;
+    width: 720px;
     height: 67px;
     margin: 0 auto;
+    
+    &.email { width: 520px!important; }
 
     /* mouse over next-button fix */
     &:hover .question {
-      border-bottom: solid 3px darken($orange-dark, 10%);
+      border-bottom: solid 3px $blue;
     }
 
     .next-button {
-      @include Gibson-Light;
       @include transition(background-color, 200ms, ease-in-out);
       position: absolute;
-      top: 15px;
-      right: 20px;
-      padding: 10px 15px;
+      top: 16px;
+      right: 15px;
+      padding: 12px 20px;
       border: none;
-      border-radius: 2px;
-      background-color: darken($orange-dark, 5%);
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      border-radius: 3px;
+      background-color: $orange;
       color: white;
-      letter-spacing: 1px;
       cursor: pointer;
 
       &:hover {
-        background-color: darken($orange-dark, 10%);
+        background-color: $blue;
+        cursor: hand;
       }
       &:focus {
         outline: none;
       }
 
       .slide-number {
-        opacity: 0.5;
+        opacity: 0.7;
       }
     }
 
     .trial-input {
       @include transition(all, 0.2s, ease-in-out);
       width: 100%;
-      padding: 21px 10px 21px 25px;
-      color: $white;
+      padding: 24px 10px 24px 30px;
+      color: $orange;
       line-height: 21px;
 
       font-size: 18px;
-      background-color: $orange-dark;
+      background-color: $bg-grey;
 
       border-radius: 5px;
       border: none;
-      border-bottom: solid 3px #fff;
+      border-bottom: solid 3px #ff836d;
       outline: none;
       margin-bottom: 40px;
+      @include Gibson-Light;
+      letter-spacing: 1px;
+      
 
-      &:hover { border-bottom: solid 3px darken($orange-dark, 10%); }
+      &:hover { border-bottom: solid 3px $blue; background: $white; cursor: hand;}
 
       &:focus {
         background: $white;
-        border-bottom: solid 3px darken($orange-dark, 10%);
+        border-bottom: solid 3px $blue;
         color: $orange;
       }
     }
@@ -759,59 +765,90 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
       float: left;
     }
 
+	/* Normal */
+
     input::-webkit-input-placeholder {
-      color: $white;
-      opacity: 0.7;
+      color: $light-grey;
       @include Gibson-Light;
     }
     /* Firefox < 19 */
     input:-moz-placeholder {
-      color: $white;
-      opacity: 0.7;
+      color: $light-grey;
       @include Gibson-Light;
     }
     /* Firefox > 19 */
     input::-moz-placeholder {
-      color: $white;
-      opacity: 0.7;
+      color: $light-grey;
       @include Gibson-Light;
     }
     /* Internet Explorer 10 */
     input:-ms-input-placeholder {
-      color: $white;
-      opacity: 0.7;
+      color: $light-grey;
       @include Gibson-Light;
     }
+    
+    /* Hover */
+    
+     input:hover::-webkit-input-placeholder {
+      color: $blue;
+      @include Gibson-Light;
+    }
+    /* Firefox < 19 */
+     input:hover:-moz-placeholder {
+      color: $blue;
+      @include Gibson-Light;
+    }
+    /* Firefox > 19 */
+     input:hover::-moz-placeholder {
+      color: $blue;
+      @include Gibson-Light;
+    }
+    /* Internet Explorer 10 */
+     input:hover::-ms-input-placeholder {
+      color: $blue;
+      @include Gibson-Light;
+    }
+    
+    /* Focus */
+    
     input:focus::-webkit-input-placeholder {
+	    @include transition(all, 0.2s, ease-in-out);
         color: $orange;
+        opacity: 0.5;
     }
     /* Firefox < 19 */
     input:focus:-moz-placeholder {
+        @include transition(all, 0.2s, ease-in-out);
         color: $orange;
+        opacity: 0.5;
     }
     /* Firefox > 19 */
     input:focus::-moz-placeholder {
+        @include transition(all, 0.2s, ease-in-out);
         color: $orange;
+        opacity: 0.5;
     }
     /* Internet Explorer 10 */
     input:focus:-ms-input-placeholder {
+        @include transition(all, 0.2s, ease-in-out);
         color: $orange;
+        opacity: 0.5;
     }
 
     /* widths */
     .firstname, .marketplace-type.chosen-container, .password {
-      @include column(4);
+		width: 300px;
     }
-    .lastname, .marketplace-name, .confirm {
-      @include column(8);
-      padding-right: 115px;
+    .lastname, .marketplace-type.chosen-container, .confirm {
+	 	width: 400px;
+		margin-left: 15px;
     }
-    .country.chosen-container, .marketplace-type.chosen-container {
-      @include column(5);
+    .country.chosen-container, .marketplace-name {
+		width: 300px;
     }
-    .language.chosen-container, .marketplace-name {
-      @include column(7);
-      padding-right: 115px;
+    .language.chosen-container, .marketplace-type.chosen-container {
+		width: 400px;
+		margin-left: 15px;
     }
   }
   /* swiper overrides */
@@ -836,10 +873,9 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
     box-shadow: none;
   }
   .chosen-container-single .chosen-single {
-    @include Gibson-Regular;
+    @include Gibson-Light;
     color: $white;
     line-height: 21px;
-    opacity: 0.7;
     padding: 0;
     height: 100%;
     border: none;
@@ -848,9 +884,12 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
     box-shadow: none;
     text-decoration: none;
     white-space: nowrap;
+    float: left;
+    width: 100%;
+    text-align: left;
 
-    div{
-      right: 5px;
+    div {
+      right: 155px;
 
       b {
         background-image: url("../images/icons/arrow.down.svg");
@@ -858,31 +897,35 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
         background-position: 100%;
         background-size: 20px;
       }
-    }
+    }    
   }
+  
   .chosen-container {
     &.chosen-container-active, &:hover, &:focus {
-      background-color: darken($orange-dark, 15%);
+      background-color: $bg-grey;
+      color: $light-grey;
     }
 
     .chosen-drop {
-      background-color: darken($orange-dark, 15%);
+      background-color: #2a3d4b;
       border: none;
     }
     .chosen-search input {
       border: none;
+      height: 50px;
       color: $white;
-      background-color: darken($orange-dark, 5%);
+      background-color: #243440;
       background-image: url("../images/icons/search.icon.svg");
       background-repeat: no-repeat;
-      background-position: 100%;
+      background-position: 93%;
       background-size: 21px;
+      padding-left: 26px;
     }
 
     .chosen-results {
       @include Gibson-Light;
       width: 100%;
-      max-height: 135px;
+      max-height: 115px;
       color: $white;
       text-align: left;
 
@@ -894,7 +937,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
 
       .highlighted {
         background: none;
-        color: yellow;
+        color: #8fd0ff;
       }
     }
   }
@@ -951,7 +994,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
   width: 100%;
   background-color: $bg-grey;
 
-  .main-wrapper { width: 844px; }
+  .main-wrapper { width: 875px; }
 
   p {
     display: inline;
@@ -1235,11 +1278,11 @@ p.pricing-faq {
 
 .stories {
   width: 100%;
-  height: 400px;
+  height: 300px;
   background-color: $blue;
   @include transition(all, 0.15s, ease-in-out);
 
-  &:hover { box-shadow: 0px 400px rgba(237, 79, 46, 0.9) inset; cursor: hand; }
+  &:hover { box-shadow: 0px 300px rgba(237, 79, 46, 0.9) inset; cursor: hand; }
 }
 
 .thequiver { background: url("../images/bg.thequiver.jpg") no-repeat center center; }
@@ -1250,15 +1293,15 @@ p.pricing-faq {
 
 .thequiver, .maggieskidmarket, .casaguau {
   background-size: cover;
-  box-shadow: 0px 400px rgba(42, 61, 75, 0.3) inset;
+  box-shadow: 0px 300px rgba(42, 61, 75, 0.5) inset;
   width: 100%;
-  height: 400px;
+  height: 300px;
 
   h2 {
-    padding-top: 150px;
-    padding-bottom: 25px;
+    padding-top: 100px;
+    padding-bottom: 15px;
     color: $white;
-    font-size: 72px;
+    font-size: 66px;
     text-align: center;
     letter-spacing: -0.02em;
   }
@@ -1607,12 +1650,39 @@ img.story-left, img.story-right {
 /////////////////////
 
 @media screen and (min-width: 1920px) {
+	
+	// HERO HOMEPAGE
 
 	.hero-text { left: 15%; }
-
+	
+	
+	// STORIES HOMEPAGE
+	
+	.stories {
+		height: 400px;
+			
+			&:hover {
+				box-shadow: 0px 400px rgba(237, 79, 46, 0.9) inset; cursor: hand;
+			}
+	}
+	
+	.thequiver, .maggieskidmarket, .casaguau {
+		@include transition(all, 0.2s, ease-in-out);
+		box-shadow: 0px 400px rgba(42, 61, 75, 0.5) inset;
+		height: 400px;
+		
+		h2 {
+			@include transition(all, 0.2s, ease-in-out);
+		    padding-top: 150px;
+			padding-bottom: 25px;
+			font-size: 72px;
+		}
+	}
 }
 
 @media screen and (max-width: 1150px) {
+
+	// NAVIGATION
 
 	.main-navigation {
 		@include transition(all, 0.2s, ease-in-out);
@@ -1635,9 +1705,56 @@ img.story-left, img.story-right {
 
 		.menu-items { margin-right: 25px; margin-top: -17px; @include transition(all, 0.2s, ease-in-out);}
 	}
+	
+	// FOOTER
+	
+	.footer li {
+		@include transition(all, 0.2s, ease-in-out);
+		padding-right: 30px;
+	}
+	
+	.footer {
+		@include transition(all, 0.2s, ease-in-out);
+		padding-bottom: 75px;
+		margin-top: 15px;
+	}
+	
+	.copyright .main-wrapper {
+		@include transition(all, 0.2s, ease-in-out);
+		width: 755px;
+	}
+	
+	// STORIES PAGE
+	
+	.stories {
+		height: 250px;
+			
+			&:hover {
+				box-shadow: 0px 250px rgba(237, 79, 46, 0.9) inset; cursor: hand;
+			}
+	}
+	
+	.thequiver, .maggieskidmarket, .casaguau {
+		@include transition(all, 0.2s, ease-in-out);
+		box-shadow: 0px 250px rgba(42, 61, 75, 0.5) inset;
+		height: 250px;
+		
+		h2 {
+			@include transition(all, 0.2s, ease-in-out);
+		    padding-top: 80px;
+			padding-bottom: 10px;
+			font-size: 52px;
+		}
+		
+		h5 { 
+			font-size: 18px;
+		}
+	}
 }
 
 @media screen and (max-width: 920px) { // Fade the main nav
+
+	// NAVIGATION
 
 	.main-navigation li {
 		display: none;
@@ -1660,6 +1777,35 @@ img.story-left, img.story-right {
 			margin-right: 7px;
 		}
 	}
+	
+	// FOOTER
+	
+	.footer {
+		padding-right: 0;
+		padding-bottom: 50px;
+		margin-top: 10px;
+		
+		img {
+			width: 50px;
+			top: 23px;
+		}
+		
+		.text-link {
+			display: none;
+		}
+	}
+	
+	li.twitter-last {
+			padding-right: 0px;
+	}
+	
+	.copyright {
+		padding: 30px 0px;
+	
+		.main-wrapper {
+			width: 92.5%;
+		}
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -1674,7 +1820,36 @@ img.story-left, img.story-right {
 	.reason { @include column(12); }
 }
 
+@media screen and (max-width: 640px) {
+
+	// FOOTER
+
+	.copyright {
+		height: 80px;
+		
+		.main-wrapper {
+			width: 100%!important;
+			margin-top: -10px;
+		}
+		
+		p.left, p.right  {
+			font-size: 11px;
+			line-height: 18px;
+			text-align: center;
+			display: block;
+			width: 100%;
+			margin-bottom: 0px;
+			
+			a { color: $grey; }
+		}
+		
+		
+	}
+}
+
 @media screen and (max-width: 470px) {
+	
+	// NAVIGATION
 
 	.main-navigation {
 		height: 50px;
@@ -1724,7 +1899,48 @@ img.story-left, img.story-right {
 	}
 
 	.mobile-menu { right: 15px; top: 18px; }
+	
+	
+	// STORIES PAGE
+	
+	.stories {
+		height: 140px;
+			
+			&:hover {
+				box-shadow: 0px 140px rgba(237, 79, 46, 0.9) inset; cursor: hand;
+			}
+	}
+	
+	.thequiver, .maggieskidmarket, .casaguau {
+		@include transition(all, 0.2s, ease-in-out);
+		box-shadow: 0px 140px rgba(42, 61, 75, 0.5) inset;
+		height: 140px;
+		
+		h2 {
+			@include transition(all, 0.2s, ease-in-out);
+		    padding-top: 40px;
+			padding-bottom: 6px;
+			font-size: 32px;
+			line-height: 36px;
+		}
+		
+		h5 { 
+			font-size: 16px;
+		}
+	}
+	
+	// FOOTER
+	
+	.footer {
+		padding-bottom: 40px;
+		
+		img {
+			width: 40px;
+			top: 17px;
+		}
+	}
 
+	
 }
 
 
