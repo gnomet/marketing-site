@@ -189,35 +189,48 @@ define(
             this.validateLocalization($container.find('.localization-field')) &&
             this.validateEmail($container.find('.email-field'))) {
 
-            alert('AJAX call: send data and redirect to response url');
+            var data_hash =   {
+                        'admin_email': $field.find('input').val()
+                      , 'marketplace_country': $field.find('.country').val()
+                      , 'marketplace_language': $field.find('.language').val()
+                      , 'admin_first_name': $field.find('.firstname').val()
+                      , 'admin_last_name': $field.find('.lastname').val()
+                      , 'admin_password': $field.find('.password').val()
+                      //, 'confirm_password': $field.find('.confirm').val()
+                      , 'marketplace_type': $field.find('.marketplace-type').val()
+                      , 'marketplace_name': $field.find('.marketplace-name').val()
+                    }
+
+            alert('AJAX call with data: ' + JSON.stringify(data_hash));
             // // TODO AJAX call: send data and redirect to response url
             // var request = $.ajax(
             //   {
             //     type: "POST"
-            //   , url: 'http://sharetribe.com/createmarketplace/'
+            //   , url: 'http://catch.lvh.me:3000/int_api/create_trial_marketplace'
             //   , data:
-                    // {
-                    //     'email': $field.find('input').val()
-                    //   , 'country': $field.find('.country').val()
-                    //   , 'language': $field.find('.language').val()
-                    //   , 'firstname': $field.find('.firstname').val()
-                    //   , 'lastname': $field.find('.lastname').val()
-                    //   , 'password': $field.find('.password').val()
-                    //   , 'confirm': $field.find('.confirm').val()
-                    //   , 'marketplace-type': $field.find('.marketplace-type').val()
-                    //   , 'marketplace-name': $field.find('.marketplace-name').val()
-                    // }
+            //         {
+            //             'admin_email': $field.find('input').val()
+            //           , 'marketplace_country': $field.find('.country').val()
+            //           , 'marketplace_language': $field.find('.language').val()
+            //           , 'admin_first_name': $field.find('.firstname').val()
+            //           , 'admin_last_name': $field.find('.lastname').val()
+            //           , 'admin_password': $field.find('.password').val()
+            //           //, 'confirm_password': $field.find('.confirm').val()
+            //           , 'marketplace_type': $field.find('.marketplace-type').val()
+            //           , 'marketplace_name': $field.find('.marketplace-name').val()
+            //         }
             //   , dataType: 'application/json'
             // });
 
-            // request.done(function( response ) {
+            request.done(function( response ) {
               //TODO some redirects according to response
-            // }.bind(this));
+              alert(response);
+            }.bind(this));
 
-            // request.fail(function( jqXHR, textStatus ) {
-            //   //TODO error message somehow
-            //   alert( "Request failed: " + textStatus );
-            // }.bind(this));
+            request.fail(function( jqXHR, textStatus ) {
+              //TODO better error message somehow
+              alert( "Request failed: " + textStatus );
+            }.bind(this));
           }
         }
       }
