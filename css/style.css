@@ -1835,8 +1835,9 @@ p.pricing-faq.second, p.pricing-faq.third {
   font-family: Gibson-Regular;
   letter-spacing: 0.03em;
   font-size: 16px;
+  line-height: 24px;
 }
-/* line 1323, ../sass/style.scss */
+/* line 1324, ../sass/style.scss */
 .story-page p.story-ingress {
   font-size: 32px;
   line-height: 46px;
@@ -1844,7 +1845,7 @@ p.pricing-faq.second, p.pricing-faq.third {
   margin: 0 auto;
   padding-bottom: 130px;
 }
-/* line 1331, ../sass/style.scss */
+/* line 1332, ../sass/style.scss */
 .story-page p.quote {
   display: inline;
   float: left;
@@ -1859,7 +1860,7 @@ p.pricing-faq.second, p.pricing-faq.third {
   margin-left: 30px;
   margin-right: 120px;
 }
-/* line 1343, ../sass/style.scss */
+/* line 1344, ../sass/style.scss */
 .story-page .story-content {
   display: inline;
   float: left;
@@ -1868,13 +1869,13 @@ p.pricing-faq.second, p.pricing-faq.third {
   padding-top: 105px;
   width: 650px;
 }
-/* line 1348, ../sass/style.scss */
+/* line 1349, ../sass/style.scss */
 .story-page .story-content p {
   padding-bottom: 30px;
   font-size: 19px;
   line-height: 30px;
 }
-/* line 1354, ../sass/style.scss */
+/* line 1355, ../sass/style.scss */
 .story-page .story-content h4 {
   font-family: Gibson-Regular;
   letter-spacing: 0.03em;
@@ -1884,14 +1885,14 @@ p.pricing-faq.second, p.pricing-faq.third {
   line-height: 30px;
 }
 
-/* line 1364, ../sass/style.scss */
+/* line 1365, ../sass/style.scss */
 img.story-left, img.story-right {
   width: 50%;
   height: auto;
   float: left;
 }
 
-/* line 1370, ../sass/style.scss */
+/* line 1371, ../sass/style.scss */
 .maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
   margin-top: 150px;
   width: 50%;
@@ -1903,7 +1904,7 @@ img.story-left, img.story-right {
   -o-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
 }
-/* line 1378, ../sass/style.scss */
+/* line 1379, ../sass/style.scss */
 .maggieskidmarket-banner h3, .casaguau-banner h3, .thequiver-banner h3 {
   font-size: 42px;
   font-family: Gibson-Light;
@@ -1912,7 +1913,7 @@ img.story-left, img.story-right {
   letter-spacing: 0em;
   margin-bottom: 15px;
 }
-/* line 1386, ../sass/style.scss */
+/* line 1387, ../sass/style.scss */
 .maggieskidmarket-banner p, .casaguau-banner p, .thequiver-banner p {
   font-family: Gibson-Light;
   letter-spacing: 0.03em;
@@ -1920,39 +1921,39 @@ img.story-left, img.story-right {
   font-size: 21px;
   margin-bottom: 160px;
 }
-/* line 1393, ../sass/style.scss */
+/* line 1394, ../sass/style.scss */
 .maggieskidmarket-banner.left, .casaguau-banner.left, .thequiver-banner.left {
   float: left;
 }
-/* line 1394, ../sass/style.scss */
+/* line 1395, ../sass/style.scss */
 .maggieskidmarket-banner.right, .casaguau-banner.right, .thequiver-banner.right {
   float: right;
 }
-/* line 1396, ../sass/style.scss */
+/* line 1397, ../sass/style.scss */
 .maggieskidmarket-banner:hover, .casaguau-banner:hover, .thequiver-banner:hover {
   box-shadow: 0px 400px rgba(237, 79, 46, 0.9) inset;
   cursor: hand;
 }
 
-/* line 1399, ../sass/style.scss */
+/* line 1400, ../sass/style.scss */
 .maggieskidmarket-banner {
   background: url("../images/bg.maggieskidmarket.jpg") no-repeat center center;
   background-size: cover;
 }
 
-/* line 1404, ../sass/style.scss */
+/* line 1405, ../sass/style.scss */
 .casaguau-banner {
   background: url("../images/bg.casaguau.jpg") no-repeat center center;
   background-size: cover;
 }
 
-/* line 1409, ../sass/style.scss */
+/* line 1410, ../sass/style.scss */
 .thequiver-banner {
   background: url("../images/bg.thequiver.jpg") no-repeat center center;
   background-size: cover;
 }
 
-/* line 1421, ../sass/style.scss */
+/* line 1422, ../sass/style.scss */
 .contact {
   display: hidden;
   z-index: 1;
@@ -1963,7 +1964,7 @@ img.story-left, img.story-right {
   background-color: rgba(237, 79, 46, 0.9);
   background-blend-mode: multiply;
 }
-/* line 1431, ../sass/style.scss */
+/* line 1432, ../sass/style.scss */
 .contact img.castle {
   margin-bottom: 40px;
   float: none;
@@ -1971,7 +1972,7 @@ img.story-left, img.story-right {
   width: 60px;
   vertical-align: -1px;
 }
-/* line 1439, ../sass/style.scss */
+/* line 1440, ../sass/style.scss */
 .contact p {
   font-family: Gibson-Regular;
   letter-spacing: 0.03em;
@@ -1980,21 +1981,21 @@ img.story-left, img.story-right {
   margin-bottom: 28px;
   letter-spacing: 0.04em;
 }
-/* line 1447, ../sass/style.scss */
+/* line 1448, ../sass/style.scss */
 .contact a {
   color: #2a3d4b;
 }
-/* line 1449, ../sass/style.scss */
+/* line 1450, ../sass/style.scss */
 .contact a:hover {
   color: #000;
 }
-/* line 1452, ../sass/style.scss */
+/* line 1453, ../sass/style.scss */
 .contact p.osoite {
   font-size: 13px;
   letter-spacing: 4px;
 }
 
-/* line 1459, ../sass/style.scss */
+/* line 1460, ../sass/style.scss */
 .contact-text {
   position: absolute;
   top: 0;
@@ -2006,7 +2007,7 @@ img.story-left, img.story-right {
   text-align: center;
 }
 
-/* line 1470, ../sass/style.scss */
+/* line 1471, ../sass/style.scss */
 #googlemaps {
   height: 93%;
   width: 100%;
@@ -2016,21 +2017,21 @@ img.story-left, img.story-right {
   z-index: 0;
 }
 
-/* line 1490, ../sass/style.scss */
+/* line 1491, ../sass/style.scss */
 .main-wrapper.about-us {
   margin: 110px auto;
 }
-/* line 1493, ../sass/style.scss */
+/* line 1494, ../sass/style.scss */
 .main-wrapper.about-us p, .main-wrapper.about-us h4 {
   width: 600px;
   margin: 0 auto;
 }
-/* line 1498, ../sass/style.scss */
+/* line 1499, ../sass/style.scss */
 .main-wrapper.about-us p {
   font-size: 19px;
   line-height: 32px;
 }
-/* line 1503, ../sass/style.scss */
+/* line 1504, ../sass/style.scss */
 .main-wrapper.about-us h4 {
   font-family: Gibson-Regular;
   letter-spacing: 0.03em;
@@ -2038,13 +2039,13 @@ img.story-left, img.story-right {
   line-height: 36px;
   margin: 90px auto 30px;
 }
-/* line 1510, ../sass/style.scss */
+/* line 1511, ../sass/style.scss */
 .main-wrapper.about-us img {
   margin: 110px auto 20px;
   width: 100%;
 }
 
-/* line 1514, ../sass/style.scss */
+/* line 1515, ../sass/style.scss */
 .about-cover {
   position: relative;
   width: 100%;
@@ -2055,7 +2056,7 @@ img.story-left, img.story-right {
   background-size: cover;
   text-align: center;
 }
-/* line 1524, ../sass/style.scss */
+/* line 1525, ../sass/style.scss */
 .about-cover h6 {
   width: 138px;
   text-align: center;
@@ -2063,7 +2064,7 @@ img.story-left, img.story-right {
   padding-bottom: 30px;
   margin-bottom: 40px;
 }
-/* line 1532, ../sass/style.scss */
+/* line 1533, ../sass/style.scss */
 .about-cover a.button.ghost {
   font-family: Gibson-Light!important;
   font-family: Gibson-Regular;
@@ -2090,7 +2091,7 @@ img.story-left, img.story-right {
   color: white;
   border: 1px solid #2a3d4b;
 }
-/* line 1540, ../sass/style.scss */
+/* line 1541, ../sass/style.scss */
 .about-cover p {
   color: #323232;
   font-family: Gibson-Light;
@@ -2104,7 +2105,7 @@ img.story-left, img.story-right {
   width: 90%;
 }
 
-/* line 1553, ../sass/style.scss */
+/* line 1554, ../sass/style.scss */
 .about-cover-text {
   position: absolute;
   top: 0;
@@ -2118,7 +2119,7 @@ img.story-left, img.story-right {
   text-align: center;
 }
 
-/* line 1572, ../sass/style.scss */
+/* line 1573, ../sass/style.scss */
 .menu-cover {
   position: relative;
   width: 100%;
@@ -2128,23 +2129,23 @@ img.story-left, img.story-right {
   background-size: cover;
   text-align: center;
 }
-/* line 1581, ../sass/style.scss */
+/* line 1582, ../sass/style.scss */
 .menu-cover li a {
   color: white;
   font-size: 48px;
   line-height: 80px;
 }
-/* line 1586, ../sass/style.scss */
+/* line 1587, ../sass/style.scss */
 .menu-cover li a:hover {
   color: #2a3d4b;
 }
-/* line 1590, ../sass/style.scss */
+/* line 1591, ../sass/style.scss */
 .menu-cover .logo {
   position: relative;
   margin-left: 40px;
   top: 40px;
 }
-/* line 1596, ../sass/style.scss */
+/* line 1597, ../sass/style.scss */
 .menu-cover .mobile-menu-close {
   display: inline-block;
   font-size: 14px;
@@ -2154,27 +2155,27 @@ img.story-left, img.story-right {
   right: 40px;
   top: 40px;
 }
-/* line 1604, ../sass/style.scss */
+/* line 1605, ../sass/style.scss */
 .menu-cover .mobile-menu-close a {
   color: white;
 }
-/* line 1607, ../sass/style.scss */
+/* line 1608, ../sass/style.scss */
 .menu-cover .mobile-menu-close a:hover {
   color: #323232;
 }
-/* line 1612, ../sass/style.scss */
+/* line 1613, ../sass/style.scss */
 .menu-cover .mobile-menu-close .menu-close {
   width: 10px;
   margin-right: 7px;
 }
 
-/* line 1619, ../sass/style.scss */
+/* line 1620, ../sass/style.scss */
 .button-bottom {
   position: absolute;
   bottom: 7%;
   left: 50%;
 }
-/* line 1624, ../sass/style.scss */
+/* line 1625, ../sass/style.scss */
 .button-bottom a.button.ghost {
   position: relative;
   left: -50%;
@@ -2204,7 +2205,7 @@ img.story-left, img.story-right {
   border: 1px solid #2a3d4b;
 }
 
-/* line 1635, ../sass/style.scss */
+/* line 1636, ../sass/style.scss */
 .menu-cover-text {
   position: absolute;
   top: 0;
@@ -2217,22 +2218,22 @@ img.story-left, img.story-right {
 }
 
 @media screen and (min-width: 1920px) {
-  /* line 1655, ../sass/style.scss */
+  /* line 1656, ../sass/style.scss */
   .hero-text {
     left: 15%;
   }
 
-  /* line 1660, ../sass/style.scss */
+  /* line 1661, ../sass/style.scss */
   .stories {
     height: 400px;
   }
-  /* line 1663, ../sass/style.scss */
+  /* line 1664, ../sass/style.scss */
   .stories:hover {
     box-shadow: 0px 400px rgba(237, 79, 46, 0.9) inset;
     cursor: hand;
   }
 
-  /* line 1668, ../sass/style.scss */
+  /* line 1669, ../sass/style.scss */
   .thequiver, .maggieskidmarket, .casaguau {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -2241,7 +2242,7 @@ img.story-left, img.story-right {
     box-shadow: 0px 400px rgba(42, 61, 75, 0.5) inset;
     height: 400px;
   }
-  /* line 1673, ../sass/style.scss */
+  /* line 1674, ../sass/style.scss */
   .thequiver h2, .maggieskidmarket h2, .casaguau h2 {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -2253,7 +2254,7 @@ img.story-left, img.story-right {
   }
 }
 @media screen and (max-width: 1150px) {
-  /* line 1686, ../sass/style.scss */
+  /* line 1687, ../sass/style.scss */
   .main-navigation {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -2262,7 +2263,7 @@ img.story-left, img.story-right {
     height: 75px;
     padding: 25px 0;
   }
-  /* line 1691, ../sass/style.scss */
+  /* line 1692, ../sass/style.scss */
   .main-navigation li {
     padding-right: 30px;
     font-size: 14px;
@@ -2271,7 +2272,7 @@ img.story-left, img.story-right {
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
   }
-  /* line 1697, ../sass/style.scss */
+  /* line 1698, ../sass/style.scss */
   .main-navigation .get-started {
     padding: 12px 19px;
     font-size: 12px;
@@ -2280,7 +2281,7 @@ img.story-left, img.story-right {
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
   }
-  /* line 1703, ../sass/style.scss */
+  /* line 1704, ../sass/style.scss */
   .main-navigation .logo {
     margin-left: 25px;
     -webkit-transition: all 0.2s ease-in-out;
@@ -2289,7 +2290,7 @@ img.story-left, img.story-right {
     transition: all 0.2s ease-in-out;
     width: 140px;
   }
-  /* line 1705, ../sass/style.scss */
+  /* line 1706, ../sass/style.scss */
   .main-navigation .menu-items {
     margin-right: 25px;
     margin-top: -17px;
@@ -2299,7 +2300,7 @@ img.story-left, img.story-right {
     transition: all 0.2s ease-in-out;
   }
 
-  /* line 1710, ../sass/style.scss */
+  /* line 1711, ../sass/style.scss */
   .footer li {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -2308,7 +2309,7 @@ img.story-left, img.story-right {
     padding-right: 30px;
   }
 
-  /* line 1715, ../sass/style.scss */
+  /* line 1716, ../sass/style.scss */
   .footer {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -2318,7 +2319,7 @@ img.story-left, img.story-right {
     margin-top: 15px;
   }
 
-  /* line 1721, ../sass/style.scss */
+  /* line 1722, ../sass/style.scss */
   .copyright .main-wrapper {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -2327,17 +2328,17 @@ img.story-left, img.story-right {
     width: 755px;
   }
 
-  /* line 1728, ../sass/style.scss */
+  /* line 1729, ../sass/style.scss */
   .stories {
     height: 250px;
   }
-  /* line 1731, ../sass/style.scss */
+  /* line 1732, ../sass/style.scss */
   .stories:hover {
     box-shadow: 0px 250px rgba(237, 79, 46, 0.9) inset;
     cursor: hand;
   }
 
-  /* line 1736, ../sass/style.scss */
+  /* line 1737, ../sass/style.scss */
   .thequiver, .maggieskidmarket, .casaguau {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -2346,7 +2347,7 @@ img.story-left, img.story-right {
     box-shadow: 0px 250px rgba(42, 61, 75, 0.5) inset;
     height: 250px;
   }
-  /* line 1741, ../sass/style.scss */
+  /* line 1742, ../sass/style.scss */
   .thequiver h2, .maggieskidmarket h2, .casaguau h2 {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -2356,42 +2357,44 @@ img.story-left, img.story-right {
     padding-bottom: 10px;
     font-size: 52px;
   }
-  /* line 1748, ../sass/style.scss */
+  /* line 1749, ../sass/style.scss */
   .thequiver h5, .maggieskidmarket h5, .casaguau h5 {
     font-size: 18px;
   }
 
-  /* line 1753, ../sass/style.scss */
+  /* line 1754, ../sass/style.scss */
   h6.story-page {
-    margin: 60px auto 40px;
+    margin: 50px auto 40px;
+    font-size: 11px;
+    padding-bottom: 25px;
   }
 
-  /* line 1757, ../sass/style.scss */
+  /* line 1760, ../sass/style.scss */
   .maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
     margin-top: 110px;
   }
-  /* line 1760, ../sass/style.scss */
+  /* line 1763, ../sass/style.scss */
   .maggieskidmarket-banner h3, .casaguau-banner h3, .thequiver-banner h3 {
     margin-top: 100px;
   }
-  /* line 1764, ../sass/style.scss */
+  /* line 1767, ../sass/style.scss */
   .maggieskidmarket-banner p, .casaguau-banner p, .thequiver-banner p {
     margin-bottom: 100px;
   }
 
-  /* line 1771, ../sass/style.scss */
+  /* line 1774, ../sass/style.scss */
   .story-page p.story-ingress {
     padding-bottom: 80px;
     font-size: 26px;
     line-height: 40px;
   }
-  /* line 1777, ../sass/style.scss */
+  /* line 1780, ../sass/style.scss */
   .story-page p.quote {
     padding-top: 60px;
     margin-left: 50px;
     margin-right: 60px;
   }
-  /* line 1783, ../sass/style.scss */
+  /* line 1786, ../sass/style.scss */
   .story-page .story-content {
     display: inline;
     float: left;
@@ -2401,12 +2404,12 @@ img.story-left, img.story-right {
   }
 }
 @media screen and (max-width: 920px) {
-  /* line 1794, ../sass/style.scss */
+  /* line 1797, ../sass/style.scss */
   .main-navigation li {
     display: none;
   }
 
-  /* line 1798, ../sass/style.scss */
+  /* line 1801, ../sass/style.scss */
   .mobile-menu {
     display: inline-block;
     font-size: 14px;
@@ -2416,80 +2419,80 @@ img.story-left, img.story-right {
     right: 150px;
     top: 30px;
   }
-  /* line 1806, ../sass/style.scss */
+  /* line 1809, ../sass/style.scss */
   .mobile-menu a {
     color: #ed4f2e;
   }
-  /* line 1807, ../sass/style.scss */
+  /* line 1810, ../sass/style.scss */
   .mobile-menu a:hover {
     color: #323232;
   }
-  /* line 1810, ../sass/style.scss */
+  /* line 1813, ../sass/style.scss */
   .mobile-menu .hamburger {
     width: 15px;
     margin-right: 7px;
   }
 
-  /* line 1818, ../sass/style.scss */
+  /* line 1821, ../sass/style.scss */
   .footer {
     padding-right: 0;
     padding-bottom: 50px;
     margin-top: 10px;
   }
-  /* line 1823, ../sass/style.scss */
+  /* line 1826, ../sass/style.scss */
   .footer img {
     width: 50px;
     top: 23px;
   }
-  /* line 1828, ../sass/style.scss */
+  /* line 1831, ../sass/style.scss */
   .footer .text-link {
     display: none;
   }
 
-  /* line 1833, ../sass/style.scss */
+  /* line 1836, ../sass/style.scss */
   li.twitter-last {
     padding-right: 0px;
   }
 
-  /* line 1837, ../sass/style.scss */
+  /* line 1840, ../sass/style.scss */
   .copyright {
     padding: 30px 0px;
   }
-  /* line 1840, ../sass/style.scss */
+  /* line 1843, ../sass/style.scss */
   .copyright .main-wrapper {
     width: 92.5%;
   }
 
-  /* line 1847, ../sass/style.scss */
+  /* line 1850, ../sass/style.scss */
   .maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
     margin-top: 90px;
   }
 
-  /* line 1851, ../sass/style.scss */
+  /* line 1854, ../sass/style.scss */
   h6.story-page {
     margin: 60px auto 40px;
   }
 
-  /* line 1855, ../sass/style.scss */
+  /* line 1858, ../sass/style.scss */
   br.responsive-br {
     display: none;
   }
 
-  /* line 1861, ../sass/style.scss */
+  /* line 1864, ../sass/style.scss */
   .story-page p.story-ingress {
     padding-bottom: 80px;
     font-size: 26px;
     line-height: 40px;
     width: 85%;
   }
-  /* line 1868, ../sass/style.scss */
+  /* line 1871, ../sass/style.scss */
   .story-page p.quote {
     text-align: center;
     width: 50%;
     padding-top: 60px;
     margin: 0 25%;
   }
-  /* line 1875, ../sass/style.scss */
+  /* line 1878, ../sass/style.scss */
   .story-page .story-content {
     padding-top: 60px;
     width: 80%;
@@ -2497,7 +2500,7 @@ img.story-left, img.story-right {
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 1885, ../sass/style.scss */
+  /* line 1888, ../sass/style.scss */
   #maincolumn, #sidebar {
     display: inline;
     float: left;
@@ -2506,7 +2509,7 @@ img.story-left, img.story-right {
     margin-bottom: 1em;
   }
 
-  /* line 1890, ../sass/style.scss */
+  /* line 1893, ../sass/style.scss */
   .reason {
     display: inline;
     float: left;
@@ -2514,7 +2517,7 @@ img.story-left, img.story-right {
     margin: 0 1.09649%;
   }
 
-  /* line 1894, ../sass/style.scss */
+  /* line 1897, ../sass/style.scss */
   .story-page p.story-ingress {
     padding-bottom: 80px;
     font-size: 21px;
@@ -2523,16 +2526,16 @@ img.story-left, img.story-right {
   }
 }
 @media screen and (max-width: 640px) {
-  /* line 1907, ../sass/style.scss */
+  /* line 1910, ../sass/style.scss */
   .copyright {
     height: 80px;
   }
-  /* line 1910, ../sass/style.scss */
+  /* line 1913, ../sass/style.scss */
   .copyright .main-wrapper {
     width: 100%!important;
     margin-top: -10px;
   }
-  /* line 1915, ../sass/style.scss */
+  /* line 1918, ../sass/style.scss */
   .copyright p.left, .copyright p.right {
     font-size: 11px;
     line-height: 18px;
@@ -2541,104 +2544,115 @@ img.story-left, img.story-right {
     width: 100%;
     margin-bottom: 0px;
   }
-  /* line 1923, ../sass/style.scss */
+  /* line 1926, ../sass/style.scss */
   .copyright p.left a, .copyright p.right a {
     color: #323232;
   }
 
-  /* line 1927, ../sass/style.scss */
+  /* line 1930, ../sass/style.scss */
   .maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
     width: 100%;
     margin-top: 0px;
   }
-  /* line 1931, ../sass/style.scss */
+  /* line 1934, ../sass/style.scss */
   .maggieskidmarket-banner.left, .casaguau-banner.left, .thequiver-banner.left {
     margin-top: 80px;
   }
-  /* line 1935, ../sass/style.scss */
+  /* line 1938, ../sass/style.scss */
   .maggieskidmarket-banner h3, .casaguau-banner h3, .thequiver-banner h3 {
-    margin-top: 70px;
-    font-size: 36px;
+    margin-top: 50px;
+    font-size: 32px;
     margin-bottom: 5px;
   }
-  /* line 1941, ../sass/style.scss */
+  /* line 1944, ../sass/style.scss */
   .maggieskidmarket-banner p, .casaguau-banner p, .thequiver-banner p {
-    margin-bottom: 70px;
-    font-size: 18px;
+    margin-bottom: 50px;
+    font-size: 16px;
   }
 
-  /* line 1947, ../sass/style.scss */
+  /* line 1950, ../sass/style.scss */
   .story-page p.quote {
     width: 90%;
     margin: 0 5%;
   }
+
+  /* line 1955, ../sass/style.scss */
+  .story-page .story-content {
+    width: 90%;
+    margin: 0 5%;
+  }
+  /* line 1959, ../sass/style.scss */
+  .story-page .story-content p {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 @media screen and (max-width: 470px) {
-  /* line 1957, ../sass/style.scss */
+  /* line 1970, ../sass/style.scss */
   .main-navigation {
     height: 50px;
     padding: 16px 0;
   }
-  /* line 1961, ../sass/style.scss */
+  /* line 1974, ../sass/style.scss */
   .main-navigation .get-started {
     display: none;
   }
-  /* line 1965, ../sass/style.scss */
+  /* line 1978, ../sass/style.scss */
   .main-navigation .logo {
     width: 109px;
     margin-left: 15px;
   }
 
-  /* line 1970, ../sass/style.scss */
+  /* line 1983, ../sass/style.scss */
   .mobile-menu {
     right: 15px;
     top: 18px;
   }
 
-  /* line 1974, ../sass/style.scss */
+  /* line 1987, ../sass/style.scss */
   .menu-cover li a {
     font-size: 24px;
     line-height: 40px;
   }
-  /* line 1979, ../sass/style.scss */
+  /* line 1992, ../sass/style.scss */
   .menu-cover .logo {
     width: 109px;
     margin-left: 15px;
     top: 20px;
   }
-  /* line 1985, ../sass/style.scss */
+  /* line 1998, ../sass/style.scss */
   .menu-cover .mobile-menu-close {
     right: 15px;
     top: 23px;
   }
-  /* line 1990, ../sass/style.scss */
+  /* line 2003, ../sass/style.scss */
   .menu-cover .menu-cover-text {
     height: 300px;
   }
 
-  /* line 1998, ../sass/style.scss */
+  /* line 2011, ../sass/style.scss */
   .button-bottom a.button.ghost {
     font-size: 12px;
     padding: 10px 16px;
   }
 
-  /* line 2004, ../sass/style.scss */
+  /* line 2017, ../sass/style.scss */
   .mobile-menu {
     right: 15px;
     top: 18px;
   }
 
-  /* line 2009, ../sass/style.scss */
+  /* line 2022, ../sass/style.scss */
   .stories {
     height: 140px;
   }
-  /* line 2012, ../sass/style.scss */
+  /* line 2025, ../sass/style.scss */
   .stories:hover {
     box-shadow: 0px 140px rgba(237, 79, 46, 0.9) inset;
     cursor: hand;
   }
 
-  /* line 2017, ../sass/style.scss */
+  /* line 2030, ../sass/style.scss */
   .thequiver, .maggieskidmarket, .casaguau {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -2647,7 +2661,7 @@ img.story-left, img.story-right {
     box-shadow: 0px 140px rgba(42, 61, 75, 0.5) inset;
     height: 140px;
   }
-  /* line 2022, ../sass/style.scss */
+  /* line 2035, ../sass/style.scss */
   .thequiver h2, .maggieskidmarket h2, .casaguau h2 {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -2658,16 +2672,16 @@ img.story-left, img.story-right {
     font-size: 32px;
     line-height: 36px;
   }
-  /* line 2030, ../sass/style.scss */
+  /* line 2043, ../sass/style.scss */
   .thequiver h5, .maggieskidmarket h5, .casaguau h5 {
     font-size: 16px;
   }
 
-  /* line 2037, ../sass/style.scss */
+  /* line 2050, ../sass/style.scss */
   .footer {
     padding-bottom: 40px;
   }
-  /* line 2040, ../sass/style.scss */
+  /* line 2053, ../sass/style.scss */
   .footer img {
     width: 40px;
     top: 17px;

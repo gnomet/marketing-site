@@ -1318,6 +1318,7 @@ p.pricing-faq {
   a {
     @include Gibson-Regular;
     font-size: 16px;
+	line-height: 24px;
   }
 
   p.story-ingress {
@@ -1751,7 +1752,9 @@ img.story-left, img.story-right {
 	}
 	
 	h6.story-page {
-		margin: 60px auto 40px;
+		margin: 50px auto 40px;
+		font-size: 11px;
+		padding-bottom: 25px;
 	}
 	
 	.maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
@@ -1933,20 +1936,30 @@ img.story-left, img.story-right {
 		}
 		
 		h3 {
-			margin-top: 70px;
-			font-size: 36px;
+			margin-top: 50px;
+			font-size: 32px;
 			margin-bottom: 5px;
 		}
 		
 		p {
-			margin-bottom: 70px;
-			font-size: 18px;
+			margin-bottom: 50px;
+			font-size: 16px;
 		}
 	}
 	
 	.story-page p.quote {
 		width: 90%;
 		margin: 0 5%;
+	}
+	
+	.story-page .story-content {
+		width: 90%;
+		margin: 0 5%;
+	
+		p {
+			font-size: 16px;
+			line-height: 24px;
+		}
 	}
 }
 
