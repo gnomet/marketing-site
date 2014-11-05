@@ -1327,7 +1327,7 @@ p.pricing-faq {
     margin: 0 auto;
     padding-bottom: 130px;
   }
-
+  
   p.quote {
     @include column(1);
     font-family: Gibson-LightIt;
@@ -1343,8 +1343,7 @@ p.pricing-faq {
   .story-content {
     @include column(4);
     padding-top: 105px;
-    max-width: 650px;
-    width: 95%;
+    width: 650px;
 
     p {
       padding-bottom: 30px;
@@ -1750,10 +1749,46 @@ img.story-left, img.story-right {
 			font-size: 18px;
 		}
 	}
+	
+	h6.story-page {
+		margin: 60px auto 40px;
+	}
+	
+	.maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
+		margin-top: 110px;
+		
+		h3 {
+			margin-top: 100px;
+		}
+		
+		p {
+			margin-bottom: 100px;
+		}
+	}
+	
+	.story-page {
+		
+		p.story-ingress	{
+			padding-bottom: 80px;
+			font-size: 26px;
+			line-height: 40px;
+		}
+		
+		p.quote {
+			padding-top: 60px;
+			margin-left: 50px;
+			margin-right: 60px;
+		}
+		
+		.story-content {
+			@include column(7);
+			padding-top: 60px;
+		}
+	}
 }
 
 @media screen and (max-width: 920px) { // Fade the main nav
-
+	
 	// NAVIGATION
 
 	.main-navigation li {
@@ -1806,18 +1841,63 @@ img.story-left, img.story-right {
 			width: 92.5%;
 		}
 	}
+	
+	// STORIES PAGE
+	
+	.maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
+		margin-top: 90px;
+	}
+	
+	h6.story-page {
+		margin: 60px auto 40px;
+	}
+	
+	br.responsive-br {
+		display: none;
+	}
+	
+	.story-page {
+		
+		p.story-ingress	{
+			padding-bottom: 80px;
+			font-size: 26px;
+			line-height: 40px;
+			width: 85%;
+		}
+		
+		p.quote {
+			text-align: center;
+			width: 50%;
+			padding-top: 60px;
+			margin: 0 25%;
+		}
+		
+		.story-content {
+			padding-top: 60px;
+			width: 80%;
+			margin: 0 10%;
+		}
+	}
 }
 
 @media screen and (max-width: 768px) {
-
-	.main-wrapper { max-width: 90%; }
-
+	
 	#maincolumn, #sidebar {
 		@include column(12);
 		margin-bottom: 1em;
 	}
 
 	.reason { @include column(12); }
+	
+	.story-page {
+		
+		p.story-ingress	{
+			padding-bottom: 80px;
+			font-size: 21px;
+			line-height: 34px;
+			width: 85%;
+		}
+	}
 }
 
 @media screen and (max-width: 640px) {
@@ -1842,8 +1922,31 @@ img.story-left, img.story-right {
 			
 			a { color: $grey; }
 		}
+	}
+	
+	.maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
+		width: 100%;
+		margin-top: 0px;
 		
+		&.left {
+			margin-top: 80px;
+		}
 		
+		h3 {
+			margin-top: 70px;
+			font-size: 36px;
+			margin-bottom: 5px;
+		}
+		
+		p {
+			margin-bottom: 70px;
+			font-size: 18px;
+		}
+	}
+	
+	.story-page p.quote {
+		width: 90%;
+		margin: 0 5%;
 	}
 }
 
