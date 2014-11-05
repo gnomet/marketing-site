@@ -1,0 +1,17 @@
+{
+  "name": "marketing-site",
+  "version": "0.0.0",
+  "description": "marketing-site ==============",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sharetribe/marketing-site.git"
+  },
+  "author": "Sharetribe",
+  "homepage": "https://www.sharetribe.com",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
