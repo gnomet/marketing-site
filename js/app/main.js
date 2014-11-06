@@ -19,6 +19,50 @@ define(
         // Initialize trial to DOM element
         Trial.initializeTrialForm($('.trial'));
 
+        var initializeStickySidebar = function(el) {
+          var win = window;
+
+          var getScrollTop = function() {
+            var prop = 'pageYOffset',
+                method = 'scrollTop';
+            return win ? (prop in win) ? win[ prop ] :
+              win.document.documentElement[ method ] :
+            win.document.body[ method ];
+          };
+
+          var getScrollBottom = function(scrollTop) {
+            var viewportHeight = $(window).height();
+            var bodyHeight = $('#navigation-wrapper').height();
+            return bodyHeight - viewportHeight - scrollTop;
+          };
+
+          var bottomStop = $('.trial').height() + $('.footer').outerHeight(true) + $('.copyright').outerHeight(true) - el.outerHeight() + 100;
+          debugger;
+
+          var handleScroll = function() {
+            var scrollTop = getScrollTop();
+            var scrollBottom = getScrollBottom(scrollTop);
+
+            if(scrollTop < 240) {
+              el.addClass('sticky-sidebar-off-top');
+              el.removeClass('sticky-sidebar-on');
+              el.removeClass('sticky-sidebar-off-bottom');
+            } else if (scrollBottom < bottomStop) {
+              el.removeClass('sticky-sidebar-off-top');
+              el.removeClass('sticky-sidebar-on');
+              el.addClass('sticky-sidebar-off-bottom');
+            } else {
+              el.removeClass('sticky-sidebar-off-top');
+              el.addClass('sticky-sidebar-on');
+              el.removeClass('sticky-sidebar-off-bottom');
+            }
+          };
+
+          handleScroll();
+          $(window).scroll(handleScroll);
+        };
+
+        initializeStickySidebar($('#side-navigation'));
       }
 
 
