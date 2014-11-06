@@ -91,14 +91,24 @@ a {
 	display: none;
 }
 
+.sidenav-sticky-wrapper {
+  width: 260px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  &.fixedsticky-container {
+    position: absolute;
+  }
+}
+
 .sidenav {
-  margin-top: 60px;
+  top: 40px;
   width: 180px;
-  float: left;
   position: relative;
-  margin-right: 80px;
   opacity: 0.5;
-  @include transition(all, 0.5s, ease-in-out);
+  @include transition(opacity, 0.5s, ease-in-out);
 
   &:hover { opacity: 1.0; }
 
@@ -121,9 +131,16 @@ a {
       color: $orange;
     }
   }
-  
+  &.fixedsticky-off {
+    position: absolute;
+  }
+
   &.text-page {
-	  margin-right: 40px;
+    margin-right: 40px;
+  }
+
+  &.fixedsticky-on {
+    margin-top: 105px;
   }
 }
 
@@ -224,11 +241,13 @@ h6 {
     position: relative;
     top: -120px;
   }
-  
+
   &.text-page {
-	  max-width: 950px;
-	  width: 90%;
+    max-width: 950px;
+    width: 90%;
   }
+
+  position: relative;
 }
 
 .logo {
@@ -240,7 +259,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
 
 .subpage-content {
   width: 865px;
-  float: left;
+  margin-left: 260px;
   height: auto;
   margin-top: 28px;
   margin-bottom: 65px;
@@ -252,7 +271,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
     font-size: 16px;
     line-height: 26px;
     padding-bottom: 65px;
-    
+
     h3 {
 	    margin-top: 50px;
     }
@@ -704,7 +723,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
     width: 720px;
     height: 67px;
     margin: 0 auto;
-    
+
     &.email { width: 520px!important; }
 
     /* mouse over next-button fix */
@@ -756,7 +775,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
       margin-bottom: 40px;
       @include Gibson-Light;
       letter-spacing: 1px;
-      
+
 
       &:hover { border-bottom: solid 3px $blue; background: $white; cursor: hand;}
 
@@ -800,9 +819,9 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
       color: $light-grey;
       @include Gibson-Light;
     }
-    
+
     /* Hover */
-    
+
      input:hover::-webkit-input-placeholder {
       color: $blue;
       @include Gibson-Light;
@@ -822,9 +841,9 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
       color: $blue;
       @include Gibson-Light;
     }
-    
+
     /* Focus */
-    
+
     input:focus::-webkit-input-placeholder {
 	    @include transition(all, 0.2s, ease-in-out);
         color: $orange;
@@ -911,9 +930,9 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
         background-position: 100%;
         background-size: 20px;
       }
-    }    
+    }
   }
-  
+
   .chosen-container {
     &.chosen-container-active, &:hover, &:focus {
       background-color: $bg-grey;
@@ -1342,7 +1361,7 @@ p.pricing-faq {
     margin: 0 auto;
     padding-bottom: 130px;
   }
-  
+
   p.quote {
     @include column(1);
     font-family: Gibson-LightIt;
@@ -1524,20 +1543,20 @@ img.story-left, img.story-right {
 		}
 
 		img.office-big { margin: 110px auto 0.5%; width: 100% }
-		
+
 		img.office-left, img.office-middle {
 			margin-right: 0.1%;
 		}
-		
+
 		.small-images {
 			width: 100%;
-			
+
 			img.office-left, img.office-middle, img.office-right {
 				width: 32.9%;
 			}
 		}
-		
-		
+
+
 	}
 }
 
@@ -1679,27 +1698,27 @@ img.story-left, img.story-right {
 /////////////////////
 
 @media screen and (min-width: 1920px) {
-	
+
 	// HERO HOMEPAGE
 
 	.hero-text { left: 15%; }
-	
-	
+
+
 	// STORIES HOMEPAGE
-	
+
 	.stories {
 		height: 400px;
-			
+
 			&:hover {
 				box-shadow: 0px 400px rgba(237, 79, 46, 0.9) inset; cursor: hand;
 			}
 	}
-	
+
 	.thequiver, .maggieskidmarket, .casaguau {
 		@include transition(all, 0.2s, ease-in-out);
 		box-shadow: 0px 400px rgba(42, 61, 75, 0.5) inset;
 		height: 400px;
-		
+
 		h2 {
 			@include transition(all, 0.2s, ease-in-out);
 		    padding-top: 150px;
@@ -1707,7 +1726,7 @@ img.story-left, img.story-right {
 			font-size: 72px;
 		}
 	}
-	
+
 	br.responsive-br-1920 {
 		display: none;
 	}
@@ -1738,110 +1757,110 @@ img.story-left, img.story-right {
 
 		.menu-items { margin-right: 25px; margin-top: -17px; @include transition(all, 0.2s, ease-in-out);}
 	}
-	
+
 	// FOOTER
-	
+
 	.footer li {
 		@include transition(all, 0.2s, ease-in-out);
 		padding-right: 30px;
 	}
-	
+
 	.footer {
 		@include transition(all, 0.2s, ease-in-out);
 		padding-bottom: 75px;
 		margin-top: 15px;
 	}
-	
+
 	.copyright .main-wrapper {
 		@include transition(all, 0.2s, ease-in-out);
 		width: 755px;
 	}
-	
+
 	// STORIES PAGE
-	
+
 	.stories {
 		height: 250px;
-			
+
 			&:hover {
 				box-shadow: 0px 250px rgba(237, 79, 46, 0.9) inset; cursor: hand;
 			}
 	}
-	
+
 	.thequiver, .maggieskidmarket, .casaguau {
 		@include transition(all, 0.2s, ease-in-out);
 		box-shadow: 0px 250px rgba(42, 61, 75, 0.5) inset;
 		height: 250px;
-		
+
 		h2 {
 			@include transition(all, 0.2s, ease-in-out);
 		    padding-top: 80px;
 			padding-bottom: 10px;
 			font-size: 52px;
 		}
-		
-		h5 { 
+
+		h5 {
 			font-size: 18px;
 		}
 	}
-	
+
 	h6.story-page {
 		margin: 50px auto 40px;
 		font-size: 11px;
 		padding-bottom: 25px;
 	}
-	
+
 	.maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
 		margin-top: 110px;
-		
+
 		h3 {
 			margin-top: 100px;
 		}
-		
+
 		p {
 			margin-bottom: 100px;
 		}
 	}
-	
+
 	.story-page {
-		
+
 		p.story-ingress	{
 			padding-bottom: 70px;
 			font-size: 26px;
 			line-height: 40px;
 		}
-		
+
 		p.quote {
 			padding-top: 60px;
 			margin-left: 50px;
 			margin-right: 60px;
 		}
-		
+
 		.story-content {
 			@include column(7);
 			padding-top: 60px;
 		}
 	}
-	
+
 	.main-wrapper {
-		
+
 		&.text-page {
 			max-width: 850px;
 		}
 	}
-	
+
 	.subpage-content {
-		
+
 		&.text-only {
 			max-width: 620px;
-			margin-top: 20px;		
+			margin-top: 20px;
 		}
 	}
-	
+
 	.sidenav.text-page {
 		margin-right: 0px;
 		margin-top: 20px;
 	}
-	
+
 	.subpage-header h2 {
 		font-size: 42px;
 		padding: 70px 0;
@@ -1849,21 +1868,21 @@ img.story-left, img.story-right {
 		margin-left: 5%;
 		margin-right: 5%;
 	}
-	
+
 	br.responsive-br-1150 {
 		display: none;
 	}
-	
-	
+
+
 	// ABOUT US COVER
-	
+
 	.about-cover-text-container {
-		
+
 		h1 {
 			font-size: 60px;
 			line-height: 66px;
 		}
-		
+
 		p {
 			font-size: 21px;
 			line-height: 34px;
@@ -1871,47 +1890,47 @@ img.story-left, img.story-right {
 			width: 95%;
 		}
 	}
-	
+
 	.about-cover-text {
 		height: 75%;
 	}
-	
+
 	// CONTACT US
-	
+
 	.contact-text {
 		width: 80%;
 	}
-	
+
 	#googlemaps {
 		top: 75px;
 	}
-	
-	
+
+
 	// TRIAL FORM
-	
+
 	.trial {
-		
+
 		@include transition(all, 0.2s, ease-in-out);
 		height: 420px;
-		
+
 		h3 {
 			font-size: 34px;
-			line-height: 42px;	
+			line-height: 42px;
 		}
-		
+
 		h4 {
 			font-size: 20px;
 		}
-		
+
 		.center-v {
 			padding: 85px 0;
-			
+
 		}
 	}
 }
 
 @media screen and (max-width: 920px) { // Fade the main nav
-	
+
 	// NAVIGATION
 
 	.main-navigation li {
@@ -1935,101 +1954,101 @@ img.story-left, img.story-right {
 			margin-right: 7px;
 		}
 	}
-	
+
 	// FOOTER
-	
+
 	.footer {
 		padding-right: 0;
 		padding-bottom: 50px;
 		margin-top: 10px;
-		
+
 		img {
 			width: 50px;
 			top: 23px;
 		}
-		
+
 		.text-link {
 			display: none;
 		}
 	}
-	
+
 	li.twitter-last {
 			padding-right: 0px;
 	}
-	
+
 	.copyright {
 		padding: 30px 0px;
-	
+
 		.main-wrapper {
 			width: 92.5%;
 		}
 	}
-	
+
 	// STORIES PAGE
-	
+
 	.maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
 		margin-top: 90px;
 	}
-	
+
 	h6.story-page {
 		margin: 60px auto 40px;
 	}
-	
+
 	br.responsive-br {
 		display: none;
 	}
-	
+
 	.story-page {
-		
+
 		p.story-ingress	{
 			padding-bottom: 80px;
 			font-size: 26px;
 			line-height: 40px;
 			width: 85%;
 		}
-		
+
 		p.quote {
 			text-align: center;
 			width: 50%;
 			padding-top: 60px;
 			margin: 0 25%;
 		}
-		
+
 		.story-content {
 			padding-top: 60px;
 			width: 85%;
 			margin: 0 7.5%;
 		}
 	}
-	
+
 	.sidenav {
-		
+
 		&.text-page {
 			display: none;
 		}
 	}
-	
+
 	.subpage-content {
-		
+
 		&.text-only {
 			max-width: 85%;
 			margin-left: 7.5%;
-			margin-right: 7.5%;		
+			margin-right: 7.5%;
 		}
 	}
 }
 
 @media screen and (max-width: 768px) {
-	
+
 	#maincolumn, #sidebar {
 		@include column(12);
 		margin-bottom: 1em;
 	}
 
 	.reason { @include column(12); }
-	
+
 	.story-page {
-		
+
 		p.story-ingress	{
 			padding-bottom: 80px;
 			font-size: 21px;
@@ -2037,54 +2056,54 @@ img.story-left, img.story-right {
 			width: 85%;
 		}
 	}
-	
+
 	.about-cover h6 {
 		margin: 50px auto 30px;
 		font-size: 11px;
 		padding-bottom: 25px;
 	}
-	
-	
+
+
 	// CONTACT
-		
+
 	.contact-text {
-		
+
 		h1 {
 			font-size: 52px;
 			margin-bottom: 15px;
 		}
 	}
-	
+
 	.contact img.castle {
 		margin-bottom: 20px;
 	}
-	
-	
+
+
 	// TRIAL FORM
-	
+
 	.trial {
-		
+
 		height: 320px;
-		
+
 		h3 {
 			font-size: 26px;
-			line-height: 42px;	
+			line-height: 42px;
 			margin-bottom: 20px;
 		}
-		
+
 		h4 {
 			font-size: 16px;
 			margin-bottom: 5px;
 		}
-		
+
 		.center-v {
-			padding: 55px 0;	
+			padding: 55px 0;
 		}
-		
+
 		.trial-info {
 			font-size: 14px;
 		}
-		
+
 		.trial-field.email {
 			width: 420px!important;
 		}
@@ -2092,16 +2111,16 @@ img.story-left, img.story-right {
 }
 
 @media screen and (max-width: 640px) {
-	
+
 	.main-wrapper {
-		
+
 		&.text-page {
 			width: 100%;
 		}
-		
+
 		&.about-us p {
 			font-size: 16px;
-			line-height: 24px;		
+			line-height: 24px;
 		}
 	}
 
@@ -2109,12 +2128,12 @@ img.story-left, img.story-right {
 
 	.copyright {
 		height: 80px;
-		
+
 		.main-wrapper {
 			width: 100%!important;
 			margin-top: -10px;
 		}
-		
+
 		p.left, p.right  {
 			font-size: 11px;
 			line-height: 18px;
@@ -2122,97 +2141,96 @@ img.story-left, img.story-right {
 			display: block;
 			width: 100%;
 			margin-bottom: 0px;
-			
+
 			a { color: $grey; }
 		}
 	}
-	
-	
+
 	// STORIES
-	
+
 	.maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
 		width: 100%;
 		margin-top: 0px;
-		
+
 		&.left {
 			margin-top: 80px;
 		}
-		
+
 		h3 {
 			margin-top: 50px;
 			font-size: 32px;
 			margin-bottom: 5px;
 		}
-		
+
 		p {
 			margin-bottom: 50px;
 			font-size: 16px;
 		}
 	}
-	
+
 	.story-page p.quote {
 		width: 90%;
 		margin: 0 5%;
 	}
-	
+
 	.story-page .story-content {
 		width: 90%;
 		margin: 0 5%;
-	
+
 		p {
 			font-size: 16px;
 			line-height: 24px;
 		}
 	}
-	
-	
+
+
 	// TERMS & PRIVACY
-	
+
 	.subpage-content {
-		
+
 		&.text-only {
 			max-width: 90%;
 			margin-left: 5%;
-			margin-right: 5%;		
+			margin-right: 5%;
 		}
 	}
-	
-	
+
+
 	// ABOUT US
-	
+
 	.about-cover-text-container {
-		
+
 		h1 {
 			font-size: 32px;
 			line-height: 40px;
 		}
-		
+
 		p {
 			font-size: 17px;
 			line-height: 24px;
 			width: 100%;
 		}
 	}
-	
+
 	.about-cover-text {
 		height: 100%;
 	}
-	
+
 	.contact-text {
-		
+
 		h1 {
 			font-size: 36px;
 		}
 	}
-	
+
 	.trial .trial-field.email {
 			width: 90%!important;
 		}
-	
+
 }
 
 @media screen and (max-width: 470px) {
-	
+
 	// NAVIGATION
 
 	.main-navigation {
@@ -2263,23 +2281,23 @@ img.story-left, img.story-right {
 	}
 
 	.mobile-menu { right: 15px; top: 18px; }
-	
-	
+
+
 	// STORIES PAGE
-	
+
 	.stories {
 		height: 140px;
-			
+
 			&:hover {
 				box-shadow: 0px 140px rgba(237, 79, 46, 0.9) inset; cursor: hand;
 			}
 	}
-	
+
 	.thequiver, .maggieskidmarket, .casaguau {
 		@include transition(all, 0.2s, ease-in-out);
 		box-shadow: 0px 140px rgba(42, 61, 75, 0.5) inset;
 		height: 140px;
-		
+
 		h2 {
 			@include transition(all, 0.2s, ease-in-out);
 		    padding-top: 40px;
@@ -2287,122 +2305,89 @@ img.story-left, img.story-right {
 			font-size: 32px;
 			line-height: 36px;
 		}
-		
-		h5 { 
+
+		h5 {
 			font-size: 16px;
 		}
 	}
-	
 	img.story-left, img.story-right {
 		width: 100%;
 	}
-	
+
 	// FOOTER
-	
+
 	.footer {
 		padding-bottom: 40px;
-		
+
 		img {
 			width: 40px;
 			top: 17px;
 		}
 	}
-	
+
 	.subpage-header h2 {
 		font-size: 28px;
 		line-height: 38px;
 		padding: 35px 0;
 	}
-	
-	
-	// CONTACT 
-	
+
+
+	// CONTACT
+
 	.contact-text {
 		width: 90%;
 		height: 300px;
-		
+
 		h1 {
 			font-size: 32px;
 			margin-bottom: 10px;
 		}
-		
+
 		p {
 			font-size: 14px;
 			line-height: 21px;
 		}
-		
+
 		p.osoite {
 			font-size: 12px;
 		}
 	}
-	
+
 	#googlemaps {
 		top: 50px;
 	}
-	
+
 	.contact img.castle {
 		margin-bottom: 10px;
 	}
-	
-	
+
+
 	// TRIAL FORM
-	
+
 	.trial {
-		
+
 		height: 320px;
-		
+
 		h3 {
 			font-size: 26px;
-			line-height: 42px;	
+			line-height: 42px;
 			margin-bottom: 20px;
 		}
-		
+
 		h4 {
 			font-size: 16px;
 			margin-bottom: 5px;
 		}
-		
+
 		.center-v {
-			padding: 55px 0;	
+			padding: 55px 0;
 		}
-		
+
 		.trial-info {
 			font-size: 14px;
 		}
-		
+
 	}
 
-	
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
