@@ -121,6 +121,10 @@ a {
       color: $orange;
     }
   }
+  
+  &.text-page {
+	  margin-right: 40px;
+  }
 }
 
 /////////////////
@@ -220,6 +224,11 @@ h6 {
     position: relative;
     top: -120px;
   }
+  
+  &.text-page {
+	  max-width: 950px;
+	  width: 90%;
+  }
 }
 
 .logo {
@@ -238,12 +247,17 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
 
   &.text-only {
     margin-top: 58px;
-    width: 700px;
+    max-width: 700px;
+    width: 100%;
     font-size: 16px;
     line-height: 26px;
     padding-bottom: 65px;
+    
+    h3 {
+	    margin-top: 50px;
+    }
 
-    p { margin-bottom: 26px; }
+    p { margin-bottom: 30px; }
 
     p.updated {
       font-size: 14px;
@@ -1426,7 +1440,7 @@ img.story-left, img.story-right {
   width: 100%;
   height: 93%;
   color: $white;
-  background-color: rgba(237, 79, 46, 0.9);
+  background-color: rgba(237, 79, 46, 0.92);
   background-blend-mode: multiply;
 
   img.castle {
@@ -1492,7 +1506,8 @@ img.story-left, img.story-right {
 		margin: 110px auto;
 
 		p, h4 {
-			width: 600px;
+			max-width: 600px;
+			width: 90%;
 			margin: 0 auto;
 		}
 
@@ -1508,7 +1523,21 @@ img.story-left, img.story-right {
 			margin: 90px auto 30px;
 		}
 
-		img { margin: 110px auto 20px; width: 100% }
+		img.office-big { margin: 110px auto 0.5%; width: 100% }
+		
+		img.office-left, img.office-middle {
+			margin-right: 0.1%;
+		}
+		
+		.small-images {
+			width: 100%;
+			
+			img.office-left, img.office-middle, img.office-right {
+				width: 32.9%;
+			}
+		}
+		
+		
 	}
 }
 
@@ -1678,6 +1707,10 @@ img.story-left, img.story-right {
 			font-size: 72px;
 		}
 	}
+	
+	br.responsive-br-1920 {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 1150px) {
@@ -1772,7 +1805,7 @@ img.story-left, img.story-right {
 	.story-page {
 		
 		p.story-ingress	{
-			padding-bottom: 80px;
+			padding-bottom: 70px;
 			font-size: 26px;
 			line-height: 40px;
 		}
@@ -1786,6 +1819,93 @@ img.story-left, img.story-right {
 		.story-content {
 			@include column(7);
 			padding-top: 60px;
+		}
+	}
+	
+	.main-wrapper {
+		
+		&.text-page {
+			max-width: 850px;
+		}
+	}
+	
+	.subpage-content {
+		
+		&.text-only {
+			max-width: 620px;
+			margin-top: 20px;		
+		}
+	}
+	
+	.sidenav.text-page {
+		margin-right: 0px;
+		margin-top: 20px;
+	}
+	
+	.subpage-header h2 {
+		font-size: 42px;
+		padding: 70px 0;
+		max-width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	
+	br.responsive-br-1150 {
+		display: none;
+	}
+	
+	
+	// ABOUT US COVER
+	
+	.about-cover-text-container {
+		
+		h1 {
+			font-size: 60px;
+			line-height: 66px;
+		}
+		
+		p {
+			font-size: 21px;
+			line-height: 34px;
+			max-width: 500px;
+			width: 95%;
+		}
+	}
+	
+	.about-cover-text {
+		height: 75%;
+	}
+	
+	// CONTACT US
+	
+	.contact-text {
+		width: 80%;
+	}
+	
+	#googlemaps {
+		top: 75px;
+	}
+	
+	
+	// TRIAL FORM
+	
+	.trial {
+		
+		@include transition(all, 0.2s, ease-in-out);
+		height: 420px;
+		
+		h3 {
+			font-size: 34px;
+			line-height: 42px;	
+		}
+		
+		h4 {
+			font-size: 20px;
+		}
+		
+		.center-v {
+			padding: 85px 0;
+			
 		}
 	}
 }
@@ -1877,8 +1997,24 @@ img.story-left, img.story-right {
 		
 		.story-content {
 			padding-top: 60px;
-			width: 80%;
-			margin: 0 10%;
+			width: 85%;
+			margin: 0 7.5%;
+		}
+	}
+	
+	.sidenav {
+		
+		&.text-page {
+			display: none;
+		}
+	}
+	
+	.subpage-content {
+		
+		&.text-only {
+			max-width: 85%;
+			margin-left: 7.5%;
+			margin-right: 7.5%;		
 		}
 	}
 }
@@ -1901,9 +2037,73 @@ img.story-left, img.story-right {
 			width: 85%;
 		}
 	}
+	
+	.about-cover h6 {
+		margin: 50px auto 30px;
+		font-size: 11px;
+		padding-bottom: 25px;
+	}
+	
+	
+	// CONTACT
+		
+	.contact-text {
+		
+		h1 {
+			font-size: 52px;
+			margin-bottom: 15px;
+		}
+	}
+	
+	.contact img.castle {
+		margin-bottom: 20px;
+	}
+	
+	
+	// TRIAL FORM
+	
+	.trial {
+		
+		height: 320px;
+		
+		h3 {
+			font-size: 26px;
+			line-height: 42px;	
+			margin-bottom: 20px;
+		}
+		
+		h4 {
+			font-size: 16px;
+			margin-bottom: 5px;
+		}
+		
+		.center-v {
+			padding: 55px 0;	
+		}
+		
+		.trial-info {
+			font-size: 14px;
+		}
+		
+		.trial-field.email {
+			width: 420px!important;
+		}
+	}
 }
 
 @media screen and (max-width: 640px) {
+	
+	.main-wrapper {
+		
+		&.text-page {
+			width: 100%;
+		}
+		
+		&.about-us p {
+			font-size: 16px;
+			line-height: 24px;		
+		}
+	}
 
 	// FOOTER
 
@@ -1926,6 +2126,9 @@ img.story-left, img.story-right {
 			a { color: $grey; }
 		}
 	}
+	
+	
+	// STORIES
 	
 	.maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
 		width: 100%;
@@ -1961,6 +2164,51 @@ img.story-left, img.story-right {
 			line-height: 24px;
 		}
 	}
+	
+	
+	// TERMS & PRIVACY
+	
+	.subpage-content {
+		
+		&.text-only {
+			max-width: 90%;
+			margin-left: 5%;
+			margin-right: 5%;		
+		}
+	}
+	
+	
+	// ABOUT US
+	
+	.about-cover-text-container {
+		
+		h1 {
+			font-size: 32px;
+			line-height: 40px;
+		}
+		
+		p {
+			font-size: 17px;
+			line-height: 24px;
+			width: 100%;
+		}
+	}
+	
+	.about-cover-text {
+		height: 100%;
+	}
+	
+	.contact-text {
+		
+		h1 {
+			font-size: 36px;
+		}
+	}
+	
+	.trial .trial-field.email {
+			width: 90%!important;
+		}
+	
 }
 
 @media screen and (max-width: 470px) {
@@ -2045,6 +2293,10 @@ img.story-left, img.story-right {
 		}
 	}
 	
+	img.story-left, img.story-right {
+		width: 100%;
+	}
+	
 	// FOOTER
 	
 	.footer {
@@ -2054,6 +2306,70 @@ img.story-left, img.story-right {
 			width: 40px;
 			top: 17px;
 		}
+	}
+	
+	.subpage-header h2 {
+		font-size: 28px;
+		line-height: 38px;
+		padding: 35px 0;
+	}
+	
+	
+	// CONTACT 
+	
+	.contact-text {
+		width: 90%;
+		height: 300px;
+		
+		h1 {
+			font-size: 32px;
+			margin-bottom: 10px;
+		}
+		
+		p {
+			font-size: 14px;
+			line-height: 21px;
+		}
+		
+		p.osoite {
+			font-size: 12px;
+		}
+	}
+	
+	#googlemaps {
+		top: 50px;
+	}
+	
+	.contact img.castle {
+		margin-bottom: 10px;
+	}
+	
+	
+	// TRIAL FORM
+	
+	.trial {
+		
+		height: 320px;
+		
+		h3 {
+			font-size: 26px;
+			line-height: 42px;	
+			margin-bottom: 20px;
+		}
+		
+		h4 {
+			font-size: 16px;
+			margin-bottom: 5px;
+		}
+		
+		.center-v {
+			padding: 55px 0;	
+		}
+		
+		.trial-info {
+			font-size: 14px;
+		}
+		
 	}
 
 	
