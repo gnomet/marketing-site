@@ -10,6 +10,7 @@ define(
       init: function() {
         //initialize sticky nav bar
         $('#main-navigation').fixedsticky();
+        $('#side-navigation').fixedsticky();
 
         //Initialize smooth-scroll plugin
         SmoothScroll.init({speed: 300});
