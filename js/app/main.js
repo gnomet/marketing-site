@@ -4,8 +4,9 @@ define(
   , "swiper"
   , "odometer"
   , "app/trial"
+  , "app/scrollspy"
   ]
-  , function ($, SmoothScroll, Swiper, Odometer, Trial) {
+  , function ($, SmoothScroll, Swiper, Odometer, Trial, scrollSpy) {
     return {
       init: function() {
         //initialize sticky nav bar
@@ -22,6 +23,8 @@ define(
         // Initialize trial to DOM element
         Trial.initializeTrialForm($('.trial'));
 
+        debugger;
+        scrollSpy.init($('#side-navigation a'));
       }
 
 
