@@ -1,7 +1,78 @@
-@import url(../css/reset.css);
+/* Border-box fix*/
 @import url(../vendor/fixedsticky/fixedsticky.css);
 @import url(../vendor/chosen/chosen.css);
 @import url(../fonts/MyFontsWebfontsKit.css);
+/* line 3, ../sass/_reset.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 6, ../sass/_reset.scss */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 29, ../sass/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 39, ../sass/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 42, ../sass/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 45, ../sass/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 48, ../sass/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 52, ../sass/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 56, ../sass/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 /* line 4, ../vendor/odometer/sass/_mixins.sass */
 .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
   display: -moz-inline-stack;
