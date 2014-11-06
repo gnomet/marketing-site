@@ -15,7 +15,7 @@ define(
         sidenav.data(window.FixedSticky.keys.scrollOffset, 105);
 
         //Initialize smooth-scroll plugin
-        SmoothScroll.init({speed: 300});
+        SmoothScroll.init({speed: 300, offset: 105});
 
         this.initializeOdometers();
 
