@@ -102,10 +102,10 @@ a {
 }
 
 .sidenav {
-  top: 40px;
+  top: 145px;
   width: 180px;
-  position: relative;
   opacity: 0.5;
+  margin-top: 40px;
   @include transition(opacity, 0.5s, ease-in-out);
 
   &:hover { opacity: 1.0; }
@@ -129,17 +129,13 @@ a {
       color: $orange;
     }
   }
-  
-  &.fixedsticky-off {
-    position: absolute;
-  }
 
   &.text-page {
     margin-right: 40px;
   }
 
   &.fixedsticky-on {
-    margin-top: 105px;
+    margin-top: 0px;
   }
 }
 

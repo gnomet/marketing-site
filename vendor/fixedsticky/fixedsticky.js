@@ -32,8 +32,7 @@
 		keys: {
 			offset: 'fixedStickyOffset',
 			position: 'fixedStickyPosition',
-			top: 'fixedStickyTopWhileOn',
-			scrollOffset: 'sharetribeFixedStickyScrollOffset'
+			top: 'fixedStickyTopWhileOn'
 		},
 		tests: {
 			sticky: featureTest( 'position', 'sticky' ),
@@ -59,7 +58,7 @@
 			var $el = $( el ),
 				height = $el.outerHeight(),
 				initialOffset = $el.data( S.keys.offset ),
-				scroll = S.getScrollTop() + ($el.data( S.keys.scrollOffset ) || 0),
+				scroll = S.getScrollTop(),
 				isAlreadyOn = $el.is( '.' + S.classes.active ),
 				toggle = function( turnOn ) {
 					$el[ turnOn ? 'addClass' : 'removeClass' ]( S.classes.active )

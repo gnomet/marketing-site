@@ -13,7 +13,6 @@ define(
         $('#main-navigation').fixedsticky();
         var sidenav = $('#side-navigation');
         sidenav.fixedsticky();
-        sidenav.data(window.FixedSticky.keys.scrollOffset, 105);
 
         //Initialize smooth-scroll plugin
         SmoothScroll.init({

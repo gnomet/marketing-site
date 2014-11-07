@@ -190,17 +190,17 @@ define(
             this.validateLocalization($container.find('.localization-field')) &&
             this.validateEmail($container.find('.email-field'))) {
 
-            var data_hash =   {
-                        'admin_email': $field.find('input').val()
-                      , 'marketplace_country': $field.find('.country').val()
-                      , 'marketplace_language': $field.find('.language').val()
-                      , 'admin_first_name': $field.find('.firstname').val()
-                      , 'admin_last_name': $field.find('.lastname').val()
-                      , 'admin_password': $field.find('.password').val()
-                      //, 'confirm_password': $field.find('.confirm').val()
-                      , 'marketplace_type': $field.find('.marketplace-type').val()
-                      , 'marketplace_name': $field.find('.marketplace-name').val()
-                    }
+            var data_hash = {
+              'admin_email': $container.find('.email').val()
+              , 'marketplace_country': $container.find('.country').val()
+              , 'marketplace_language': $container.find('.language').val()
+              , 'admin_first_name': $container.find('.firstname').val()
+              , 'admin_last_name': $container.find('.lastname').val()
+              , 'admin_password': $container.find('.password').val()
+              , 'marketplace_type': $container.find('.marketplace-type').val()
+              , 'marketplace_name': $container.find('.marketplace-name').val()
+            };
+
 
             alert('AJAX call with data: ' + JSON.stringify(data_hash));
             // // TODO AJAX call: send data and redirect to response url
