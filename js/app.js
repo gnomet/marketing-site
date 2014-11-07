@@ -9,6 +9,7 @@ requirejs.config(
       , 'sticky':       '../vendor/fixedsticky/fixedsticky'
       , 'swiper':       '../vendor/Swiper/dist/idangerous.swiper.min'
       , 'text':         '../vendor/text'
+      , 'lodash':     '../vendor/lodash'
       }
   , shim:
     { sticky:
