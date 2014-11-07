@@ -149,9 +149,16 @@ define(
 
       var scrollPos = $(window).scrollTop();
 
-      var activeGroup = _.findLast(groups, function(items, top) {
-        return Number(top) < scrollPos + scrollBuffer;
-      }) || _.first(_.toArray(groups));
+      var activeGroup = _.reduce(groups, function(memo, group, top) {
+        top = Number(top);
+        var prevTop = memo.top || 0;
+        if (top < scrollPos + scrollBuffer && top > prevTop) {
+          return {group: group, top: top};
+        } else {
+          return memo;
+        }
+      }, {}).group || _.first(_.toArray(groups));
+
       selectGroup(activeGroup);
     };
 
