@@ -1,31 +1,61 @@
 // http://jsfiddle.net/mekwall/up4nu/
 define(
   [ "jquery"
+  , "lodash"
   ]
-  , function ($) {
-    var items; // array of {id, linkEl, anchorEl}
+  , function ($, _) {
+    var scrollBuffer = 145;
+    var items; // array of {id, linkEl, anchorEl, top}
+    var groups; // items grouped by 'top'
 
-    var init = function(links) {
-      debugger;
-      items = links.toArray().map(function(domNode) {
+    var selectGroup = (function() {
+      var selectedGroup; // keep reference to prev selected group in the closure
+      var selectedItem;
+
+      return function(newGroup) {
+        if (!newGroup || selectedGroup === newGroup) { return; }
+
+        if (selectedGroup) {
+          _.first(selectedGroup).linkEl.parent().removeClass('current');
+          _.first(newGroup).linkEl.parent().addClass('current');
+        } else {
+          _.first(newGroup).linkEl.parent().addClass('current');
+        }
+        selectedGroup = newGroup;
+      };
+    })();
+
+    var handleScroll = function() {
+      var scrollPos = $(window).scrollTop();
+
+      var activeGroup = _.findLast(groups, function(items, top) {
+        return Number(top) < scrollPos + scrollBuffer;
+      });
+
+      selectGroup(activeGroup);
+    };
+
+    var createItems = function(linkDomNodes) {
+      return linkDomNodes.map(function(domNode) {
         var linkEl = $(domNode);
         var id = linkEl.attr('href');
         return {
           id: id,
           linkEl: linkEl,
-          anchorEl: $(id)
+          anchorEl: $(id),
+          top: $(id).offset().top
         };
       });
+    };
 
-      $(window).scroll(function() {
-        // Get container scroll position
-        var fromTop = $(this).scrollTop();
+    var init = function(links) {
+      items = createItems(links.toArray());
+      groups = _.groupBy(items, 'top');
 
-        var current = items.filter(function(item) {
-          return item.anchorEl.offset().top < fromTop;
-        }).pop();
-        console.log(current);
-      });
+
+      $(window).scroll(handleScroll);
+      // Run once on startup
+      handleScroll();
     };
 
     return {
