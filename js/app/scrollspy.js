@@ -11,13 +11,114 @@ define(
     var selectedGroup; // keep reference to prev selected group in the closure
     var selectedItem;
 
-    var renderSelectedEl = function(oldItem, newItem) {
-      if (oldItem) {
-        oldItem.linkEl.parent().removeClass('current');
+    var createQueue = function(timeout) {
+      var q = [];
+      var running = false;
+
+      var run = function() {
+        var fn = q.shift();
+
+        if(fn) {
+          fn.apply();
+          running = true;
+          setTimeout(run, timeout);
+        } else {
+          running = false;
+        }
+      };
+
+      var purge = function() {
+        if (!running) {
+          run();
+        }
+      };
+
+      var add = function(fn) {
+        q.push(fn);
+      };
+
+      return function(fn) {
+        add(fn);
+        purge();
+      };
+    };
+
+    var queue = createQueue(100);
+
+    var elementsToChange = function(oldGroup, oldItem, newGroup, newItem) {
+      var result;
+
+      if (!oldItem) {
+        result = [newItem];
+      } else {
+
+        var resultObject = _.reduce(items, function(memo, item) {
+          var captured = memo.oldFound && memo.newFound;
+          var capture = memo.oldFound !== memo.newFound;
+
+          if (oldItem === item) {
+            memo.oldFound = true;
+            memo.reverse = memo.newFound;
+            memo.items.push(item);
+          } else if (newItem === item) {
+            memo.newFound = true;
+            memo.items.push(item);
+          } else if (capture) {
+            memo.items.push(item);
+          }
+
+          return memo;
+
+        }, {oldFound: false, newFound: false, reverse: false, items: []});
+
+        if(resultObject.reverse) {
+          resultObject.items.reverse();
+        }
+
+        result = resultObject.items;
       }
 
-      newItem.linkEl.parent().addClass('current');
+      return result;
     };
+
+    // xs = ['a', 'b', 'c', 'd']
+    // partition(2, xs) => [['a', 'b'], ['b', 'c'], ['c', 'd']]
+    var partition = function(n, xs) {
+      return _.range(xs.length - (n - 1)).map(function(i) { return xs.slice(i, i + n); });
+    };
+
+    var renderSelectedEl = function(oldGroup, oldItem, newGroup, newItem) {
+      var elements = elementsToChange(oldGroup, oldItem, newGroup, newItem);
+      var first = _.first(elements);
+      var middle = _.initial(_.rest(elements));
+      var middleRenderFns = _(middle)
+        .map(function(midItem) {
+          var addFn = function() {
+            midItem.linkEl.parent().addClass('current');
+          };
+          var removeFn = function() {
+            midItem.linkEl.parent().removeClass('current');
+          };
+          return [addFn, removeFn];
+        })
+        .flatten()
+        .value();
+      var last = _.last(elements);
+
+      if(elements.length === 1) {
+        first.linkEl.parent().addClass('current');
+      } else {
+        partition(2, elements).map(function(itemPair) {
+          var item1 = itemPair[0];
+          var item2 = itemPair[1];
+
+          return function() {
+            item1.linkEl.parent().removeClass('current');
+            item2.linkEl.parent().addClass('current');
+          };
+        }).forEach(queue);
+      }
+   };
 
     var selectItem = function(href) {
       var newItem = _.find(items, {href: href});
@@ -25,7 +126,9 @@ define(
         return Number(top) === newItem.top;
       });
 
-      renderSelectedEl(selectedItem, newItem);
+      if (newItem === selectedItem) { return; }
+
+      renderSelectedEl(selectedGroup, selectedItem, newGroup, newItem);
 
       selectedGroup = newGroup;
       selectedItem = newItem;
@@ -35,7 +138,7 @@ define(
       if (!newGroup || selectedGroup === newGroup) { return; }
       var newItem = _.first(newGroup);
 
-      renderSelectedEl(selectedItem, newItem);
+      renderSelectedEl(selectedGroup, selectedItem, newGroup, newItem);
 
       selectedGroup = newGroup;
       selectedItem = newItem;
