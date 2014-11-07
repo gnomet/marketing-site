@@ -11,17 +11,21 @@ define(
     var selectedGroup; // keep reference to prev selected group in the closure
     var selectedItem;
 
+    var renderSelectedEl = function(oldItem, newItem) {
+      if (oldItem) {
+        oldItem.linkEl.parent().removeClass('current');
+      }
+
+      newItem.linkEl.parent().addClass('current');
+    };
+
     var selectItem = function(href) {
       var newItem = _.find(items, {href: href});
       var newGroup = _.find(groups, function(__, top) {
         return Number(top) === newItem.top;
       });
 
-      if (selectedItem) {
-        selectedItem.linkEl.parent().removeClass('current');
-      }
-
-      newItem.linkEl.parent().addClass('current');
+      renderSelectedEl(selectedItem, newItem);
 
       selectedGroup = newGroup;
       selectedItem = newItem;
@@ -29,15 +33,12 @@ define(
 
     var selectGroup = function(newGroup) {
       if (!newGroup || selectedGroup === newGroup) { return; }
+      var newItem = _.first(newGroup);
 
-      if (selectedItem) {
-        selectedItem.linkEl.parent().removeClass('current');
-      }
-
-      _.first(newGroup).linkEl.parent().addClass('current');
+      renderSelectedEl(selectedItem, newItem);
 
       selectedGroup = newGroup;
-      selectedItem = _.first(newGroup);
+      selectedItem = newItem;
     };
 
     var handleScroll = function() {
@@ -47,8 +48,7 @@ define(
 
       var activeGroup = _.findLast(groups, function(items, top) {
         return Number(top) < scrollPos + scrollBuffer;
-      });
-
+      }) || _.first(_.toArray(groups));
       selectGroup(activeGroup);
     };
 
