@@ -131,6 +131,7 @@ a {
       color: $orange;
     }
   }
+  
   &.fixedsticky-off {
     position: absolute;
   }
@@ -270,6 +271,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
     width: 100%;
     font-size: 16px;
     line-height: 26px;
+    padding-top: 40px;
     padding-bottom: 65px;
 
     h3 {
@@ -1093,7 +1095,6 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
 .grey-background {
   width: 100%;
   background: #F6F7F7;
-  height: 1100px;
 }
 
 .pricing-page h2 {
@@ -1128,7 +1129,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
   float: left;
   margin-right: 0;
   width: 25%;
-  height: 595px;
+  height: 570px;
   background: $white;
   text-align: center;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -1149,7 +1150,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
   &.featured-table {
     border: 1px solid $orange;
     margin-top: -25px;
-    height: 620px;
+    height: 595px;
 
     h4 {
       padding-top: 70px;
@@ -1188,6 +1189,8 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
 
   .hundred {
     vertical-align: middle;
+    right: -6px;
+    position: relative;
   }
 
   .pro .hundred {
@@ -1757,6 +1760,18 @@ img.story-left, img.story-right {
 
 		.menu-items { margin-right: 25px; margin-top: -17px; @include transition(all, 0.2s, ease-in-out);}
 	}
+	
+	.sidenav-sticky-wrapper {
+  	
+  	  &.features-sidenav {
+    	  display:none;
+  	  }
+	}
+	
+	.subpage-content.features-page {
+  	margin-left: auto;
+  	margin-right: auto;
+	}
 
 	// FOOTER
 
@@ -1775,6 +1790,14 @@ img.story-left, img.story-right {
 		@include transition(all, 0.2s, ease-in-out);
 		width: 755px;
 	}
+
+  p.pricing-faq {
+  	width: 29%;
+  }
+
+  p.pricing-faq.second, p.pricing-faq.third {
+    margin-left: 2%;
+  }
 
 	// STORIES PAGE
 
@@ -1849,16 +1872,13 @@ img.story-left, img.story-right {
 	}
 
 	.subpage-content {
+  	
+  	margin-left: 190px;
 
 		&.text-only {
 			max-width: 620px;
 			margin-top: 20px;
 		}
-	}
-
-	.sidenav.text-page {
-		margin-right: 0px;
-		margin-top: 20px;
 	}
 
 	.subpage-header h2 {
@@ -2021,13 +2041,6 @@ img.story-left, img.story-right {
 		}
 	}
 
-	.sidenav {
-
-		&.text-page {
-			display: none;
-		}
-	}
-
 	.subpage-content {
 
 		&.text-only {
@@ -2035,6 +2048,10 @@ img.story-left, img.story-right {
 			margin-left: 7.5%;
 			margin-right: 7.5%;
 		}
+	}
+	
+	.sidenav-sticky-wrapper {
+  	display: none;
 	}
 }
 
@@ -2108,6 +2125,15 @@ img.story-left, img.story-right {
 			width: 420px!important;
 		}
 	}
+	
+	p.pricing-faq {
+  	width: 90%;
+  	margin-bottom: 30px;
+	}
+	
+	p.pricing-faq.second, p.pricing-faq.third {
+    margin-left: 40px;
+  }
 }
 
 @media screen and (max-width: 640px) {
