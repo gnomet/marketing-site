@@ -103,19 +103,20 @@ define(
 
       , emailQuestion: function($field) {
         if(this.validateEmail($field)) {
-          // // TODO AJAX call!
-          // var request = $.ajax(
-          //   {
-          //     type: "GET"
-          //   , url: 'http://catch.lvh.me:3000/int_api/check_email_availability'
-          //   , data: {email: $field.find('input').val()}
-          //   , dataType: 'json'
-          // });
 
-          //request.done(function( response ) {
-            var response = {email: 'blaa@blaa.fi', available: true}
+          var request = $.ajax(
+            {
+              type: "GET"
+            , url: 'http://catch.lvh.me:3000/int_api/check_email_availability'
+            , data: {email: $field.find('input').val()}
+            , dataType: 'json'
+          });
+
+          request.done(function( response ) {
+            //var response = {email: 'blaa@blaa.fi', available: true}
             //alert("We got response" + JSON.stringify(response.available));
             var emailAvailable = response.available;
+            debugger;
 
             if(emailAvailable) {
               trial["validated_email"] = $field.find('input').val();
@@ -147,12 +148,11 @@ define(
               newSlide.append();
               this.trialSwiper.swipeNext();
             }
-          //}.bind(this));
+          }.bind(this));
 
-          // request.fail(function( jqXHR, textStatus ) {
-          //   //TODO
-          //   alert( "Request for email availability failed: " + textStatus );
-          // }.bind(this));
+          request.fail(function( jqXHR, textStatus ) {
+            alert( "Check for email availability failed: " + textStatus + "Please contact us.");
+          }.bind(this));
         } else {
           $field.parents('.trial').find('.trial-info').addClass('warning').text( "Sorry, we need a valid email address.")
         }
@@ -209,12 +209,12 @@ define(
                 type: "POST"
               , url: 'http://catch.lvh.me:3000/int_api/create_trial_marketplace'
               , data: data_hash
-              , dataType: 'application/json'
+              , dataType: 'json'
             });
 
             request.done(function( response ) {
-              //TODO some redirects according to response
-              alert(response);
+              //alert("New marketplace created: " + response.marketplace_url + "\n Redirecting there next.");
+              window.location.href = response.marketplace_url
             }.bind(this));
 
             request.fail(function( jqXHR, textStatus ) {
