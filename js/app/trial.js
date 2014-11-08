@@ -107,7 +107,7 @@ define(
           var request = $.ajax(
             {
               type: "GET"
-            , url: 'http://catch.lvh.me:3000/int_api/check_email_availability'
+            , url: 'http://catch.sharetri.be/int_api/check_email_availability'
             , data: {email: $field.find('input').val()}
             , dataType: 'json'
           });
@@ -116,7 +116,6 @@ define(
             //var response = {email: 'blaa@blaa.fi', available: true}
             //alert("We got response" + JSON.stringify(response.available));
             var emailAvailable = response.available;
-            debugger;
 
             if(emailAvailable) {
               trial["validated_email"] = $field.find('input').val();
@@ -207,7 +206,7 @@ define(
             var request = $.ajax(
               {
                 type: "POST"
-              , url: 'http://catch.lvh.me:3000/int_api/create_trial_marketplace'
+              , url: 'http://catch.sharetri.be/int_api/create_trial_marketplace'
               , data: data_hash
               , dataType: 'json'
             });
