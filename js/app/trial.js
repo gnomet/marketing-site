@@ -118,6 +118,7 @@ define(
             var emailAvailable = response.available;
 
             if(emailAvailable) {
+              trial["validated_email"] = $field.find('input').val();
               var $container = $field.parents('.swiper-container');
               // country & language
               this.trialSwiper.createSlide(localizationHtml).append();
@@ -191,7 +192,7 @@ define(
             this.validateEmail($container.find('.email-field'))) {
 
             var data_hash = {
-              'admin_email': $container.find('.email').val()
+              'admin_email': trial["validated_email"]
               , 'marketplace_country': $container.find('.country').val()
               , 'marketplace_language': $container.find('.language').val()
               , 'admin_first_name': $container.find('.firstname').val()
@@ -201,27 +202,15 @@ define(
               , 'marketplace_name': $container.find('.marketplace-name').val()
             };
 
+            //alert('AJAX call with data: ' + JSON.stringify(data_hash));
 
-            alert('AJAX call with data: ' + JSON.stringify(data_hash));
-            // // TODO AJAX call: send data and redirect to response url
-            // var request = $.ajax(
-            //   {
-            //     type: "POST"
-            //   , url: 'http://catch.lvh.me:3000/int_api/create_trial_marketplace'
-            //   , data:
-            //         {
-            //             'admin_email': $field.find('input').val()
-            //           , 'marketplace_country': $field.find('.country').val()
-            //           , 'marketplace_language': $field.find('.language').val()
-            //           , 'admin_first_name': $field.find('.firstname').val()
-            //           , 'admin_last_name': $field.find('.lastname').val()
-            //           , 'admin_password': $field.find('.password').val()
-            //           //, 'confirm_password': $field.find('.confirm').val()
-            //           , 'marketplace_type': $field.find('.marketplace-type').val()
-            //           , 'marketplace_name': $field.find('.marketplace-name').val()
-            //         }
-            //   , dataType: 'application/json'
-            // });
+            var request = $.ajax(
+              {
+                type: "POST"
+              , url: 'http://catch.lvh.me:3000/int_api/create_trial_marketplace'
+              , data: data_hash
+              , dataType: 'application/json'
+            });
 
             request.done(function( response ) {
               //TODO some redirects according to response

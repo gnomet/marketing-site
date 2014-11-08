@@ -32,7 +32,6 @@ define(
         // Initialize trial to DOM element
         Trial.initializeTrialForm($('.trial'));
 
-        debugger;
         scrollSpy.init($('#side-navigation a'));
       }
 
