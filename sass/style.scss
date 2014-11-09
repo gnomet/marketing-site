@@ -413,6 +413,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
     letter-spacing: 0.00em;
     padding: 90px 0;
     color: $white;
+    margin-left: 40px;
   }
 
 }
@@ -579,6 +580,15 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
   height: 800px;
   background: $bg-grey;
   position: relative;
+}
+
+img.svg.creditcards {
+  height: 35px;
+  margin-left: 30px;
+}
+
+img.svg.paypal {
+  margin-top: 30px;
 }
 
 
@@ -1097,7 +1107,8 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
 }
 
 .pricing-top {
-  width: 1140px;
+  max-width: 1140px;
+  width: 98%;
   margin: 0 auto;
   height: 450px;
 }
@@ -1147,7 +1158,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
     height: 595px;
 
     h4 {
-      padding-top: 70px;
+      padding-top: 69px;
       font-size: 24px;
       padding-bottom: 24px;
     }
@@ -1156,10 +1167,11 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
 
     img {
       position: relative;
-      left: 90px;
       width: 30px;
       height: auto;
       margin-bottom: -42px;
+      float: right;
+      right: 40px;
     }
   }
 
@@ -1174,6 +1186,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
     height: 72px;
     overflow-y: hidden;
   }
+  
   .superscript {
     @include Gibson-Light;
     font-size: 42px;
@@ -1276,6 +1289,7 @@ p.footnotes {
   font-size: 12px;
   line-height: 24px;
   margin-left: 40px;
+  width: 90%;
 }
 
 hr.pricing {
@@ -1727,6 +1741,7 @@ img.story-left, img.story-right {
 	br.responsive-br-1920 {
 		display: none;
 	}
+	
 }
 
 @media screen and (max-width: 1150px) {
@@ -1941,6 +1956,69 @@ img.story-left, img.story-right {
 
 		}
 	}
+	
+	// PRICING
+
+  .pricing-table {
+    width: 24%;
+    
+    li {
+      font-size: 14px;
+      line-height: 26px;
+    }
+    
+    .price {
+      font-size: 60px;
+    }
+    
+    &.first-table {
+      margin-left: 2%;
+    }
+  }
+  
+  .enterprise-table {
+    width: 96%;
+    text-align: middle;
+    margin-left: 2%;
+    
+    p {
+      padding-left: 40px;
+      padding-top: 10px;
+      width: 95%;
+      line-height: 24px;
+    }
+    
+    a {
+      padding-left: 5px;
+    }
+  }
+  
+  .pricing-icon {
+    width: 160px;
+    margin-right: 30px;
+  }
+  
+}
+
+@media screen and (max-width: 1000px) {
+  
+  .pricing-page h2 {
+    margin-top: 0px;
+    width: 90%;
+    text-align: center;
+    margin: 0 5%;
+    padding: 70px 0 90px;
+  }
+  
+  .pricing-icon {
+    width: 30%;
+    margin-right: 2%;
+    margin-top: -40px;
+  }
+  
+  .main-wrapper.pricing {
+    top: -60px;
+  }
 }
 
 @media screen and (max-width: 920px) { // Fade the main nav
@@ -2047,6 +2125,25 @@ img.story-left, img.story-right {
 	.sidenav-sticky-wrapper {
   	display: none;
 	}
+	
+  .pricing-table {
+    width: 48%;
+    
+    &.featured-table {
+      margin-top: -1px;
+      height: 571px;
+      border-radius: 0 5px 0 0;
+      
+      h4 {
+        padding-top: 44px;
+      }
+    }
+    
+    &.table {
+      margin-left: 2%;
+    }
+  }
+  
 }
 
 @media screen and (max-width: 768px) {
@@ -2120,6 +2217,8 @@ img.story-left, img.story-right {
 		}
 	}
 	
+	// PRICING PAGE
+	
 	p.pricing-faq {
   	width: 90%;
   	margin-bottom: 30px;
@@ -2142,7 +2241,24 @@ img.story-left, img.story-right {
 			font-size: 16px;
 			line-height: 24px;
 		}
+		
+		&.pricing {
+  		width: 95%;
+		}
 	}
+	
+	p.footnotes {
+  	margin-left: 20px;
+	}
+	
+	hr.pricing {
+  	margin: 40px 20px;
+	}
+	
+	.pricing-faqs {
+    margin-left: -20px;
+    width: 95%;
+  }
 
 	// FOOTER
 
@@ -2246,6 +2362,26 @@ img.story-left, img.story-right {
 	.trial .trial-field.email {
 			width: 90%!important;
 		}
+		
+  .pricing-table {
+    width: 96%;
+    
+    &.first-table {
+      border-radius: 5px 5px 0 0;
+    }
+    
+    &.featured-table {
+      border-radius: 0;
+      margin-left: 2%;
+    }
+    
+    &.last-table {
+      border-left: none;
+      margin-left: 2%;
+    }
+  }	
+  
+  
 
 }
 
