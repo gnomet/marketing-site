@@ -19,7 +19,17 @@ body {
 
 strong { @include Gibson-Regular; }
 
-.clear { clear: both; }
+.clear { 
+  clear: both; 
+  
+  &.feature {
+    clear: both;
+  }  
+  
+  &.feature-both {
+    clear: none;
+  }
+}
 
 a {
   @include transition(color, 0.1s, ease-in-out);
@@ -253,7 +263,8 @@ h6 {
 a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
 
 .subpage-content {
-  width: 865px;
+  max-width: 865px;
+  width: 95%;
   margin-left: 260px;
   height: auto;
   margin-top: 28px;
@@ -1077,17 +1088,18 @@ img.svg.paypal {
     letter-spacing: 0.02em;
   }
 
-  &.one-third { @include column(4); width: 225px; margin-right: 90px; margin-left: 0; }
+  &.one-third { float: left; width: 225px; margin-right: 90px; margin-left: 0; }
 
-  &.one-third-last { @include column(4); width: 225px; margin-right: 0; margin-left: 0; }
+  &.one-third-last { float: left; width: 225px; margin-right: 0; margin-left: 0; }
 
-  &.one-half { @include column(6); width: 384px; margin-right: 90px; margin-left: 0; }
+  &.one-half { float: left; width: 384px; margin-right: 90px; margin-left: 0; }
 
-  &.one-half-last { @include column(6); width: 383px; margin-right: 0; margin-left: 0; }
+  &.one-half-last { float: left; width: 383px; margin-right: 0; margin-left: 0; }
 
-  &.two-thirds { @include column(8); width: 540px; margin-right: 90px; margin-left: 0; }
+  &.two-thirds { float: left; width: 540px; margin-right: 90px; margin-left: 0; }
 
-  &.two-thirds-last { @include column(8); width: 550px; margin-right: 0; margin-left: 0; }
+  &.two-thirds-last { float: left; width: 550px; margin-right: 0; margin-left: 0; }
+  
 }
 
 
@@ -2019,6 +2031,23 @@ img.story-left, img.story-right {
   .main-wrapper.pricing {
     top: -60px;
   }
+  
+  .feature {
+
+    &.one-third { width: 30%; margin-right: 5%; }
+  
+    &.one-third-last { width: 30%; margin-right: 0; }
+  
+    &.one-half { float: left; width: 45%; margin-right: 5%; margin-left: 0; }
+  
+    &.one-half-last { float: left; width: 45%; margin-right: 0; margin-left: 0; }
+  
+    &.two-thirds { float: left; width: 60%; margin-right: 5%; margin-left: 0; }
+  
+    &.two-thirds-last { float: left; width: 60%; margin-right: 0; margin-left: 0; }
+  
+  }
+
 }
 
 @media screen and (max-width: 920px) { // Fade the main nav
@@ -2227,6 +2256,44 @@ img.story-left, img.story-right {
 	p.pricing-faq.second, p.pricing-faq.third {
     margin-left: 40px;
   }
+  
+  
+  // FEATURES PAGE
+  
+  .clear { 
+    
+    &.feature {
+      clear: none;
+    }  
+    
+    &.feature-both {
+      clear: both;
+    }
+  }
+    
+  .feature {
+    
+    margin: 0 auto;
+    padding-bottom: 30px;
+
+    &.one-third { width: 40%; margin-left: 5%; }
+  
+    &.one-third-last { width: 40%; margin-left: 5%; margin-right: 5%; }
+  
+    &.one-half { width: 40%; margin-left: 5%; }
+  
+    &.one-half-last { width: 40%; margin-left: 5%; }
+  
+    &.two-thirds { clear: both; margin-top: -70px; }
+  
+    &.two-thirds-last { clear: both; display: none;}
+  }
+  
+  div#marketing {
+    width: 90%;
+  }
+  
+  
 }
 
 @media screen and (max-width: 640px) {
@@ -2247,19 +2314,6 @@ img.story-left, img.story-right {
 		}
 	}
 	
-	p.footnotes {
-  	margin-left: 20px;
-	}
-	
-	hr.pricing {
-  	margin: 40px 20px;
-	}
-	
-	.pricing-faqs {
-    margin-left: -20px;
-    width: 95%;
-  }
-
 	// FOOTER
 
 	.copyright {
@@ -2363,6 +2417,9 @@ img.story-left, img.story-right {
 			width: 90%!important;
 		}
 		
+		
+	// PRICING	
+		
   .pricing-table {
     width: 96%;
     
@@ -2381,6 +2438,39 @@ img.story-left, img.story-right {
     }
   }	
   
+  p.footnotes {
+  	margin-left: 20px;
+	}
+	
+	hr.pricing {
+  	margin: 40px 20px;
+	}
+	
+	.pricing-faqs {
+    margin-left: -20px;
+    width: 95%;
+  }
+  
+  .pricing-icon {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  
+  
+  .feature {
+    
+    margin: 0 auto;
+    padding-bottom: 10px;
+
+    &.one-third { width: 90%; }
+  
+    &.one-third-last { width: 90%; }
+  
+    &.one-half { width: 90%; }
+  
+    &.one-half-last { width: 90%; }
+      
+  }
   
 
 }
@@ -2544,6 +2634,5 @@ img.story-left, img.story-right {
 		}
 
 	}
-
 
 }
