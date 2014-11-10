@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     compass: {
       dist: {
         options: {
-          sassDir: 'dist/sass',
+          sassDir: 'src/sass',
           cssDir: 'dist/css',
           environment: 'production'
         }
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
       dist: {
         expand: true,
         cwd: 'src/',
-        src: '**',
+        src: ['**',  '!**/sass/**', '!**/css/**'],
         dest: 'dist/'
       }
     },
@@ -50,6 +50,7 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('build', [
+    'clean',
     'copy',
     'compass:dist'
   ]);
