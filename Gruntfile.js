@@ -18,6 +18,9 @@ module.exports = function(grunt) {
         }
       }
     },
+    clean: {
+      dist: ['dist/']
+    },
     copy: {
       dist: {
         expand: true,
@@ -43,8 +46,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify']);
-
+  grunt.registerTask('build', [
+    'copy',
+    'compass:dist'
+  ]);
 };
