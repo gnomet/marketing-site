@@ -6,15 +6,38 @@ module.exports = function(grunt) {
     compass: {
       dist: {
         options: {
-          sassDir: 'sass',
-          cssDir: 'css'
+          sassDir: 'src/sass',
+          cssDir: 'dist/css',
+          environment: 'production'
         }
+      },
+      dev: {
+        options: {
+          sassDir: 'src/sass',
+          cssDir: 'src/css'
+        }
+      }
+    },
+    clean: {
+      dist: ['dist/']
+    },
+    copy: {
+      dist: {
+        expand: true,
+        cwd: 'src/',
+        src: [
+          '**',
+          '!**/sass/**',
+          '!**/css/**',
+          '!**/js/**'
+        ],
+        dest: 'dist/'
       }
     },
     watch: {
       css: {
         files: '**/*.scss',
-        tasks: ['compass']
+        tasks: ['compass:dev']
       },
       configFiles: {
         files: [ 'Gruntfile.js' ],
@@ -22,15 +45,29 @@ module.exports = function(grunt) {
           reload: true
         }
       }
+    },
+    requirejs: {
+      compile: {
+        options: {
+          mainConfigFile: "src/js/app.js",
+          out: "dist/js/app.js",
+          name: "almond"
+        }
+      }
     }
   });
 
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify']);
-
+  grunt.registerTask('build', [
+    'clean',
+    'copy',
+    'requirejs',
+    'compass:dist'
+  ]);
 };
