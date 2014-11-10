@@ -7,6 +7,13 @@ module.exports = function(grunt) {
       dist: {
         options: {
           sassDir: 'sass',
+          cssDir: 'css',
+          environment: 'production'
+        }
+      },
+      dev: {
+        options: {
+          sassDir: 'sass',
           cssDir: 'css'
         }
       }
@@ -14,7 +21,7 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: '**/*.scss',
-        tasks: ['compass']
+        tasks: ['compass:dev']
       },
       configFiles: {
         files: [ 'Gruntfile.js' ],
@@ -25,8 +32,6 @@ module.exports = function(grunt) {
     }
   });
 
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
