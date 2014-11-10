@@ -25,7 +25,12 @@ module.exports = function(grunt) {
       dist: {
         expand: true,
         cwd: 'src/',
-        src: ['**',  '!**/sass/**', '!**/css/**'],
+        src: [
+          '**',
+          '!**/sass/**',
+          '!**/css/**',
+          '!**/js/**'
+        ],
         dest: 'dist/'
       }
     },
@@ -40,6 +45,15 @@ module.exports = function(grunt) {
           reload: true
         }
       }
+    },
+    requirejs: {
+      compile: {
+        options: {
+          mainConfigFile: "src/js/app.js",
+          out: "dist/js/app.js",
+          name: "almond"
+        }
+      }
     }
   });
 
@@ -47,11 +61,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
 
   // Default task(s).
   grunt.registerTask('build', [
     'clean',
     'copy',
+    'requirejs',
     'compass:dist'
   ]);
 };
