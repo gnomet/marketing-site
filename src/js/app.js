@@ -20,10 +20,6 @@ requirejs.config(
       {
         deps: ['jquery']
       }
-    , smoothscroll:
-      {
-        'deps': ['bind']
-      }
     , fancybox:
       {
         'deps': ['jquery']
