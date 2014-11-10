@@ -18,6 +18,14 @@ module.exports = function(grunt) {
         }
       }
     },
+    copy: {
+      dist: {
+        expand: true,
+        cwd: 'src/',
+        src: '**',
+        dest: 'dist/'
+      }
+    },
     watch: {
       css: {
         files: '**/*.scss',
@@ -34,6 +42,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task(s).
   grunt.registerTask('default', ['uglify']);
