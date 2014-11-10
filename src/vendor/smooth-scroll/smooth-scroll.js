@@ -1,14 +1,12 @@
 (function (root, factory) {
-  if ( typeof define === 'function' && define.amd ) {
-    //  define(function() {return factory(root);})
-    define(factory(root));
-  } else if ( typeof exports === 'object' ) {
-    module.exports = factory(root);
-  } else {
-    root.smoothScroll = factory(root);
-  }
+	if ( typeof define === 'function' && define.amd ) {
+		define('smoothScroll', factory(root));
+	} else if ( typeof exports === 'object' ) {
+		module.exports = factory(root);
+	} else {
+		root.smoothScroll = factory(root);
+	}
 })(window || this, function (root) {
-
   'use strict';
 
   //
