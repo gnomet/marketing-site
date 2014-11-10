@@ -459,7 +459,9 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
 ///////////////////////////////////////////
 
 .reason {
-  @include column(2.4);
+  float: left;
+  width: 17%;
+  margin: 0 1.5%;
   height: auto;
   text-align: center;
   line-height: 26px;
@@ -674,7 +676,7 @@ img.svg.paypal {
   }
 
   p {
-    width: 295px;
+    max-width: 295px;
     margin: 0 auto;
   }
 }
@@ -1661,8 +1663,8 @@ img.story-left, img.story-right {
 
   .logo {
     position: relative;
-    margin-left: 40px;
-    top: 40px;
+    margin-left: 0px;
+    top: 0px;
   }
 
   .mobile-menu-close {
@@ -1793,6 +1795,37 @@ img.story-left, img.story-right {
   	margin-left: auto;
   	margin-right: auto;
 	}
+	
+	
+	// HOME
+	
+	.video {
+  	
+  	h4 {
+    	font-size: 26px;
+  	}
+  	
+  	h3 {
+    	font-size: 32px;
+  	}
+	
+	
+	  &.center-v {
+  	  padding: 140px 0;
+    }
+	}
+	
+	.icon-hexagon {
+    width: 40px;
+    height: 140px;
+  }
+  
+  .reason {
+    font-size: 16px;
+    line-height: 21px;
+    width: 16%;
+    margin: 0 2%;
+  }
 
 	// FOOTER
 
@@ -2047,7 +2080,23 @@ img.story-left, img.story-right {
     &.two-thirds-last { float: left; width: 60%; margin-right: 0; margin-left: 0; }
   
   }
-
+  
+  .story {
+    
+    width: 28%;
+    margin-left: 2.6%;
+    margin-right: 2.6%;
+    
+  
+    img {
+      width: 200px;
+    }
+    
+    strong, i {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
 }
 
 @media screen and (max-width: 920px) { // Fade the main nav
@@ -2176,13 +2225,39 @@ img.story-left, img.story-right {
 }
 
 @media screen and (max-width: 768px) {
+  
+  .where, .what {
+    width: 50%;  
+    max-height: 272px;
+    
+    p {
+      padding: 80px 0;
+      width: 65%;
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+  
+  .story {
+    width: 45%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    
+    &.mario {
+      display: none;
+    }
+  }
+  
+  .video .center-v {
+  	padding: 100px 0;
+	}
 
 	#maincolumn, #sidebar {
 		@include column(12);
 		margin-bottom: 1em;
 	}
 
-	.reason { @include column(12); }
+	.reason {  }
 
 	.story-page {
 
@@ -2313,6 +2388,25 @@ img.story-left, img.story-right {
   		width: 95%;
 		}
 	}
+	
+	.story {
+  	width: 100%;
+  	
+  	&.jackie {display: none;}
+	}
+	
+	.where, .what { 
+  	width: 100%;
+  	
+  	p {
+    	padding: 60px 0px;
+    	width: 90%;
+  	}
+  }
+	
+	.what {
+  	margin-top: 0px;
+  }
 	
 	// FOOTER
 
