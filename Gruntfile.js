@@ -66,15 +66,22 @@ module.exports = function(grunt) {
     requirejs: {
       compile: {
         options: {
-          almond: true,
-          replaceRequireScript: [{
-            files: ['dist/index.html']
-          }],
           mainConfigFile: "src/js/app.js",
           out: "dist/js/app.js",
-          name: "app",
+          include: "app",
+          name: "almond",
           insertRequire: ['app/main']
         }
+      }
+    },
+    replace: {
+      requirejs: {
+        src: ['dist/*.html'],
+        overwrite: true,
+        replacements: [{
+          from: '<script data-main="js/app" src="vendor/require.js"></script>',
+          to: '<script src="js/app.js"></script>'
+        }]
       }
     },
     'filerev-fix': {
@@ -113,12 +120,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-filerev');
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-debug-task');
+  grunt.loadNpmTasks('grunt-text-replace');
 
   // Default task(s).
   grunt.registerTask('build', [
     'clean',
     'copy',
     'requirejs',
+    'replace',
     'compass:dist',
     'filerev',
     'filerev-fix',
