@@ -17,41 +17,9 @@
   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 
   <script data-main="js/app" src="vendor/require.js"></script>
-  
-  <!-- Fancybox -->  
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-  <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
-  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-  
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $(".fancybox")
-        .fancybox({
-          width       : '100%',
-          height      : '100%',
-          type        : 'iframe',
-          scrolling   : 'no',
-          preload     : 'true',
-      });
-      
-      $('.fancybox-media')
-				.attr('rel', 'media-gallery')
-				.fancybox({
-					openEffect : 'none',
-					closeEffect : 'none',
-					prevEffect : 'none',
-					nextEffect : 'none',
 
-					arrows : false,
-					helpers : {
-						media : {},
-						buttons : {}
-					}
-				});
-
-    });
-  </script>
-  
+  <!-- Fancybox -->
+  <link rel="stylesheet" href="vendor/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
 </head>
 <body>
 
@@ -146,7 +114,7 @@
         <h4>Have 48 seconds to spare?</h4>
         <h3>Watch how Sharetribe works.</h3>
 
-        <a class="fancybox button" href="http://www.youtube.com/watch?v=AISCnwHYosc"><img class="svg play" src="images/icons/play.svg">Play video</a>
+        <a class="fancybox button" href="http://www.youtube.com/embed/AISCnwHYosc"><img class="svg play" src="images/icons/play.svg">Play video</a>
 
       </div>
 
@@ -190,7 +158,7 @@
 
           <p>Sharetribe's built-in payment system allows your merchants to accept both PayPal and all of major credit cards. It works in 190+ countries and in 25+ currencies. You can easily earn commission from each transaction.</p>
           <img class="svg paypal" src="images/svg/paypal.svg" alt="Sharetribe logo"><img class="svg creditcards" src="images/icons/credit.cards.svg" alt="Sharetribe logo">
-          
+
 
         </div>
 

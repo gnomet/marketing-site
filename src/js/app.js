@@ -9,6 +9,7 @@ requirejs.config(
       , 'sticky':       '../vendor/fixedsticky/fixedsticky'
       , 'swiper':       '../vendor/Swiper/dist/idangerous.swiper.min'
       , 'text':         '../vendor/text'
+      , 'fancybox':     '../vendor/fancybox/jquery.fancybox'
       , 'lodash':     '../vendor/lodash'
       }
   , shim:
@@ -23,6 +24,10 @@ requirejs.config(
     , smoothscroll:
       {
         'deps': ['bind']
+      }
+    , fancybox:
+      {
+        'deps': ['jquery']
       }
     }
   }

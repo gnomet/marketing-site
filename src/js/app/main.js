@@ -5,8 +5,9 @@ define(
   , "odometer"
   , "app/trial"
   , "app/scrollspy"
+  , "fancybox"
   ]
-  , function ($, SmoothScroll, Swiper, Odometer, Trial, scrollSpy) {
+  , function ($, SmoothScroll, Swiper, Odometer, Trial, scrollSpy, fancybox) {
     return {
       init: function() {
         //initialize sticky nav bar
@@ -34,6 +35,30 @@ define(
 
         debugger;
         scrollSpy.init($('#side-navigation a'));
+
+        $(".fancybox")
+          .fancybox({
+            width       : '100%',
+            height      : '100%',
+            type        : 'iframe',
+            scrolling   : 'no',
+            preload     : 'true'
+          });
+
+        $('.fancybox-media')
+          .attr('rel', 'media-gallery')
+          .fancybox({
+            openEffect : 'none',
+            closeEffect : 'none',
+            prevEffect : 'none',
+            nextEffect : 'none',
+
+            arrows : false,
+            helpers : {
+              media : {},
+              buttons : {}
+            }
+          });
       }
 
 
