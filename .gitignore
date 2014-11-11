@@ -4,3 +4,4 @@ node_modules
 src/css/
 dist
 .build-tmp
+aws-keys.json

@@ -98,7 +98,8 @@ module.exports = function(grunt) {
           to: '<script src="js/app.js"></script>'
         }]
       }
-    }
+    },
+    aws: grunt.file.readJSON('aws-keys.json')
   });
 
   grunt.loadNpmTasks('grunt-contrib-compass');
@@ -110,6 +111,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-debug-task');
   grunt.loadNpmTasks('grunt-text-replace');
+  grunt.loadNpmTasks('grunt-aws-s3');
 
   /**
     Task to build a distribution package. Outputs to `dist` directory.
