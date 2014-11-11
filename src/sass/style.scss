@@ -551,21 +551,25 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
   float: right;
   position: relative;
   width: 200px;
-  right: 300px;
-  top: 140px;
+  right: 320px;
+  top: 166px;
 }
 
 .feature-info {
-  width: 488px;
-  top: 20px;
+  width: 500px;
+  top: 0px;
   float: right;
   position: relative;
   text-align: left;
   line-height: 32px;
+  
+  &.track-manage {
+    top: 90px;
+  }
 
   &.right-info {
     width: 460px;
-    top: 20px;
+    top: 0px;
     float: left;
     position: relative;
     text-align: left;
@@ -1110,8 +1114,8 @@ img.svg.paypal {
 
   &.two-thirds-last { float: left; width: 550px; margin-right: 0; margin-left: 0; }
   
-  .img-left { margin-left: -25px; }
-  .img-right { margin-left: -15px; }
+  .img-left { margin-left: -25px; margin-top: -22px; }
+  .img-right { margin-left: -15px; margin-top: -15px;  }
 
 }
 
