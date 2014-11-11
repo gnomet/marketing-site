@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<html lang="en">
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <title>Create a marketplace with Sharetribe – Contact us</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+</head>
+<body>
+
+
+<!-- Sticky navigation -->
+
+    <nav class="main-navigation fixedsticky" id="main-navigation">
+
+      <div class="logo"><a href="index.html"><img class="svg" src="images/svg/logo.svg" alt="Sharetribe logo"></a></div>
+
+      <div class="mobile-menu"><a href="menu.html" class="fancybox"><img class="svg hamburger" src="images/icons/menu-hamburger.svg" alt="Sharetribe logo">Menu</a></div>
+
+      <div class="menu-items">
+
+        <li><a href="features.html">Features</a></li>
+        <li><a href="stories.html">Success stories</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="http://blog.sharetribe.com" target="_blank">Blog</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <a class="fancybox button get-started" href="form.html">Get started</a>
+
+      </div>
+
+    </nav>
+
+
+<!-- Subpage Header -->
+
+  <div id="googlemaps"></div>
+
+  <header class="contact">
+
+    <div class="contact-text">
+
+        <img class="svg castle" src="images/icons/castle.svg" alt="Sharetribe Castle">
+
+        <h1><a href="mailto:hello@sharetribe.com">hello@sharetribe.com</a></h1>
+
+        <p class="osoite">SHARETRIBE LTD | BULEVARDI 12 | 00120 HELSINKI | FINLAND</p>
+        <p>Do you have a marketplace concept in mind? Perhaps a potential partnership? <br class="responsive-br">Or just want to hear more about Sharetribe? We're happy to help.</p>
+
+
+
+    </div>
+
+  </header>
+
+
+
+  <!-- Footer -->
+
+    <div class="main-wrapper footer">
+
+      <div>
+
+        <li class="text-link"><a href="features.html">Features</a></li>
+        <li class="text-link"><a href="stories.html">Success stories</a></li>
+        <li class="text-link"><a href="pricing.html">Pricing</a></li>
+
+        <li><a href="https://www.facebook.com/Sharetribe" target="_blank"><img class="svg facebook" src="images/icons/facebook.svg" alt="Sharetribe Facebook"></a></li>
+
+        <li><a href="index.html"><img class="svg" src="images/svg/sharetribe.symbol.svg" alt="Sharetribe logo"></a></li>
+
+        <li class="twitter-last"><a href="https://www.twitter.com/Sharetribe" target="_blank"><img class="svg twitter" src="images/icons/twitter.svg" alt="Sharetribe Twitter"></a></li>
+
+        <li class="text-link"><a href="about.html">About us</a></li>
+        <li class="text-link"><a href="http://blog.sharetribe.com" target="_blank">Blog</a></li>
+        <li class="footer-last text-link"><a href="contact.html">Contact us</a></li>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+
+      <div class="main-wrapper">
+
+        <p class="left">© Sharetribe is crafted with love & coffee in Helsinki.</p>
+        <p class="right"><a href="privacypolicy.html">Privacy Policy</a> & <a href="termsofuse.html">Terms of use</a></p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Load all JavaScript here, at the end of the document body.
+       No need to use domReady or anything like that.
+
+       This will be replaced by grunt build -->
+  <script data-main="js/app" src="vendor/require.js"></script>
+
+  <script type="text/javascript">
+
+    // The latitude and longitude of your business / place
+    var position = [60.1654159, 24.9405212];
+
+    function showGoogleMaps() {
+
+        var latLng = new google.maps.LatLng(position[0], position[1]);
+
+        var mapOptions = {
+            zoom: 5, // initialize zoom level - the max value is 21
+            streetViewControl: false, // hide the yellow Street View pegman
+            scaleControl: false, // allow users to zoom the Google Map
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: latLng
+        };
+
+        map = new google.maps.Map(document.getElementById('googlemaps'),
+            mapOptions);
+
+        // Show the default red marker at the location
+        marker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            draggable: false,
+            animation: google.maps.Animation.DROP
+        });
+    }
+
+    google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+
+  </script>
+</body>
+</html>

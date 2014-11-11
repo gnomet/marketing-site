@@ -1,4 +1,8 @@
 .DS_Store
 .sass-cache/
 node_modules
-css/
+src/css/
+dist
+dist-packaged
+.build-tmp
+aws-keys.json

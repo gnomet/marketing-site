@@ -1,0 +1,2758 @@
+@import 'reset';
+
+@import 'vendor';
+@import 'semantic-grid';
+@import 'variables';
+@import 'mixins';
+@import 'MyFontsWebfontsKit';
+
+body, html { height: 100%; }
+
+body {
+  @include Gibson-Light;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-size: 18px;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+strong { @include Gibson-Regular; }
+
+.clear {
+  clear: both;
+
+  &.feature {
+    clear: both;
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+
+  &.feature-both {
+    clear: none;
+  }
+}
+
+a {
+  @include transition(color, 0.1s, ease-in-out);
+  text-decoration: none;
+  color: $orange;
+
+  &:hover { color: $blue; }
+}
+
+
+////////////////
+// NAVIGATION //
+////////////////
+
+.main-navigation {
+  top: 0px;
+  z-index: 99;
+  height: 105px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 3px rgba(0,0,0,.05);
+  padding: 35px 0;
+
+  .logo {
+    position: relative;
+    margin-left: 50px;
+  }
+
+  .menu-items {
+    float: right;
+    margin-right: 50px;
+    margin-top: -20px;
+  }
+
+  li {
+    @include Gibson-Regular;
+    list-style-type: none;
+    float: left;
+    font-size: 15px;
+    padding-right: 45px;
+    @include transition(all, 0.2s, ease-in-out);
+  }
+
+  a {
+    @include transition(color, 0.1s, ease-in-out);
+    color: $grey;
+    text-decoration: none;
+
+    &:hover { color: $orange; }
+  }
+
+  .login {
+    @include button($orange, $white, $orange, $white, $blue, $blue);
+    top: -1px;
+    margin-right: -5px;
+    border-radius: 5px 0px 0px 5px;
+  }
+
+  .get-started {
+    @include button($white, $orange, $orange, $white, $blue, $blue);
+    top: -1px;
+  }
+
+}
+
+.mobile-menu {
+	display: none;
+}
+
+.sidenav-sticky-wrapper {
+  width: 260px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  &.fixedsticky-container {
+    position: absolute;
+  }
+}
+
+.sidenav {
+  top: 145px;
+  width: 180px;
+  opacity: 0.5;
+  margin-top: 40px;
+  @include transition(opacity, 0.5s, ease-in-out);
+
+  &:hover { opacity: 1.0; }
+
+  li {
+    list-style-type: none;
+    @include Gibson-Regular;
+    font-size: 16px;
+    margin-bottom: 15px;
+    letter-spacing: 0.01em;
+    line-height: 26px;
+
+    a { color: $grey;
+      &:hover { color: $orange; }
+    }
+
+    &.current a {
+      border-left: 3px solid $orange;
+      padding-left: 20px;
+      margin-left: -23px;
+      color: $orange;
+    }
+  }
+
+  &.text-page {
+    margin-right: 40px;
+  }
+
+  &.fixedsticky-on {
+    margin-top: 0px;
+  }
+}
+
+/////////////////
+// TYPOGRAPHY //
+////////////////
+
+h1 {
+  font-size: 64px;
+  line-height: 74px;
+  margin-bottom: 30px;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  @include Gibson-Light;
+  color: $grey;
+  font-size: 46px;
+  line-height: 60px;
+  letter-spacing: 0.00em;
+
+  &.centered {
+    padding-bottom: 50px;
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto 40px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  @include Gibson-Regular;
+  margin-bottom: 20px;
+
+}
+
+.subpage-content h4 {
+  font-size: 18px;
+  @include Gibson-Regular;
+  margin-bottom: 10px;
+}
+
+
+h6 {
+  @include Gibson-Light;
+  color: $grey;
+  font-size: 13px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #CCC;
+
+  &.reasons, &.stories-title {
+    text-align: center;
+    margin: 130px auto 65px;
+    padding-bottom: 30px;
+  }
+
+  &.marketplace-design, &.track-manage {
+    margin: 100px 0 30px;
+    padding-bottom: 15px;
+  }
+
+  &.reasons { width: 400px; } // Onko tahan parempaa ratkaisua?
+
+  &.stories-title, &.story-page { width: 225px; } // Onko tahan parempaa ratkaisua?
+
+  &.marketplace-design { width: 280px; } // Onko tahan parempaa ratkaisua?
+
+  &.track-manage { width: 220px; } // Onko tahan parempaa ratkaisua?
+
+  &.payments { width: 124px; margin: 150px 0 40px; padding-bottom: 15px; } // Onko tahan parempaa ratkaisua?
+
+  &.story-page { text-align: center; margin: 100px auto 50px; padding-bottom: 30px;}
+
+}
+
+.feature h6 {
+  @include Gibson-Regular;
+  font-size: 11px;
+  letter-spacing: 5px!important;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+}
+
+
+
+
+////////////
+// LAYOUT //
+////////////
+
+.main-wrapper {
+  @include Gibson-Light;
+  max-width: 1140px;
+  margin: 0 auto;
+
+  &.pricing {
+    position: relative;
+    top: -120px;
+  }
+
+  &.text-page {
+    max-width: 950px;
+    width: 90%;
+  }
+
+  position: relative;
+}
+
+.logo {
+  width: 165px;
+  height: auto;
+}
+
+a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
+
+.subpage-content {
+  max-width: 865px;
+  width: 95%;
+  margin-left: 260px;
+  height: auto;
+  margin-top: 28px;
+  margin-bottom: 65px;
+
+  &.text-only {
+    margin-top: 58px;
+    max-width: 700px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 26px;
+    padding-top: 40px;
+    padding-bottom: 65px;
+
+    h3 {
+	    margin-top: 50px;
+    }
+
+    p { margin-bottom: 30px; }
+
+    p.updated {
+      font-size: 14px;
+      color: #999;
+      margin-bottom: 20px;
+    }
+
+    p.important-privacy {
+      font-size: 30px;
+      line-height: 42px;
+      font-family:  Gibson-LightIt;
+    }
+
+    ol { counter-reset: item; }
+
+    ol li {
+      display: block;
+      position: relative;
+    }
+
+    ol li:before {
+      content: counters(item, ".")".";
+      counter-increment: item;
+      position: absolute;
+      margin-right: 100%;
+      right: 10px; /* space between number and text */
+    }
+  }
+}
+
+
+
+//////////////////////
+// HOMEPAGE / HERO //
+/////////////////////
+
+.hero .logo {
+  position: relative;
+  top: 0;
+  margin-bottom: 100px;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: $orange;
+  color: $white;
+  background: url("../images/bg.hero.jpg") no-repeat center center fixed;
+  background-size: cover;
+
+  a.button.ghost {
+    font-family: Gibson-Light!important;
+    @include button($white,none,$white,$white,$blue,$blue);
+    font-size: 15px;
+    letter-spacing: 0.07em;
+    padding: 16px 26px;
+  }
+
+  a.button.white {
+    @include button($orange,$white,$white,$white,$blue,$blue);
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    margin-right: 30px;
+    padding: 16px 26px;
+  }
+
+  img.crown {
+    margin-right: 7px;
+    float: none;
+    display: inline-block;
+    width: 15px;
+    vertical-align: -1px;
+  }
+
+  a.login {
+    color: $white;
+    font-size: 13px;
+    opacity: 0.7;
+    @include transition(all, 0.1s, ease-in-out);
+
+    &:hover img.arrow { margin-left: 9px; }
+
+    &:hover { opacity: 1.0;}
+
+    img.arrow {
+      margin-left: 3px;
+      float: none;
+      display: inline-block;
+      width: 15px;
+      vertical-align: -3px;
+      @include transition(all, 0.1s, ease-in-out);
+    }
+  }
+
+  p {
+    @include Gibson-Regular;
+    font-size: 19px;
+    line-height: 36px;
+    margin-bottom: 55px;
+    letter-spacing: 0.02em;
+  }
+}
+
+.hero-text {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:10%;
+  right:0;
+  margin:auto;
+  height: 600px;
+
+  img { float: right; }
+}
+
+.hero-text-container {
+  max-width: 700px;
+  float: left;
+}
+
+
+////////////////////////////////
+// SUBPAGE / HEADERS: PRICING //
+///////////////////////////////
+
+
+.subpage-header, .pricing-page {
+  width: 100%;
+  background-color: $orange;
+  color: $white;
+  background: url("../images/bg.where.jpg") no-repeat center bottom fixed;
+  background-size: cover;
+
+  h2 {
+    font-size: 52px;
+    @include Gibson-Light;
+    letter-spacing: 0.00em;
+    padding: 90px 0;
+    color: $white;
+    margin-left: 40px;
+  }
+
+}
+
+.subpage-header h2 {
+  text-align: center;
+  margin-bottom: 40px;
+
+}
+
+.contact-header {
+  width: 100%;
+  height: 90%;
+  background-color: $orange;
+  color: $white;
+  background: url("../images/bg.where.jpg") no-repeat center bottom fixed;
+  background-size: cover;
+
+  h2 {
+    text-align: center;
+    font-size: 52px;
+    @include Gibson-Light;
+    letter-spacing: 0.00em;
+    padding: 90px 0;
+    color: $white;
+  }
+}
+
+
+////////////////////////////////////////////
+// HOMEPAGE / 5 REASONS TO USE SHARETRIBE //
+///////////////////////////////////////////
+
+.reason {
+  float: left;
+  width: 17%;
+  margin: 0 1.5%;
+  height: auto;
+  text-align: center;
+  line-height: 26px;
+
+  strong {
+    display: block;
+    margin-bottom: 8px;
+  }
+}
+
+.icon-hexagon-bg {
+  height: auto;
+  margin-bottom: 30px;
+  background: url("../images/svg/hexagon.svg") no-repeat center center;
+}
+
+.icon-hexagon {
+  width: 55px;
+  height: 170px;
+  top: -4px;
+  position: relative;
+}
+
+
+//////////////////////
+// HOMEPAGE / VIDEO //
+/////////////////////
+
+.video {
+  margin-top: 165px;
+  margin-bottom: 100px;
+  width: 100%;
+  background: url('../images/bg.video.jpg') no-repeat center top fixed;
+  background-color: $blue;
+  background-size: cover;
+  text-align: center;
+  color: $white;
+
+  h4 {
+    font-size: 32px;
+    font-family: Gibson-LightIt;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    @include Gibson-Regular;
+    font-size: 38px;
+    margin-bottom: 50px;
+  }
+
+  a.button { @include button($white, $orange, $orange, $white, none, $white); }
+
+  .center-v {
+    position: relative;
+    padding: 180px 0;
+  }
+
+  img.play {
+    margin-right: 7px;
+    float: none;
+    display: inline-block;
+    width: 13px;
+    vertical-align: -3px;
+  }
+}
+
+
+/////////////////////////
+// HOMEPAGE / FEATURES //
+////////////////////////
+
+.feature-screenshot {
+  float: left;
+  position: relative;
+  width: 200px;
+  left: -320px;
+
+  &.track-manage {
+    margin-top: 100px;
+    margin-bottom: -150px;
+  }
+}
+
+.right-screenshot {
+  float: right;
+  position: relative;
+  width: 200px;
+  right: 320px;
+  top: 166px;
+}
+
+.feature-info {
+  max-width: 500px;
+  width: 90%;
+  top: 0px;
+  float: right;
+  position: relative;
+  text-align: left;
+  line-height: 32px;
+
+  &.track-manage {
+    top: 90px;
+  }
+
+  &.right-info {
+    width: 460px;
+    top: 0px;
+    float: left;
+    position: relative;
+    text-align: left;
+    line-height: 32px;
+
+    h2 { padding-bottom: 35px; }
+
+  }
+
+  h2 {
+    padding-bottom: 25px;
+    max-width: 600px;
+    margin: 0 auto 0px;
+  }
+
+  a.button {
+    @include button($orange, $white, $orange, $white, $blue, $blue);
+    top: 50px;
+  }
+
+  img.add {
+    margin-right: 7px;
+    float: none;
+    display: inline-block;
+    width: 13px;
+    vertical-align: -2px;
+  }
+}
+
+.bg-color {
+  width: 100%;
+  height: 800px;
+  background: $bg-grey;
+  position: relative;
+  overflow: hidden;
+}
+
+img.svg.creditcards {
+  height: 35px;
+  margin-left: 30px;
+}
+
+img.svg.paypal {
+  margin-top: 30px;
+}
+
+
+/////////////////////////////
+// HOMEPAGE / WHERE & WHAT //
+////////////////////////////
+
+.where, .what {
+  margin-top: 150px;
+  width: 50%;
+  color: $white;
+  text-align: center;
+
+  p {
+    padding: 160px 0;
+    max-width: 450px;
+    max-height: 430px;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    font-family: Gibson-LightIt;
+    font-size: 26px;
+    line-height: 36px;
+  }
+}
+
+.where {
+  background: url("../images/bg.where.jpg") no-repeat center center fixed;
+  background-size: cover;
+  float: left;
+}
+
+.what {
+  background: url('../images/bg.video.jpg') no-repeat center top fixed;
+  background-size: cover;
+  float: right;
+}
+
+
+////////////////////////////////
+// HOMEPAGE / SUCCESS STORIES //
+///////////////////////////////
+
+.story {
+  @include column(4);
+  height: auto;
+  text-align: center;
+  line-height: 26px;
+  margin-bottom: 165px;
+
+  strong {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 18px;
+
+    a { font-size: 18px; }
+  }
+
+  img { margin-bottom: 40px; }
+
+  i {
+    font-family: Gibson-LightIt;
+    font-size: 18px;
+    line-height: 26px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    display: block;
+  }
+
+  a {
+    @include Gibson-Regular;
+    font-size: 15px;
+  }
+
+  p {
+    max-width: 295px;
+    margin: 0 auto;
+  }
+}
+
+
+////////////
+// TRIAL //
+///////////
+
+.trial {
+  width: 100%;
+  height: 500px;
+  background-color: $orange;
+  text-align: center;
+  color: $white;
+  background: url("../images/bg.footer.jpg") no-repeat center top fixed;
+  background-size: cover;
+  overflow-x: hidden;
+
+  .center-v {
+    position: relative;
+    padding: 120px 0;
+  }
+
+
+  h4 {
+    font-size: 23px;
+    font-family: Gibson-LightIt;
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    font-size: 42px;
+    @include Gibson-Light;
+    margin-bottom: 40px;
+    letter-spacing: 0.01em;
+  }
+
+  p {
+    color: #f3ab9e;
+    font-size: 16px;
+    display: block;
+	@include Gibson-Regular;
+  }
+
+  .trial-text {
+    color: darken($white, 15%);
+    font-size: 18px;
+  }
+  .trial-link {
+    color: $white;
+  }
+  .trial-info {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .trial-info.warning {
+    color: yellow;
+  }
+
+  .trial-field {
+    position: relative;
+    width: 720px;
+    height: 67px;
+    margin: 0 auto;
+
+    &.email { width: 520px!important; }
+
+    /* mouse over next-button fix */
+    &:hover .question {
+      border-bottom: solid 3px $blue;
+    }
+
+    .next-button {
+      @include transition(background-color, 200ms, ease-in-out);
+      position: absolute;
+      top: 16px;
+      right: 15px;
+      padding: 12px 20px;
+      border: none;
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      border-radius: 3px;
+      background-color: $orange;
+      color: white;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $blue;
+        cursor: hand;
+      }
+      &:focus {
+        outline: none;
+      }
+
+      .slide-number {
+        opacity: 0.7;
+      }
+    }
+
+    .trial-input {
+      @include transition(all, 0.2s, ease-in-out);
+      width: 100%;
+      padding: 24px 10px 24px 30px;
+      color: $orange;
+      line-height: 21px;
+
+      font-size: 18px;
+      background-color: $bg-grey;
+
+      border-radius: 5px;
+      border: none;
+      border-bottom: solid 3px #ff836d;
+      outline: none;
+      margin-bottom: 40px;
+      @include Gibson-Light;
+      letter-spacing: 1px;
+
+
+      &:hover { border-bottom: solid 3px $blue; background: $white; cursor: hand;}
+
+      &:focus {
+        background: $white;
+        border-bottom: solid 3px $blue;
+        color: $orange;
+      }
+    }
+
+    .email,
+    .firstname, .lastname,
+    .chosen-container, .country,
+    .marketplace-name,
+    .password, .confirm {
+      @extend .trial-input;
+    }
+
+    input {
+      float: left;
+    }
+
+	/* Normal */
+
+    input::-webkit-input-placeholder {
+      color: $light-grey;
+      @include Gibson-Light;
+    }
+    /* Firefox < 19 */
+    input:-moz-placeholder {
+      color: $light-grey;
+      @include Gibson-Light;
+    }
+    /* Firefox > 19 */
+    input::-moz-placeholder {
+      color: $light-grey;
+      @include Gibson-Light;
+    }
+    /* Internet Explorer 10 */
+    input:-ms-input-placeholder {
+      color: $light-grey;
+      @include Gibson-Light;
+    }
+
+    /* Hover */
+
+     input:hover::-webkit-input-placeholder {
+      color: $blue;
+      @include Gibson-Light;
+    }
+    /* Firefox < 19 */
+     input:hover:-moz-placeholder {
+      color: $blue;
+      @include Gibson-Light;
+    }
+    /* Firefox > 19 */
+     input:hover::-moz-placeholder {
+      color: $blue;
+      @include Gibson-Light;
+    }
+    /* Internet Explorer 10 */
+     input:hover::-ms-input-placeholder {
+      color: $blue;
+      @include Gibson-Light;
+    }
+
+    /* Focus */
+
+    input:focus::-webkit-input-placeholder {
+	    @include transition(all, 0.2s, ease-in-out);
+        color: $orange;
+        opacity: 0.5;
+    }
+    /* Firefox < 19 */
+    input:focus:-moz-placeholder {
+        @include transition(all, 0.2s, ease-in-out);
+        color: $orange;
+        opacity: 0.5;
+    }
+    /* Firefox > 19 */
+    input:focus::-moz-placeholder {
+        @include transition(all, 0.2s, ease-in-out);
+        color: $orange;
+        opacity: 0.5;
+    }
+    /* Internet Explorer 10 */
+    input:focus:-ms-input-placeholder {
+        @include transition(all, 0.2s, ease-in-out);
+        color: $orange;
+        opacity: 0.5;
+    }
+
+    /* widths */
+    .firstname, .marketplace-type.chosen-container, .password {
+		width: 300px;
+    }
+    .lastname, .marketplace-type.chosen-container, .confirm {
+	 	width: 400px;
+		margin-left: 15px;
+    }
+    .country.chosen-container, .marketplace-name {
+		width: 300px;
+    }
+    .language.chosen-container, .marketplace-type.chosen-container {
+		width: 400px;
+		margin-left: 15px;
+    }
+  }
+  /* swiper overrides */
+  .swiper-container, .swiper-slide {
+    width: 100%;
+    height: 100px;
+  }
+  .swiper-slide {
+    float: left;
+    opacity: 0;
+    @include transition(opacity, 500ms, ease-in-out);
+
+  }
+  .swiper-slide-active {
+    opacity: 1;
+  }
+
+  /* chosen overrides */
+  .chosen-container-active .chosen-single {
+    @include Gibson-Regular;
+    border: none;
+    box-shadow: none;
+  }
+  .chosen-container-single .chosen-single {
+    @include Gibson-Light;
+    color: $white;
+    line-height: 21px;
+    padding: 0;
+    height: 100%;
+    border: none;
+    border-radius: none;
+    background: none;
+    box-shadow: none;
+    text-decoration: none;
+    white-space: nowrap;
+    float: left;
+    width: 100%;
+    text-align: left;
+
+    div {
+      right: 155px;
+
+      b {
+        background-image: url("../images/icons/arrow.down.svg");
+        background-repeat: no-repeat;
+        background-position: 100%;
+        background-size: 20px;
+      }
+    }
+  }
+
+  .chosen-container {
+    &.chosen-container-active, &:hover, &:focus {
+      background-color: $bg-grey;
+      color: $light-grey;
+    }
+
+    .chosen-drop {
+      background-color: #2a3d4b;
+      border: none;
+    }
+    .chosen-search input {
+      border: none;
+      height: 50px;
+      color: $white;
+      background-color: #243440;
+      background-image: url("../images/icons/search.icon.svg");
+      background-repeat: no-repeat;
+      background-position: 93%;
+      background-size: 21px;
+      padding-left: 26px;
+    }
+
+    .chosen-results {
+      @include Gibson-Light;
+      width: 100%;
+      max-height: 115px;
+      color: $white;
+      text-align: left;
+
+      li.no-results {
+        color: $white;
+        font-size: 14px;
+        background: none;
+      }
+
+      .highlighted {
+        background: none;
+        color: #8fd0ff;
+      }
+    }
+  }
+}
+
+////////////
+// FOOTER //
+///////////
+
+.footer {
+  text-align: center;
+  padding-bottom: 100px;
+  margin-top: 40px;
+  padding-right: 43px;
+
+  li {
+    @include Gibson-Regular;
+    list-style-type: none;
+    display: inline;
+    font-size: 15px;
+    padding-right: 45px;
+
+    &.footer-last { padding-right: 0!important; }
+  }
+
+  a {
+    @include transition(color, 0.1s, ease-in-out);
+    color: $grey;
+    text-decoration: none;
+
+    &:hover { color: $orange; }
+
+    &.icon { color: $orange;
+
+      &:hover { color: $blue; }
+    }
+  }
+
+  img {
+    position: relative;
+    width: 64px;
+    height: auto;
+    top: 29px;
+  }
+
+  img.facebook, img.twitter {
+    width: 22px;
+    top: 5px;
+  }
+}
+
+.copyright {
+  padding: 45px 43px 45px 0;
+  width: 100%;
+  background-color: $bg-grey;
+
+  .main-wrapper { width: 875px; }
+
+  p {
+    display: inline;
+    @include Gibson-Regular;
+    font-size: 13px;
+    color: #999;
+
+    a { color: #999;
+
+      &:hover { color: $blue; }
+    }
+  }
+
+  p.left { text-align: left; }
+
+  p.right { float: right; }
+}
+
+
+
+////////////////////////
+// SUBPAGE / FEATURES //
+///////////////////////
+
+.feature {
+  padding-bottom: 80px;
+  padding-top: 40px;
+
+  p {
+    font-size: 16px;
+    line-height: 28px;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  h5 {
+    @include Gibson-Regular;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+  }
+
+  &.one-third { float: left; width: 225px; margin-right: 90px; margin-left: 0; }
+
+  &.one-third-last { float: left; width: 225px; margin-right: 0; margin-left: 0; }
+
+  &.one-half { float: left; width: 384px; margin-right: 90px; margin-left: 0; }
+
+  &.one-half-last { float: left; width: 383px; margin-right: 0; margin-left: 0; }
+
+  &.two-thirds { float: left; width: 540px; margin-right: 90px; margin-left: 0; }
+
+  &.two-thirds-last { float: left; width: 550px; margin-right: 0; margin-left: 0; }
+
+  .img-left { margin-left: -25px; margin-top: -22px; }
+  .img-right { margin-left: -15px; margin-top: -15px;  }
+
+}
+
+
+
+////////////////////////
+// SUBPAGES / PRICING //
+////////////////////////
+
+.grey-background {
+  width: 100%;
+  background: #F6F7F7;
+}
+
+.pricing-page h2 {
+  margin-top: 40px;
+  float: left;
+}
+
+.pricing-top {
+  max-width: 1140px;
+  width: 98%;
+  margin: 0 auto;
+  height: 450px;
+}
+
+.pricing-icon {
+  @include Gibson-Regular;
+  width: 175px;
+  float: right;
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+  margin-right: 55px;
+  margin-top: 95px;
+
+  img {
+    width: 55px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+}
+
+.pricing-table {
+  float: left;
+  margin-right: 0;
+  width: 25%;
+  height: 570px;
+  background: $white;
+  text-align: center;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  &.first-table {
+    border-radius: 5px 0 0 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  &.last-table {
+    border-radius: 0 5px 0 0;
+    border-left: 1px solid #CCC;
+    border-bottom: 1px solid #ccc;
+  }
+
+  &.table { border-bottom: 1px solid #ccc; }
+
+  &.featured-table {
+    border: 1px solid $orange;
+    margin-top: -25px;
+    height: 595px;
+
+    h4 {
+      padding-top: 69px;
+      font-size: 24px;
+      padding-bottom: 24px;
+    }
+
+    h4, .superscript, .price, .month { color: $orange; }
+
+    img {
+      position: relative;
+      width: 30px;
+      height: auto;
+      margin-bottom: -42px;
+      float: right;
+      right: 40px;
+    }
+  }
+
+  h4 {
+    @include Gibson-Regular;
+    font-size: 23px;
+    padding-top: 45px;
+    padding-bottom: 25px;
+  }
+
+  .price-container {
+    height: 72px;
+    overflow-y: hidden;
+  }
+
+  .superscript {
+    @include Gibson-Light;
+    font-size: 42px;
+    letter-spacing: 0;
+    vertical-align: top;
+  }
+
+  .hundred {
+    vertical-align: middle;
+    right: -6px;
+    position: relative;
+  }
+
+  .pro .hundred {
+    margin-right: -8px;
+  }
+
+  .price {
+    @include Gibson-Light;
+    font-size: 72px;
+    letter-spacing: 0em;
+  }
+
+  .month {
+    font-size: 16px;
+    vertical-align: bottom;
+    line-height: 50px;
+  }
+
+
+  p.billing-cycle {
+    width: 185px;
+    margin: 15px auto 25px;
+    font-size: 14px;
+    color: #666666;
+    padding: 15px 0;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+  }
+
+  li {
+    list-style-type: none;
+    font-size: 16px;
+    line-height: 30px;
+
+    &.last-band { padding-bottom: 76px; }
+
+    &.last { padding-bottom: 45px; }
+  }
+
+  a.switch-price {
+    display: block;
+    margin-top: 40px;
+    font-size: 14px;
+    margin: 0 auto;
+    width: 185px;
+    margin-top: 36px;
+    line-height: 21px;
+  }
+  a.switch-monthly {
+    color: #b3b3b3;
+
+    &:hover { color: #666; }
+  }
+
+  a.switch-biannually {
+    color: $orange;
+
+    &:hover { color: $blue; }
+  }
+}
+
+.enterprise-table {
+  background: $white;
+  border-radius: 0 0 5px 5px;
+  float: left;
+  width: 100%;
+  padding: 35px 0;
+  margin-bottom: 50px;
+
+  h4 {
+    @include Gibson-Regular;
+    font-size: 21px;
+    margin-left: 40px;
+    float: left;
+  }
+
+  p {
+    font-size: 16px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    margin-top: 4px;
+    padding-left: 30px;
+    float: left;
+  }
+
+  a { padding-left: 20px; }
+}
+
+p.footnotes {
+  font-size: 12px;
+  line-height: 24px;
+  margin-left: 40px;
+  width: 90%;
+}
+
+hr.pricing {
+  margin: 60px 40px;
+  opacity: 0.3;
+}
+
+p.pricing-faq {
+  @include column(4);
+  width: 300px;
+  font-size: 16px;
+  line-height: 24px;
+
+  strong {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  &.first { margin-left: 40px!important; }
+
+  &.second, &.third { margin-left: 70px; }
+
+}
+
+
+
+/////////////////////
+// SUCCESS STORIES //
+////////////////////
+
+.stories {
+  width: 100%;
+  height: 300px;
+  background-color: $blue;
+  @include transition(all, 0.15s, ease-in-out);
+
+  &:hover { box-shadow: 0px 300px rgba(237, 79, 46, 0.9) inset; cursor: hand; }
+}
+
+.thequiver { background: url("../images/bg.thequiver.jpg") no-repeat center center; }
+
+.maggieskidmarket { background: url("../images/bg.maggieskidmarket.jpg") no-repeat center center; }
+
+.casaguau { background: url("../images/bg.casaguau.jpg") no-repeat center center; }
+
+.thequiver, .maggieskidmarket, .casaguau {
+  background-size: cover;
+  box-shadow: 0px 300px rgba(42, 61, 75, 0.5) inset;
+  width: 100%;
+  height: 300px;
+
+  h2 {
+    padding-top: 100px;
+    padding-bottom: 15px;
+    color: $white;
+    font-size: 66px;
+    text-align: center;
+    letter-spacing: -0.02em;
+  }
+
+  h5 {
+    text-align: center;
+    color: $white;
+    font-size: 24px;
+  }
+}
+
+.story-page {
+
+  a {
+    @include Gibson-Regular;
+    font-size: 16px;
+	line-height: 24px;
+  }
+
+  p.story-ingress {
+    font-size: 32px;
+    line-height: 46px;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 130px;
+  }
+
+  p.quote {
+    @include column(1);
+    font-family: Gibson-LightIt;
+    padding-top: 100px;
+    width: 220px;
+    font-size: 26px;
+    line-height: 36px;
+    text-align: right;
+    margin-left: 30px;
+    margin-right: 120px;
+  }
+
+  .story-content {
+    @include column(4);
+    padding-top: 105px;
+    width: 650px;
+
+    p {
+      padding-bottom: 30px;
+      font-size: 19px;
+      line-height: 30px;
+    }
+
+    h4 {
+      @include Gibson-Regular;
+      padding-top: 15px;
+      padding-bottom: 30px;
+      font-size: 21px;
+      line-height: 30px;
+    }
+  }
+}
+
+img.story-left, img.story-right {
+  width: 50%;
+  height: auto;
+  float: left;
+}
+
+.maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
+  margin-top: 150px;
+  width: 50%;
+  color: $white;
+  text-align: center;
+  box-shadow: 0px 400px rgba(42, 61, 75, 0.3) inset;
+  @include transition(all, 0.15s, ease-in-out);
+
+  h3 {
+    font-size: 42px;
+    @include Gibson-Light;
+    margin-top: 160px;
+    letter-spacing: 0em;
+    margin-bottom: 15px;
+  }
+
+  p {
+    @include Gibson-Light;
+    margin: 0 auto;
+    font-size: 21px;
+    margin-bottom: 160px;
+  }
+
+  &.left { float: left; }
+  &.right { float: right; }
+
+  &:hover { box-shadow: 0px 400px rgba(237, 79, 46, 0.9) inset; cursor: hand; }
+}
+
+.maggieskidmarket-banner {
+  background: url("../images/bg.maggieskidmarket.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.casaguau-banner {
+  background: url('../images/bg.casaguau.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.thequiver-banner {
+  background: url('../images/bg.thequiver.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+
+
+/////////////////////
+// CONTACT //
+////////////////////
+
+
+.contact {
+  display: hidden;
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 93%;
+  color: $white;
+  background-color: rgba(237, 79, 46, 0.92);
+  background-blend-mode: multiply;
+
+  img.castle {
+    margin-bottom: 40px;
+    float: none;
+    display: inline-block;
+    width: 60px;
+    vertical-align: -1px;
+  }
+
+  p {
+    @include Gibson-Regular;
+    font-size: 17px;
+    line-height: 28px;
+    margin-bottom: 28px;
+    letter-spacing: 0.04em;
+  }
+
+  a { color: $blue;
+
+    &:hover { color: #000; }
+  }
+
+  p.osoite {
+    font-size: 13px;
+    letter-spacing: 4px;
+  }
+
+}
+
+.contact-text {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  height:450px;
+  text-align: center;
+}
+
+#googlemaps {
+  height: 93%;
+  width: 100%;
+  position:absolute;
+  top: 105px;
+  left: 0;
+  z-index: 0;
+}
+
+
+
+
+
+
+//////////////////////
+// ABOUT US / HERO //
+/////////////////////
+
+.main-wrapper {
+
+	&.about-us {
+		margin: 110px auto;
+
+		p, h4 {
+			max-width: 600px;
+			width: 90%;
+			margin: 0 auto;
+		}
+
+		p {
+			font-size: 19px;
+			line-height: 32px;
+		}
+
+		h4 {
+			@include Gibson-Regular;
+			font-size: 24px;
+			line-height: 36px;
+			margin: 90px auto 30px;
+		}
+
+		img.office-big { margin: 110px auto 0.5%; width: 100% }
+
+		img.office-left, img.office-middle {
+			margin-right: 0.1%;
+		}
+
+		.small-images {
+			width: 100%;
+
+			img.office-left, img.office-middle, img.office-right {
+				width: 32.9%;
+			}
+		}
+
+
+	}
+}
+
+.about-cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: $orange;
+  color: $orange;
+  background: url("../images/cover.aboutus.jpg") no-repeat bottom center;
+  background-size: cover;
+  text-align: center;
+
+  h6 {
+	  width: 138px;
+	  text-align: center;
+	  margin: 0 auto;
+	  padding-bottom: 30px;
+	  margin-bottom: 40px;
+  }
+
+  a.button.ghost {
+    font-family: Gibson-Light!important;
+    @include button($white,$orange,none,$white,$blue,$blue);
+    font-size: 15px;
+    letter-spacing: 0.07em;
+    padding: 16px 26px;
+  }
+
+  p {
+	color: $grey;
+    @include Gibson-Light;
+    font-size: 24px;
+    line-height: 42px;
+    margin-bottom: 55px;
+    letter-spacing: 0.02em;
+    max-width: 780px;
+	margin: 0 auto 50px;
+    width: 90%;
+  }
+}
+
+.about-cover-text {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 65%;
+	max-width: 1020px;
+	width: 90%;
+	text-align: center;
+}
+
+
+
+////////////////
+// MOBILE NAV //
+////////////////
+
+.menu-cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: $orange;
+  color: $orange;
+  background-size: cover;
+  text-align: center;
+
+  li a {
+	  color: $white;
+	  font-size: 48px;
+	  line-height: 80px;
+
+	  &:hover { color: $blue; }
+
+  }
+
+  .logo {
+    position: relative;
+    margin-left: 0px;
+    top: 0px;
+  }
+
+  .mobile-menu-close {
+		display: inline-block;
+		font-size: 14px;
+		@include Gibson-Regular;
+		position: absolute;
+		right: 40px;
+		top: 40px;
+
+		a {
+			color: $white;
+
+				&:hover {
+					color: $grey;
+				}
+		}
+
+		.menu-close {
+			width: 10px;
+			margin-right: 7px;
+		}
+	}
+}
+
+.button-bottom {
+	position: absolute;
+	bottom: 7%;
+	left: 50%;
+
+	a.button.ghost {
+		position: relative;
+		left: -50%;
+	    font-family: Gibson-Regular!important;
+	    @include button($white, $orange, $white ,$white,$blue,$blue);
+	    font-size: 14px;
+	    letter-spacing: 0.07em;
+	    padding: 14px 20px;
+	}
+}
+
+.menu-cover-text {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 600px;
+	text-align: center;
+}
+
+
+//////////////////////
+// RESPONSIVE STUFF //
+/////////////////////
+
+@media screen and (min-width: 1920px) {
+
+	// HERO HOMEPAGE
+
+	.hero-text { left: 15%; }
+
+
+	// STORIES HOMEPAGE
+
+	.stories {
+		height: 400px;
+
+			&:hover {
+				box-shadow: 0px 400px rgba(237, 79, 46, 0.9) inset; cursor: hand;
+			}
+	}
+
+	.thequiver, .maggieskidmarket, .casaguau {
+		@include transition(all, 0.2s, ease-in-out);
+		box-shadow: 0px 400px rgba(42, 61, 75, 0.5) inset;
+		height: 400px;
+
+		h2 {
+			@include transition(all, 0.2s, ease-in-out);
+		    padding-top: 150px;
+			padding-bottom: 25px;
+			font-size: 72px;
+		}
+	}
+
+	br.responsive-br-1920 {
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 1150px) {
+
+	// NAVIGATION
+
+	.main-navigation {
+		@include transition(all, 0.2s, ease-in-out);
+		height: 75px;
+		padding: 25px 0;
+
+		li {
+			padding-right: 30px;
+			font-size: 14px;
+			@include transition(all, 0.2s, ease-in-out);
+		}
+
+		.get-started {
+			padding: 12px 19px;
+			font-size: 12px;
+			@include transition(all, 0.2s, ease-in-out);
+		}
+
+		.logo { margin-left: 25px; @include transition(all, 0.2s, ease-in-out); width: 140px; }
+
+		.menu-items { margin-right: 25px; margin-top: -17px; @include transition(all, 0.2s, ease-in-out);}
+	}
+
+	.sidenav-sticky-wrapper {
+
+  	  &.features-sidenav {
+    	  display:none;
+  	  }
+	}
+
+	.subpage-content.features-page {
+  	margin-left: auto;
+  	margin-right: auto;
+	}
+
+
+	// HOME
+
+	.video {
+
+  	h4 {
+    	font-size: 26px;
+  	}
+
+  	h3 {
+    	font-size: 32px;
+  	}
+
+
+	  &.center-v {
+  	  padding: 140px 0;
+    }
+	}
+
+	.icon-hexagon {
+    width: 40px;
+    height: 140px;
+  }
+
+  .reason {
+    font-size: 16px;
+    line-height: 21px;
+    width: 16%;
+    margin: 0 2%;
+  }
+
+	// FOOTER
+
+	.footer li {
+		@include transition(all, 0.2s, ease-in-out);
+		padding-right: 30px;
+	}
+
+	.footer {
+		@include transition(all, 0.2s, ease-in-out);
+		padding-bottom: 75px;
+		margin-top: 15px;
+	}
+
+	.copyright .main-wrapper {
+		@include transition(all, 0.2s, ease-in-out);
+		width: 755px;
+	}
+
+  p.pricing-faq {
+  	width: 29%;
+  }
+
+  p.pricing-faq.second, p.pricing-faq.third {
+    margin-left: 2%;
+  }
+
+	// STORIES PAGE
+
+	.stories {
+		height: 250px;
+
+			&:hover {
+				box-shadow: 0px 250px rgba(237, 79, 46, 0.9) inset; cursor: hand;
+			}
+	}
+
+	.thequiver, .maggieskidmarket, .casaguau {
+		@include transition(all, 0.2s, ease-in-out);
+		box-shadow: 0px 250px rgba(42, 61, 75, 0.5) inset;
+		height: 250px;
+
+		h2 {
+			@include transition(all, 0.2s, ease-in-out);
+		    padding-top: 80px;
+			padding-bottom: 10px;
+			font-size: 52px;
+		}
+
+		h5 {
+			font-size: 18px;
+		}
+	}
+
+	h6.story-page {
+		margin: 50px auto 40px;
+		font-size: 11px;
+		padding-bottom: 25px;
+	}
+
+	.maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
+		margin-top: 110px;
+
+		h3 {
+			margin-top: 100px;
+		}
+
+		p {
+			margin-bottom: 100px;
+		}
+	}
+
+	.story-page {
+
+		p.story-ingress	{
+			padding-bottom: 70px;
+			font-size: 26px;
+			line-height: 40px;
+		}
+
+		p.quote {
+			padding-top: 60px;
+			margin-left: 50px;
+			margin-right: 60px;
+		}
+
+		.story-content {
+			@include column(7);
+			padding-top: 60px;
+		}
+	}
+
+	.main-wrapper {
+
+		&.text-page {
+			max-width: 850px;
+		}
+	}
+
+	.subpage-content {
+
+  	margin-left: 190px;
+
+		&.text-only {
+			max-width: 620px;
+			margin-top: 20px;
+		}
+	}
+
+	.subpage-header h2 {
+		font-size: 42px;
+		padding: 70px 0;
+		max-width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+	br.responsive-br-1150 {
+		display: none;
+	}
+
+
+	// ABOUT US COVER
+
+	.about-cover-text-container {
+
+		h1 {
+			font-size: 60px;
+			line-height: 66px;
+		}
+
+		p {
+			font-size: 21px;
+			line-height: 34px;
+			max-width: 500px;
+			width: 95%;
+		}
+	}
+
+	.about-cover-text {
+		height: 75%;
+	}
+
+	// CONTACT US
+
+	.contact-text {
+		width: 80%;
+	}
+
+	#googlemaps {
+		top: 75px;
+	}
+
+
+	// TRIAL FORM
+
+	.trial {
+
+		@include transition(all, 0.2s, ease-in-out);
+		height: 420px;
+
+		h3 {
+			font-size: 34px;
+			line-height: 42px;
+		}
+
+		h4 {
+			font-size: 20px;
+		}
+
+		.center-v {
+			padding: 85px 0;
+
+		}
+	}
+
+	// PRICING
+
+  .pricing-table {
+    width: 24%;
+
+    li {
+      font-size: 14px;
+      line-height: 26px;
+    }
+
+    .price {
+      font-size: 60px;
+    }
+
+    &.first-table {
+      margin-left: 2%;
+    }
+  }
+
+  .enterprise-table {
+    width: 96%;
+    text-align: middle;
+    margin-left: 2%;
+
+    p {
+      padding-left: 40px;
+      padding-top: 10px;
+      width: 95%;
+      line-height: 24px;
+    }
+
+    a {
+      padding-left: 5px;
+    }
+  }
+
+  .pricing-icon {
+    width: 160px;
+    margin-right: 30px;
+  }
+
+
+  // HOMEPAGE FEATURES
+
+  .feature-info {
+    margin-right: 5%;
+
+    &.right-info {
+      margin-left: 5%;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  .pricing-page h2 {
+    margin-top: 0px;
+    width: 90%;
+    text-align: center;
+    margin: 0 5%;
+    padding: 70px 0 90px;
+  }
+
+  .pricing-icon {
+    width: 30%;
+    margin-right: 2%;
+    margin-top: -40px;
+  }
+
+  .main-wrapper.pricing {
+    top: -60px;
+  }
+
+  .feature {
+
+    &.one-third { width: 30%; margin-right: 5%; }
+
+    &.one-third-last { width: 30%; margin-right: 0; }
+
+    &.one-half { float: left; width: 45%; margin-right: 5%; margin-left: 0; }
+
+    &.one-half-last { float: left; width: 45%; margin-right: 0; margin-left: 0; }
+
+    &.two-thirds { float: left; width: 60%; margin-right: 5%; margin-left: 0; }
+
+    &.two-thirds-last { float: left; width: 60%; margin-right: 0; margin-left: 0; }
+
+  }
+
+  .story {
+
+    width: 28%;
+    margin-left: 2.6%;
+    margin-right: 2.6%;
+
+
+    img {
+      width: 200px;
+    }
+
+    strong, i {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 920px) { // Fade the main nav
+
+	// NAVIGATION
+
+	.main-navigation li {
+		display: none;
+	}
+
+	.mobile-menu {
+		display: inline-block;
+		font-size: 14px;
+		@include Gibson-Regular;
+		position: absolute;
+		right: 150px;
+		top: 30px;
+
+		a {	color: $orange;
+			&:hover { color: $grey; }
+		}
+
+		.hamburger {
+			width: 15px;
+			margin-right: 7px;
+		}
+	}
+
+	// FOOTER
+
+	.footer {
+		padding-right: 0;
+		padding-bottom: 50px;
+		margin-top: 10px;
+
+		img {
+			width: 50px;
+			top: 23px;
+		}
+
+		.text-link {
+			display: none;
+		}
+	}
+
+	li.twitter-last {
+			padding-right: 0px;
+	}
+
+	.copyright {
+		padding: 30px 0px;
+
+		.main-wrapper {
+			width: 92.5%;
+		}
+	}
+
+	// STORIES PAGE
+
+	.maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
+		margin-top: 90px;
+	}
+
+	h6.story-page {
+		margin: 60px auto 40px;
+	}
+
+	br.responsive-br {
+		display: none;
+	}
+
+	.story-page {
+
+		p.story-ingress	{
+			padding-bottom: 80px;
+			font-size: 26px;
+			line-height: 40px;
+			width: 85%;
+		}
+
+		p.quote {
+			text-align: center;
+			width: 50%;
+			padding-top: 60px;
+			margin: 0 25%;
+		}
+
+		.story-content {
+			padding-top: 60px;
+			width: 85%;
+			margin: 0 7.5%;
+		}
+	}
+
+	.subpage-content {
+
+		&.text-only {
+			max-width: 85%;
+			margin-left: 7.5%;
+			margin-right: 7.5%;
+		}
+	}
+
+	.sidenav-sticky-wrapper {
+  	display: none;
+	}
+
+  .pricing-table {
+    width: 48%;
+
+    &.featured-table {
+      margin-top: -1px;
+      height: 571px;
+      border-radius: 0 5px 0 0;
+
+      h4 {
+        padding-top: 44px;
+      }
+    }
+
+    &.table {
+      margin-left: 2%;
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .where, .what {
+    width: 50%;
+    max-height: 272px;
+
+    p {
+      padding: 80px 0;
+      width: 65%;
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+
+  .story {
+    width: 45%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+
+    &.mario {
+      display: none;
+    }
+  }
+
+  .video .center-v {
+  	padding: 100px 0;
+	}
+
+	#maincolumn, #sidebar {
+		@include column(12);
+		margin-bottom: 1em;
+	}
+
+	.reason {  }
+
+	.story-page {
+
+		p.story-ingress	{
+			padding-bottom: 80px;
+			font-size: 21px;
+			line-height: 34px;
+			width: 85%;
+		}
+	}
+
+	.about-cover h6 {
+		margin: 50px auto 30px;
+		font-size: 11px;
+		padding-bottom: 25px;
+	}
+
+
+	// CONTACT
+
+	.contact-text {
+
+		h1 {
+			font-size: 52px;
+			margin-bottom: 15px;
+		}
+	}
+
+	.contact img.castle {
+		margin-bottom: 20px;
+	}
+
+
+	// TRIAL FORM
+
+	.trial {
+
+		height: 320px;
+
+		h3 {
+			font-size: 26px;
+			line-height: 42px;
+			margin-bottom: 20px;
+		}
+
+		h4 {
+			font-size: 16px;
+			margin-bottom: 5px;
+		}
+
+		.center-v {
+			padding: 55px 0;
+		}
+
+		.trial-info {
+			font-size: 14px;
+		}
+
+		.trial-field.email {
+			width: 420px!important;
+		}
+	}
+
+	// PRICING PAGE
+
+	p.pricing-faq {
+  	width: 90%;
+  	margin-bottom: 30px;
+	}
+
+	p.pricing-faq.second, p.pricing-faq.third {
+    margin-left: 40px;
+  }
+
+
+  // FEATURES PAGE
+
+  .clear {
+
+    &.feature {
+      clear: none;
+    }
+
+    &.feature-both {
+      clear: both;
+    }
+  }
+
+  .feature {
+
+    margin: 0 auto;
+    padding-bottom: 30px;
+
+    &.one-third { width: 40%; margin-left: 5%; }
+
+    &.one-third-last { width: 40%; margin-left: 5%; margin-right: 5%; }
+
+    &.one-half { width: 40%; margin-left: 5%; }
+
+    &.one-half-last { width: 40%; margin-left: 5%; }
+
+    &.two-thirds { clear: both; margin-top: -70px; }
+
+    &.two-thirds-last { clear: both; display: none;}
+  }
+
+  div#marketing {
+    width: 90%;
+  }
+
+
+}
+
+@media screen and (max-width: 640px) {
+
+	.main-wrapper {
+
+		&.text-page {
+			width: 100%;
+		}
+
+		&.about-us p {
+			font-size: 16px;
+			line-height: 24px;
+		}
+
+		&.pricing {
+  		width: 95%;
+		}
+	}
+
+	.story {
+  	width: 100%;
+
+  	&.jackie {display: none;}
+	}
+
+	.where, .what {
+  	width: 100%;
+
+  	p {
+    	padding: 60px 0px;
+    	width: 90%;
+  	}
+  }
+
+	.what {
+  	margin-top: 0px;
+  }
+
+	// FOOTER
+
+	.copyright {
+		height: 80px;
+
+		.main-wrapper {
+			width: 100%!important;
+			margin-top: -10px;
+		}
+
+		p.left, p.right  {
+			font-size: 11px;
+			line-height: 18px;
+			text-align: center;
+			display: block;
+			width: 100%;
+			margin-bottom: 0px;
+
+			a { color: $grey; }
+		}
+	}
+
+	// STORIES
+
+	.maggieskidmarket-banner, .casaguau-banner, .thequiver-banner {
+		width: 100%;
+		margin-top: 0px;
+
+		&.left {
+			margin-top: 80px;
+		}
+
+		h3 {
+			margin-top: 50px;
+			font-size: 32px;
+			margin-bottom: 5px;
+		}
+
+		p {
+			margin-bottom: 50px;
+			font-size: 16px;
+		}
+	}
+
+	.story-page p.quote {
+		width: 90%;
+		margin: 0 5%;
+	}
+
+	.story-page .story-content {
+		width: 90%;
+		margin: 0 5%;
+
+		p {
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+
+
+	// TERMS & PRIVACY
+
+	.subpage-content {
+
+		&.text-only {
+			max-width: 90%;
+			margin-left: 5%;
+			margin-right: 5%;
+		}
+	}
+
+
+	// ABOUT US
+
+	.about-cover-text-container {
+
+		h1 {
+			font-size: 32px;
+			line-height: 40px;
+		}
+
+		p {
+			font-size: 17px;
+			line-height: 24px;
+			width: 100%;
+		}
+	}
+
+	.about-cover-text {
+		height: 100%;
+	}
+
+	.contact-text {
+
+		h1 {
+			font-size: 36px;
+		}
+	}
+
+	.trial .trial-field.email {
+			width: 90%!important;
+		}
+
+
+	// PRICING
+
+  .pricing-table {
+    width: 96%;
+
+    &.first-table {
+      border-radius: 5px 5px 0 0;
+    }
+
+    &.featured-table {
+      border-radius: 0;
+      margin-left: 2%;
+    }
+
+    &.last-table {
+      border-left: none;
+      margin-left: 2%;
+    }
+  }
+
+  p.footnotes {
+  	margin-left: 20px;
+	}
+
+	hr.pricing {
+  	margin: 40px 20px;
+	}
+
+	.pricing-faqs {
+    margin-left: -20px;
+    width: 95%;
+  }
+
+  .pricing-icon {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+
+  .feature {
+
+    margin: 0 auto;
+    padding-bottom: 10px;
+
+    &.one-third { width: 90%; }
+
+    &.one-third-last { width: 90%; }
+
+    &.one-half { width: 90%; }
+
+    &.one-half-last { width: 90%; }
+
+  }
+
+
+}
+
+@media screen and (max-width: 470px) {
+
+	// NAVIGATION
+
+	.main-navigation {
+		height: 50px;
+		padding: 16px 0;
+
+		.get-started {
+			display: none;
+		}
+
+		.logo {
+			width: 109px;
+			margin-left: 15px;
+		}
+	}
+	.mobile-menu { right: 15px; top: 18px; }
+
+	.menu-cover {
+
+		li a {
+			font-size: 24px;
+			line-height: 40px;
+		}
+
+		.logo {
+			width: 109px;
+			margin-left: 15px;
+			top: 20px;
+		}
+
+		.mobile-menu-close {
+			right: 15px;
+			top: 23px;
+		}
+
+		.menu-cover-text {
+			height: 300px;
+		}
+
+	}
+
+	.button-bottom {
+
+		a.button.ghost {
+			font-size: 12px;
+		    padding: 10px 16px;
+		}
+	}
+
+	.mobile-menu { right: 15px; top: 18px; }
+
+
+	// STORIES PAGE
+
+	.stories {
+		height: 140px;
+
+			&:hover {
+				box-shadow: 0px 140px rgba(237, 79, 46, 0.9) inset; cursor: hand;
+			}
+	}
+
+	.thequiver, .maggieskidmarket, .casaguau {
+		@include transition(all, 0.2s, ease-in-out);
+		box-shadow: 0px 140px rgba(42, 61, 75, 0.5) inset;
+		height: 140px;
+
+		h2 {
+			@include transition(all, 0.2s, ease-in-out);
+		    padding-top: 40px;
+			padding-bottom: 6px;
+			font-size: 32px;
+			line-height: 36px;
+		}
+
+		h5 {
+			font-size: 16px;
+		}
+	}
+	img.story-left, img.story-right {
+		width: 100%;
+	}
+
+	// FOOTER
+
+	.footer {
+		padding-bottom: 40px;
+
+		img {
+			width: 40px;
+			top: 17px;
+		}
+	}
+
+	.subpage-header h2 {
+		font-size: 28px;
+		line-height: 38px;
+		padding: 35px 0;
+	}
+
+
+	// CONTACT
+
+	.contact-text {
+		width: 90%;
+		height: 300px;
+
+		h1 {
+			font-size: 32px;
+			margin-bottom: 10px;
+		}
+
+		p {
+			font-size: 14px;
+			line-height: 21px;
+		}
+
+		p.osoite {
+			font-size: 12px;
+		}
+	}
+
+	#googlemaps {
+		top: 50px;
+	}
+
+	.contact img.castle {
+		margin-bottom: 10px;
+	}
+
+
+	// TRIAL FORM
+
+	.trial {
+
+		height: 320px;
+
+		h3 {
+			font-size: 26px;
+			line-height: 42px;
+			margin-bottom: 20px;
+		}
+
+		h4 {
+			font-size: 16px;
+			margin-bottom: 5px;
+		}
+
+		.center-v {
+			padding: 55px 0;
+		}
+
+		.trial-info {
+			font-size: 14px;
+		}
+
+	}
+
+}
