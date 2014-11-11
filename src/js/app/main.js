@@ -1,14 +1,15 @@
 define(
   [ "jquery"
-  , "smoothscroll"
+  , "smoothScroll"
   , "swiper"
   , "odometer"
   , "app/trial"
   , "app/scrollspy"
   , "fancybox"
+  , "sticky"
   ]
-  , function ($, SmoothScroll, Swiper, Odometer, Trial, scrollSpy, fancybox) {
-    return {
+  , function ($, SmoothScroll, Swiper, Odometer, Trial, scrollSpy, fancybox, sticky) {
+    var app = {
       init: function() {
         //initialize sticky nav bar
         $('#main-navigation').fixedsticky();
@@ -33,7 +34,6 @@ define(
         // Initialize trial to DOM element
         Trial.initializeTrialForm($('.trial'));
 
-        debugger;
         scrollSpy.init($('#side-navigation a'));
 
         $(".fancybox")
@@ -108,4 +108,6 @@ define(
         }
       }
     }
+    app.init();
+    return app;
 });

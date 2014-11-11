@@ -16,8 +16,6 @@
     <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 
-  <script data-main="js/app" src="vendor/require.js"></script>
-
   <!-- Fancybox -->
   <link rel="stylesheet" href="vendor/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
 </head>
@@ -279,5 +277,10 @@
 
   </div>
 
+  <!-- Load all JavaScript here, at the end of the document body.
+       No need to use domReady or anything like that.
+
+       This will be replaced by grunt build -->
+  <script data-main="js/app" src="vendor/require.js"></script>
 </body>
 </html>
