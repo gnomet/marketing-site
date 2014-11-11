@@ -24,6 +24,8 @@ strong { @include Gibson-Regular; }
 
   &.feature {
     clear: both;
+    padding-bottom: 0px;
+    padding-top: 0px;
   }
 
   &.feature-both {
@@ -537,7 +539,12 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
   float: left;
   position: relative;
   width: 200px;
-  left: -380px;
+  left: -320px;
+  
+  &.track-manage {
+    margin-top: 100px;
+    margin-bottom: -150px;
+  }
 }
 
 .right-screenshot {
@@ -593,6 +600,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
   height: 800px;
   background: $bg-grey;
   position: relative;
+  overflow: hidden;
 }
 
 img.svg.creditcards {
@@ -1101,6 +1109,9 @@ img.svg.paypal {
   &.two-thirds { float: left; width: 540px; margin-right: 90px; margin-left: 0; }
 
   &.two-thirds-last { float: left; width: 550px; margin-right: 0; margin-left: 0; }
+  
+  .img-left { margin-left: -25px; }
+  .img-right { margin-left: -15px; }
 
 }
 
