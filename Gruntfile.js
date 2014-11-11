@@ -39,6 +39,7 @@ module.exports = function(grunt) {
         src: [
           '**',
           '!**/sass/**', // SASS source is not needed. Only CSS.
+          '!**/vendor/**', // These are included by SASS and RequireJS
           '!**/templates/**', // Templates are bundled with RequireJS package
 
           '!*.html', // compress task copies these files

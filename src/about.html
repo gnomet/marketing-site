@@ -13,29 +13,8 @@
 
   <title>Create a marketplace with Sharetribe - Our story</title>
 
-    <!-- Stylesheets -->
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-
-  <script data-main="js/app" src="vendor/require.js"></script>
-  
-  <!-- Fancybox -->  
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-  <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
-  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-  
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $(".fancybox")
-        .fancybox({
-          width       : '100%',
-          height      : '100%',
-          type        : 'iframe',
-          scrolling   : 'no',
-          preload     : 'true',
-      });
-    });
-  </script>
-  
 </head>
 <body>
 
@@ -96,15 +75,15 @@
 <p>In all these cases, online marketplaces provide an effective way to save costs by skipping the middleman, while maintaining convenience and high quality. This new economy is more personal (we often interact directly with individual providers instead of faceless corporations) and sustainable (by using our existing assets more effectively we can reduce waste and emissions). We believe that this collaborative economy will be the next big revolution, and we want to be one of the bedrocks supporting and powering it.</p>
 
 		<!-- Hide the team pictures for now
-  		
+
     <img src="images/office.big.jpg" class="office-big">
-		
+
 		<div class="small-images">
 			<img src="images/office.left.jpg" class="office-left">
 			<img src="images/office.middle.jpg" class="office-middle">
 			<img src="images/office.right.jpg" class="office-right">
 		</div>
-		
+
 		-->
 
 		<h4>Creating an online marketplace used to be <br class="responsive-br-1150">an expensive and time-consuming task.</h4>
@@ -172,5 +151,10 @@
 
   </div>
 
+  <!-- Load all JavaScript here, at the end of the document body.
+       No need to use domReady or anything like that.
+
+       This will be replaced by grunt build -->
+  <script data-main="js/app" src="vendor/require.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 @import 'reset';
 
-@import 'vendor.scss';
+@import 'vendor';
 @import 'semantic-grid';
 @import 'variables';
 @import 'mixins';
@@ -540,7 +540,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
   position: relative;
   width: 200px;
   left: -320px;
-  
+
   &.track-manage {
     margin-top: 100px;
     margin-bottom: -150px;
@@ -563,7 +563,7 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
   position: relative;
   text-align: left;
   line-height: 32px;
-  
+
   &.track-manage {
     top: 90px;
   }
@@ -1114,7 +1114,7 @@ img.svg.paypal {
   &.two-thirds { float: left; width: 540px; margin-right: 90px; margin-left: 0; }
 
   &.two-thirds-last { float: left; width: 550px; margin-right: 0; margin-left: 0; }
-  
+
   .img-left { margin-left: -25px; margin-top: -22px; }
   .img-right { margin-left: -15px; margin-top: -15px;  }
 
@@ -2060,11 +2060,11 @@ img.story-left, img.story-right {
   }
 
 
-  // HOMEPAGE FEATURES 
-  
+  // HOMEPAGE FEATURES
+
   .feature-info {
     margin-right: 5%;
-    
+
     &.right-info {
       margin-left: 5%;
     }

@@ -16,27 +16,6 @@
     <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 
-  <!-- Javascripts -->
-  <script data-main="js/app" src="vendor/require.js"></script>
-  
-  <!-- Fancybox -->  
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-  <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
-  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-  
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $(".fancybox")
-        .fancybox({
-          width       : '100%',
-          height      : '100%',
-          type        : 'iframe',
-          scrolling   : 'no',
-          preload     : 'true',
-      });
-    });
-  </script>
-
 </head>
 <body>
 
@@ -47,7 +26,7 @@
     <nav class="main-navigation fixedsticky" id="main-navigation">
 
       <div class="logo"><a href="index.html"><img class="svg" src="images/svg/logo.svg" alt="Sharetribe logo"></a></div>
-      
+
       <div class="mobile-menu"><a href="menu.html" class="fancybox"><img class="svg hamburger" src="images/icons/menu-hamburger.svg" alt="Sharetribe logo">Menu</a></div>
 
       <div class="menu-items">
@@ -59,7 +38,7 @@
         <li><a href="http://blog.sharetribe.com" target="_blank">Blog</a></li>
         <li><a href="contact.html">Contact us</a></li>
         <a class="fancybox button get-started" href="form.html">Get started</a>
-        
+
       </div>
 
     </nav>
@@ -85,7 +64,7 @@
     <p class="story-ingress">Like many great marketplace concepts, Casa Guau was born out of a <br class="responsive-br">personal need. <strong>Mario Hego</strong> needed to find a sitter for his dog, <br class="responsive-br">but it proved difficult. He didn't want to resort to a pet hotel.</p>
 
     <div class="main-wrapper">
-	    
+
 	    <img src="images/casaguau-case.jpg" style="width: 100%;">
 
       <p class="quote">"Casa Guau helps Mexicans find sitters for their pets."</p>
@@ -171,5 +150,11 @@
 
   </div>
 
-</body>
+  <!-- Load all JavaScript here, at the end of the document body.
+       No need to use domReady or anything like that.
+
+       This will be replaced by grunt build -->
+  <script data-main="js/app" src="vendor/require.js"></script>
+
+  </body>
 </html>

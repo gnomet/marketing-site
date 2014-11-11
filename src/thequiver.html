@@ -13,30 +13,8 @@
 
   <title>Create a marketplace with Sharetribe – The Quiver's Success Story</title>
 
-    <!-- Stylesheets -->
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-
-  <!-- Javascripts -->
-  <script data-main="js/app" src="vendor/require.js"></script>
-
-  <!-- Fancybox -->  
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-  <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
-  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-  
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $(".fancybox")
-        .fancybox({
-          width       : '100%',
-          height      : '100%',
-          type        : 'iframe',
-          scrolling   : 'no',
-          preload     : 'true',
-      });
-    });
-  </script>
-  
 </head>
 <body>
 
@@ -47,7 +25,7 @@
     <nav class="main-navigation fixedsticky" id="main-navigation">
 
       <div class="logo"><a href="index.html"><img class="svg" src="images/svg/logo.svg" alt="Sharetribe logo"></a></div>
-      
+
       <div class="mobile-menu"><a href="menu.html" class="fancybox"><img class="svg hamburger" src="images/icons/menu-hamburger.svg" alt="Sharetribe logo">Menu</a></div>
 
       <div class="menu-items">
@@ -85,7 +63,7 @@
     <p class="story-ingress"><strong>Rob Bonvetti</strong> used to have a finance job on Wall Street. <br class="responsive-br">But a few years back he decided it was time for something different. <br class="responsive-br">He wanted to do something he truly loved for a living.</p>
 
     <div class="main-wrapper">
-	    
+
 	  <img src="images/thequiver-case.jpg" style="width: 100%;">
 
       <p class="quote">“The Quiver helps people rent quality boards from other surfers.”</p>
@@ -95,7 +73,7 @@
         <p>Rob experienced a revelation after trying out <a href="http://www.airbnb.com" target="_blank">Airbnb</a> a couple of times. "The peer-to-peer rental model was a great experience. In my previous job I was fascinated with marketplaces and matching supply & demand, so I immediately started to think of ways the Airbnb model could be applied to other things."</p>
 
         <p>An avid surfer, Rob soon realized the solution was right in front of him. Surfboards are valuable items, and they are tricky and expensive to carry with you while traveling, so there is a large number of surfers who could benefit from short-term board rentals. Meanwhile, many active surfers own multiple boards, many of which spend a lot of time gathering dust in the garage. They would surely be interested in monetizing their idle assets.</p>
-        
+
         <p>Rob knew the surfing market inside out and now had a clear business plan. He would set up a marketplace site where surfers could list their boards for rent. Booking and payment would happen through the site, and Rob would charge a commission from each payment transaction.</p>
 
         <h4>He had only one problem. <br>He didn't know how to build such a marketplace site.</h4>
@@ -176,5 +154,10 @@
 
   </div>
 
+  <!-- Load all JavaScript here, at the end of the document body.
+       No need to use domReady or anything like that.
+
+       This will be replaced by grunt build -->
+  <script data-main="js/app" src="vendor/require.js"></script>
 </body>
 </html>

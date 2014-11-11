@@ -13,29 +13,8 @@
 
   <title>Create a marketplace with Sharetribe – Pricing</title>
 
-    <!-- Stylesheets -->
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-
-  <!-- Javascripts -->
-  <script data-main="js/app" src="vendor/require.js"></script>
-
-  <!-- Fancybox -->  
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-  <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
-  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-  
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $(".fancybox")
-        .fancybox({
-          width       : '100%',
-          height      : '100%',
-          type        : 'iframe',
-          scrolling   : 'no',
-          preload     : 'true',
-      });
-    });
-  </script>
 
 </head>
 <body>
@@ -72,24 +51,24 @@
     <div class="pricing-top">
 
       <h2>Simple pricing</h2>
-      
+
       <div class="pricing-icons">
 
         <div class="pricing-icon">
           <img src="images/icons/heart-angel.svg">
           <p>Cancel at any point. <br>No hard feelings.</p>
         </div>
-  
+
         <div class="pricing-icon">
           <img src="images/icons/chart.svg">
           <p>Pricing that scales with <br>you as you grow.</p>
         </div>
-  
+
         <div class="pricing-icon">
           <img src="images/icons/cake.svg">
           <p>No setup fees. <br>No transaction fees.</p>
         </div>
-      
+
       </div>
 
     </div>
@@ -206,7 +185,7 @@
         <p>Do you need even more members? Want to create a marketplace for your brand? Require custom features & support?<a href="contact">› Let's talk</a></p>
 
       </div>
-      
+
       <div class="clear"></div>
 
       <p class="footnotes">* We provide hosting for your marketplace and take care of all technical issues. When we release new features, your marketplace is updated automatically. You can just sit back and relax.<br>
@@ -214,19 +193,19 @@
         Prices do not include VAT. If you are an individual in the EU or a company in Finland, 24% VAT will be added to the price. In other cases you don't need to pay VAT.</p>
 
       <hr class="pricing"/>
-      
+
       <div class="pricing-faqs">
 
         <p class="pricing-faq first"><strong>Who is a member?</strong>Everybody can browse content on your marketplace without creating an account. However, when somebody wants to either sell or buy something, they need to register as a member. </p>
-        
+
         <p class="pricing-faq second"><strong>What is a custom domain?</strong>By default, the web address (domain) of your marketplace has a "marketplace.sharetribe.com" format. However, it's possible for you to use your own domain (eg. www.yourdomain.com) instead. This feature is available in all our plans except the "starter" plan.</p>
-  
+
         <p class="pricing-faq third"><strong>What happens if I want to leave?</strong>If you're not satisfied with our services, you're free to leave at any point. We will export all your data for you, and even provide our code with instructions to set it up on your own server. There's no lock-in of any kind in our services.</p>
-      
+
         <div class="clear"></div>
-      
+
       </div>
-      
+
   </div> <!-- main wrapper closing -->
 
   </div>  <!-- grey background closing -->
@@ -269,5 +248,10 @@
 
   </div>
 
+  <!-- Load all JavaScript here, at the end of the document body.
+       No need to use domReady or anything like that.
+
+       This will be replaced by grunt build -->
+  <script data-main="js/app" src="vendor/require.js"></script>
 </body>
 </html>

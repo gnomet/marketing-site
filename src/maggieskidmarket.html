@@ -13,41 +13,20 @@
 
   <title>Create a marketplace with Sharetribe – Maggie's Kids Market's Success Story</title>
 
-    <!-- Stylesheets -->
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-
-  <!-- Javascripts -->
-  <script data-main="js/app" src="vendor/require.js"></script>
-  
-  <!-- Fancybox -->  
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-  <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
-  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-  
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $(".fancybox")
-        .fancybox({
-          width       : '100%',
-          height      : '100%',
-          type        : 'iframe',
-          scrolling   : 'no',
-          preload     : 'true',
-      });
-    });
-  </script>
 
 </head>
 <body>
 
 <div id="navigation-wrapper">
-	
+
 <!-- Sticky navigation -->
 
     <nav class="main-navigation fixedsticky" id="main-navigation">
 
       <div class="logo"><a href="index.html"><img class="svg" src="images/svg/logo.svg" alt="Sharetribe logo"></a></div>
-      
+
       <div class="mobile-menu"><a href="menu.html" class="fancybox"><img class="svg hamburger" src="images/icons/menu-hamburger.svg" alt="Sharetribe logo">Menu</a></div>
 
       <div class="menu-items">
@@ -84,7 +63,7 @@
     <h6 class="story-page">Success stories</h6>
     <p class="story-ingress">Over and over <strong>Jacklyn Kelly</strong> heard the same story from her friends: they had to <br class="responsive-br">throw away their kids' old toys and clothes that were in perfectly good condition, <br class="responsive-br">because it was too difficult to find anyone who would want them.</p>
 
-    
+
     <div class="main-wrapper">
 
 		<img src="images/maggieskidsmarket-case.jpg" style="width: 100%;">
@@ -175,6 +154,12 @@
     </div>
 
   </div>
+
+  <!-- Load all JavaScript here, at the end of the document body.
+       No need to use domReady or anything like that.
+
+       This will be replaced by grunt build -->
+  <script data-main="js/app" src="vendor/require.js"></script>
 
 </body>
 </html>

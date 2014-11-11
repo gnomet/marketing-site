@@ -13,30 +13,8 @@
 
   <title>Create a marketplace with Sharetribe – Press</title>
 
-    <!-- Stylesheets -->
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-
-  <!-- Javascripts -->
-  <script data-main="js/app" src="vendor/require.js"></script>
-  
-  <!-- Fancybox -->  
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-  <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
-  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-  
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $(".fancybox")
-        .fancybox({
-          width       : '100%',
-          height      : '100%',
-          type        : 'iframe',
-          scrolling   : 'no',
-          preload     : 'true',
-      });
-    });
-  </script>
-
 </head>
 <body>
 
@@ -134,7 +112,7 @@
         <!-- Aggregated Statistics -->
 
         <h3>Contact details</h3>
-        
+
         <h4>Responsible organization:</h4>
         <p>Sharetribe Ltd<br>
         Business ID (Finland): 2432359-2<br>
@@ -207,5 +185,10 @@
 
   </div>
 
+  <!-- Load all JavaScript here, at the end of the document body.
+       No need to use domReady or anything like that.
+
+       This will be replaced by grunt build -->
+  <script data-main="js/app" src="vendor/require.js"></script>
 </body>
 </html>

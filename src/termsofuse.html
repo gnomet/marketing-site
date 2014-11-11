@@ -16,27 +16,6 @@
     <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 
-  <!-- Javascripts -->
-  <script data-main="js/app" src="vendor/require.js"></script>
-  
-  <!-- Fancybox -->  
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-  <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
-  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-  
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $(".fancybox")
-        .fancybox({
-          width       : '100%',
-          height      : '100%',
-          type        : 'iframe',
-          scrolling   : 'no',
-          preload     : 'true',
-      });
-    });
-  </script>
-    
   <style type="text/css">
     .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc; width: 100%;}
     .tg td{font-size:14px;padding:10px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
@@ -148,7 +127,7 @@
         <!-- 4 Service Level Guarantee -->
 
         <h3>4 Service Level Guarantee</h3><p>Sharetribe will make all reasonable efforts to keep the Service available 24/7 with an uptime percentage as high as possible. If the service is available less than 95% of time during any calendar month, You are entitled to service credit (“Service Credit”) in the following amounts by requesting it from Sharetribe within 30 days from the end of the respective calendar month:</p>
-        
+
         <table class="tg">
             <tr>
               <th class="tg-e3zv">Service Availability during the Calendar Month</th>
@@ -167,7 +146,7 @@
               <td class="tg-4eph">50%</td>
             </tr>
         </table>
-        
+
         <br>
 
         <p>Sharetribe will deduct the Service Credit from Your next invoice regarding monthly or annual fees charged the Service. Service Credits are not paid out as refunds or other such amounts.</p>
@@ -297,5 +276,10 @@
 
   </div>
 
+  <!-- Load all JavaScript here, at the end of the document body.
+       No need to use domReady or anything like that.
+
+       This will be replaced by grunt build -->
+  <script data-main="js/app" src="vendor/require.js"></script>
 </body>
 </html>
