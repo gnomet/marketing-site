@@ -1,15 +1,14 @@
-# www.shareetribe.com
-==============
+# sharetribe.com marketing site
 
 The marketing site shown at www.sharetribe.com
 
 ## Deploy
 
-### tl;dr - Build, compress and deploy new version
+### tl;dr - Build, package and deploy new version
 
 (Make sure you have `aws-keys.json` file)
 
-1. Run `grunt build compress deploy`
+1. Run `grunt build package deploy`
 
 1. Go to [CloudFront console](https://console.aws.amazon.com/cloudfront/home) and invalidate *.html files
 
@@ -19,7 +18,7 @@ The marketing site shown at www.sharetribe.com
 
 1. Build task creates a new folder `dist`. Go to that browser and run http-server on that folder. Do your testing.
 
-1. Run `grunt compress deploy`
+1. Run `grunt package deploy`
 
 1. Go to S3 URL (http://www.sharetri.be.s3-website-us-east-1.amazonaws.com/ or http://www.sharetribe.com.s3-website-us-east-1.amazonaws.com/) and test.
 

@@ -20,7 +20,8 @@ module.exports = function(grunt) {
     },
     clean: {
       dist: ['dist/'],
-      temp: ['.build-tmp/']
+      temp: ['.build-tmp/'],
+      package: ['dist-packaged/']
     },
     copy: {
 
@@ -32,25 +33,35 @@ module.exports = function(grunt) {
         dest: '.build-tmp/'
       },
 
-      // Copy files from temporary location to the final destination
+      // Copy files from temporary location to the `dist` directory
       dist: {
         expand: true,
         cwd: '.build-tmp/',
         src: [
           '**',
+
+          // These are packaged by RequireJS.
+          '!**/js/almond*.js',
+          '!**/js/app/**',
+
           '!**/sass/**', // SASS source is not needed. Only CSS.
           '!**/vendor/**', // These are included by SASS and RequireJS
           '!**/templates/**', // Templates are bundled with RequireJS package
-
-          '!*.html', // compress task copies these files
-          '!**/js/**', // compress task copies these files
-          '!**/css/**', // compress task copies these files
-          '!**/fonts/**', // compress task copies these files
-          '!**/images/svg/**', // compress task copies these files
-          '!**/images/icons/**' // compress task copies these files
         ],
         dest: 'dist/'
+      },
+
+      // Copy uncompressed image filed to `dist-packaged`. All other files are copies by the
+      // compress task
+      package: {
+        expand: true,
+        cwd: 'dist/',
+        src: [
+          '**/images/*',
+        ],
+        dest: 'dist-packaged/'
       }
+
     },
     watch: {
       css: {
@@ -69,25 +80,15 @@ module.exports = function(grunt) {
         algorithm: 'md5',
         length: 8
       },
-      images: {
-        src: '.build-tmp/images/*'
-      },
-      icons: {
-        src: '.build-tmp/images/icons/*'
-      },
-      svg: {
-        src: '.build-tmp/images/svg/*'
-      },
-      css: {
-        src: ['.build-tmp/css/*']
-      },
-      js: {
-        src: '.build-tmp/js/*'
-      },
-      fonts: {
-        expand: true,
-        src: ['.build-tmp/fonts/**/*']
-      }
+
+      // WARNING! Do NOT use expand: true in filerev task. It seems to be unable to delete
+      // the originals if expand is true
+      images: { src: '.build-tmp/images/*' },
+      icons: { src: '.build-tmp/images/icons/*' },
+      svg: { src: '.build-tmp/images/svg/*' },
+      css: { src: '.build-tmp/css/*' },
+      js: { src: '.build-tmp/js/*' },
+      fonts: { src: ['.build-tmp/fonts/webfonts/*'] }
     },
     usemin: {
       html: '.build-tmp/*.html',
@@ -120,14 +121,14 @@ module.exports = function(grunt) {
           mode: 'gzip'
         },
         files: [
-          {expand: true, cwd: '.build-tmp/', src: [
+          {expand: true, cwd: 'dist/', src: [
             '*.html',
             'js/*',
             'css/*',
             'fonts/**/*',
             'images/svg/*',
             'images/icons/*'
-          ], dest: 'dist/'}
+          ], dest: 'dist-packaged/'}
         ]
       }
     },
@@ -147,10 +148,10 @@ module.exports = function(grunt) {
         files: [
           // Cleanup all old files. If differential: true, this deletes only
           // files that do not exists locally
-          {cwd: 'dist/', dest: '/', action: 'delete'},
+          {cwd: 'dist-packaged/', dest: '/', action: 'delete'},
 
           // Compressed files with long cache expiration
-          {expand: true, cwd: 'dist/', src: [
+          {expand: true, cwd: 'dist-packaged/', src: [
             'js/*',
             'css/*',
             'images/svg/*',
@@ -162,12 +163,12 @@ module.exports = function(grunt) {
           }},
 
           // Not compressed filed with long cache expiration
-          {expand: true, cwd: 'dist/', src: ['images/*'], dest: '', params: {
+          {expand: true, cwd: 'dist-packaged/', src: ['images/*'], dest: '', params: {
             CacheControl: "max-age=" + 3600 * 24 * 365 + "" // One year
           }},
 
           // Compressed files without cache
-          {expand: true, cwd: 'dist/', src: ['*.html'], dest: '', params: {
+          {expand: true, cwd: 'dist-packaged/', src: ['*.html'], dest: '', params: {
             ContentEncoding: "gzip"
           }},
         ]
@@ -180,27 +181,27 @@ module.exports = function(grunt) {
         files: [
           // Cleanup all old files. If differential: true, this deletes only
           // files that do not exists locally
-          {cwd: 'dist/', dest: '/', action: 'delete'},
+          {cwd: 'dist-packaged/', dest: '/', action: 'delete'},
 
           // Compressed files with long cache expiration
-          {expand: true, cwd: 'dist/', src: [
+          {expand: true, cwd: 'dist-packaged/', src: [
             'js/*',
             'css/*',
+            'fonts/**/*',
             'images/svg/*',
-            'images/icons/*',
-            'fonts/**/*'
+            'images/icons/*'
           ], dest: '', params: {
             ContentEncoding: "gzip",
             CacheControl: "max-age=" + 3600 * 24 * 365 + "" // One year
           }},
 
           // Not compressed filed with long cache expiration
-          {expand: true, cwd: 'dist/', src: ['images/*'], dest: '', params: {
+          {expand: true, cwd: 'dist-packaged/', src: ['images/*'], dest: '', params: {
             CacheControl: "max-age=" + 3600 * 24 * 365 + "" // One year
           }},
 
           // Compressed files without cache
-          {expand: true, cwd: 'dist/', src: ['*.html'], dest: '', params: {
+          {expand: true, cwd: 'dist-packaged/', src: ['*.html'], dest: '', params: {
             ContentEncoding: "gzip"
           }},
         ]
@@ -237,8 +238,13 @@ module.exports = function(grunt) {
     'compass:dist',
     'filerev',
     'usemin',
-    'compress',
     'copy:dist'
+  ]);
+
+
+  grunt.registerTask('package', [
+    'compress',
+    'copy:package'
   ]);
 
   grunt.registerTask('deploy', [
