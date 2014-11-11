@@ -142,34 +142,64 @@ module.exports = function(grunt) {
       staging: {
         options: {
           bucket: 'www.sharetri.be',
-          differential: false // Only uploads the files that have changed
+          differential: false // Only uploads the files that have changed (this is now disabled. seems to be a good idea, but didn't seem to work that well)
         },
         files: [
-          // Cleanup all old files. Because of differential: true, this deleted only
+          // Cleanup all old files. If differential: true, this deletes only
           // files that do not exists locally
           {cwd: 'dist/', dest: '/', action: 'delete'},
 
-          // Upload files with cache
+          // Compressed files with long cache expiration
+          {expand: true, cwd: 'dist/', src: [
+            'js/*',
+            'css/*',
+            'images/svg/*',
+            'images/icons/*',
+            'fonts/**/*'
+          ], dest: '', params: {
+            ContentEncoding: "gzip",
+            CacheControl: "max-age=" + 3600 * 24 * 365 + "" // One year
+          }},
 
-          {expand: true, cwd: 'dist/', src: ['js/*'], dest: '', params: {
-            ContentEncoding: "gzip",
-            CacheControl: "max-age=" + 3600 * 24 * 365 + "" // One year
-          }},
-          {expand: true, cwd: 'dist/', src: ['css/*'], dest: '', params: {
-            ContentEncoding: "gzip",
-            CacheControl: "max-age=" + 3600 * 24 * 365 + "" // One year
-          }},
-          {expand: true, cwd: 'dist/', src: ['images/svg/*', 'images/icons/*'], dest: '', params: {
-            ContentEncoding: "gzip",
-            CacheControl: "max-age=" + 3600 * 24 * 365 + "" // One year
-          }},
+          // Not compressed filed with long cache expiration
           {expand: true, cwd: 'dist/', src: ['images/*'], dest: '', params: {
             CacheControl: "max-age=" + 3600 * 24 * 365 + "" // One year
           }},
-          {expand: true, cwd: 'dist/', src: ['fonts/**/*'], dest: '', params: {
+
+          // Compressed files without cache
+          {expand: true, cwd: 'dist/', src: ['*.html'], dest: '', params: {
+            ContentEncoding: "gzip"
+          }},
+        ]
+      },
+      production: {
+        options: {
+          bucket: 'www.sharetribe.com',
+          differential: false // Only uploads the files that have changed (this is now disabled. seems to be a good idea, but didn't seem to work that well)
+        },
+        files: [
+          // Cleanup all old files. If differential: true, this deletes only
+          // files that do not exists locally
+          {cwd: 'dist/', dest: '/', action: 'delete'},
+
+          // Compressed files with long cache expiration
+          {expand: true, cwd: 'dist/', src: [
+            'js/*',
+            'css/*',
+            'images/svg/*',
+            'images/icons/*',
+            'fonts/**/*'
+          ], dest: '', params: {
             ContentEncoding: "gzip",
             CacheControl: "max-age=" + 3600 * 24 * 365 + "" // One year
           }},
+
+          // Not compressed filed with long cache expiration
+          {expand: true, cwd: 'dist/', src: ['images/*'], dest: '', params: {
+            CacheControl: "max-age=" + 3600 * 24 * 365 + "" // One year
+          }},
+
+          // Compressed files without cache
           {expand: true, cwd: 'dist/', src: ['*.html'], dest: '', params: {
             ContentEncoding: "gzip"
           }},
