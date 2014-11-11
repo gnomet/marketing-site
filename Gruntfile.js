@@ -113,6 +113,16 @@ module.exports = function(grunt) {
           from: '<script data-main="js/app" src="vendor/require.js"></script>',
           to: '<script src="js/app.js"></script>'
         }]
+      },
+      version: {
+        src: ['.build-tmp/*.html'],
+        overwrite: true,
+        replacements: [{
+          from: '<!-- VERSION -->',
+          to: function() {
+            return '<!-- VERSION ' + new Date() + ' -->';
+          }
+        }]
       }
     },
     compress: {
@@ -233,6 +243,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean',
     'copy:temp',
+    'replace:version',
     'requirejs:compile',
     'replace:requirejs',
     'compass:dist',
