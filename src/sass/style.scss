@@ -556,7 +556,8 @@ a.button { @include button($white, $orange, $orange, $white, $blue, $blue); }
 }
 
 .feature-info {
-  width: 500px;
+  max-width: 500px;
+  width: 90%;
   top: 0px;
   float: right;
   position: relative;
@@ -2058,6 +2059,16 @@ img.story-left, img.story-right {
     margin-right: 30px;
   }
 
+
+  // HOMEPAGE FEATURES 
+  
+  .feature-info {
+    margin-right: 5%;
+    
+    &.right-info {
+      margin-left: 5%;
+    }
+  }
 }
 
 @media screen and (max-width: 1000px) {
