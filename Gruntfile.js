@@ -44,7 +44,7 @@ module.exports = function(grunt) {
           '!*.html', // compress task copies these files
           '!**/js/**', // compress task copies these files
           '!**/css/**', // compress task copies these files
-          // '!**/fonts/**', // compress task copies these files
+          '!**/fonts/**', // compress task copies these files
           '!**/images/svg/**', // compress task copies these files
           '!**/images/icons/**' // compress task copies these files
         ],
@@ -69,19 +69,28 @@ module.exports = function(grunt) {
         length: 8
       },
       images: {
-        expand: true,
-        src: '.build-tmp/images/**/*'
+        src: '.build-tmp/images/*'
+      },
+      icons: {
+        src: '.build-tmp/images/icons/*'
+      },
+      svg: {
+        src: '.build-tmp/images/svg/*'
       },
       css: {
         src: ['.build-tmp/css/*']
       },
       js: {
         src: '.build-tmp/js/*'
+      },
+      fonts: {
+        expand: true,
+        src: ['.build-tmp/fonts/**/*']
       }
     },
     usemin: {
       html: '.build-tmp/*.html',
-      css: '.build-tmp/css/style.css'
+      css: '.build-tmp/css/style.*.css'
     },
     requirejs: {
       compile: {
@@ -114,7 +123,7 @@ module.exports = function(grunt) {
             '*.html',
             'js/*',
             'css/*',
-            // 'fonts/**/*',
+            'fonts/**/*',
             'images/svg/*',
             'images/icons/*'
           ], dest: 'dist/'}
@@ -143,21 +152,22 @@ module.exports = function(grunt) {
 
           {expand: true, cwd: 'dist/', src: ['js/*'], dest: '', params: {
             ContentEncoding: "gzip",
-            CacheControl: 3600 * 24 * 365 + "" // One year
+            CacheControl: "max-age=" + 3600 * 24 * 365 + "" // One year
           }},
           {expand: true, cwd: 'dist/', src: ['css/*'], dest: '', params: {
             ContentEncoding: "gzip",
-            CacheControl: 3600 * 24 * 365 + "" // One year
+            CacheControl: "max-age=" + 3600 * 24 * 365 + "" // One year
           }},
           {expand: true, cwd: 'dist/', src: ['images/svg/*', 'images/icons/*'], dest: '', params: {
             ContentEncoding: "gzip",
-            CacheControl: 3600 * 24 * 365 + "" // One year
+            CacheControl: "max-age=" + 3600 * 24 * 365 + "" // One year
           }},
           {expand: true, cwd: 'dist/', src: ['images/*'], dest: '', params: {
-            CacheControl: 3600 * 24 * 365 + "" // One year
+            CacheControl: "max-age=" + 3600 * 24 * 365 + "" // One year
           }},
           {expand: true, cwd: 'dist/', src: ['fonts/**/*'], dest: '', params: {
-            ContentEncoding: "gzip"
+            ContentEncoding: "gzip",
+            CacheControl: "max-age=" + 3600 * 24 * 365 + "" // One year
           }},
           {expand: true, cwd: 'dist/', src: ['*.html'], dest: '', params: {
             ContentEncoding: "gzip"
